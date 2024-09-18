@@ -72,17 +72,17 @@ for (let i = 1; randomNumbers.length > i; i++) {
 // 3. Plus each number in randomNumbers with 5. Result should be [15, 25, 55 …]. Find at least 2 ways to do this
 
 // Using Map()
-let plusFive = randomNumbers.map(num => num + 5);
+const plusFive = randomNumbers.map(num => num + 5);
 
 // Using loop
-let plusFiveLoop = [];
+const plusFiveLoop = [];
 
 for (let i = 0; i < randomNumbers.length; i++) {
   plusFiveLoop.push(randomNumbers[i] + 5);
 }
 
 // Using forEach()
-let newNumbers = [];
+const newNumbers = [];
 
 randomNumbers.forEach(function (num) {
   newNumbers.push(num + 5)
