@@ -15,9 +15,9 @@ console.log('Get all users that their ages are over 18: ', usersOver18);
   
 // 2. Find user have letter “e” in their name
 const LETTER_TO_SEARCH = 'e';
-const usersWithE = users.filter(user => user.name.toLowerCase().includes(LETTER_TO_SEARCH));
+const result = users.filter(user => user.name.toLowerCase().includes(LETTER_TO_SEARCH));
   
-console.log('Users have letter “e” in their name: ', usersWithE);
+console.log('Users have letter “e” in their name: ', result);
   
 // 3. Uppercase people name
 const capitalizedUsers = users.map(user => ({
