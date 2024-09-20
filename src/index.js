@@ -1,105 +1,147 @@
-// Exercise 1
-const randomValues = [1, '1', 'Mike', 0, 12, true];
+// // Exercise 1
+// const randomValues = [1, '1', 'Mike', 0, 12, true];
 
-// 1. Print type of all items in randomValues
-let typeValues = randomValues.forEach((value) => console.log(typeof value));
+// // 1. Print type of all items in randomValues
+// const typeValues = randomValues.forEach((value) => console.log(typeof value));
 
-// 2. How many number in randomValues
-//Using filter
-const numberCount = randomValues.filter((valueNumber) => typeof valueNumber === 'number').length;
+// // 2. How many number in randomValues
+// //Using filter
+// const numberCount = randomValues.filter((valueNumber) => typeof valueNumber === 'number').length;
 
-console.log(numberCount);
-//Using for loop
-let count = 0;
+// console.log('Using filter() to count:' + numberCount);
 
-for (let i = 0; randomValues.length > i; i++) {
+// //Using for loop
+// let count = 0;
 
-  if (typeof randomValues[i] === 'number') {
-    count++;
-  }
+// for (let i = 0; randomValues.length > i; i++) {
+//   if (typeof randomValues[i] === 'number') {
+//     count++;
+//   }
+// }
 
-}
+// console.log('Using for() loop to count:' + count);
 
-console.log(count);
-// Exercise 2
-let randomNumbers = [10, 20, 50, 25, 70, 0, 55, 90];
-// 1. Find the item with value = 70 and 30 in randomNumbers. Find at least 4 ways to do this
+// // Exercise 2
+// const randomNumbers = [10, 20, 50, 25, 70, 0, 55, 90];
+// // 1. Find the item with value = 70 and 30 in randomNumbers. Find at least 4 ways to do this
 
-// Using indexOf()
-let index70 = randomNumbers.indexOf(70) !== -1 ? "Found 70" : "70 Not Found";
-let index30 = randomNumbers.indexOf(30) !== -1 ? "Found 30" : "30 Not Found";
+// // Using indexOf()
+// const indexNumber70 = randomNumbers.indexOf(70) !== -1 ? "Found 70" : "70 Not Found";
+// const indexNumber30 = randomNumbers.indexOf(30) !== -1 ? "Found 30" : "30 Not Found";
 
-console.log(index70); 
-console.log(index30);
+// console.log('Using indexOf() to determine value:');
+// console.log(indexNumber70); 
+// console.log(indexNumber30);
 
-// Using find()
-let find70 = randomNumbers.find(number => number === 70) !== undefined ? "Found 70" : "70 Not Found";
-let find30 = randomNumbers.find(number => number === 30) !== undefined ? "Found 30" : "30 Not Found";
+// // Using find()
+// const findNumber70 = randomNumbers.find(number => number === 70) !== undefined ? "Found 70" : "70 Not Found";
+// const findNumber30 = randomNumbers.find(number => number === 30) !== undefined ? "Found 30" : "30 Not Found";
 
-console.log(find70);
-console.log(find30); 
-// Using filter()
-let filter70 = randomNumbers.filter(number => number === 70).length > 0 ? "Found 70" : "70 Not Found";
-let filter30 = randomNumbers.filter(number => number === 30).length > 0 ? "Found 30" : "30 Not Found";
+// console.log('Using find() to determine value:');
+// console.log(findNumber70);
+// console.log(findNumber30); 
 
-console.log(filter70);
-console.log(filter30);
+// // Using filter()
+// const filterNumber70 = randomNumbers.filter(number => number === 70).length > 0 ? "Found 70" : "70 Not Found";
+// const filterNumber30 = randomNumbers.filter(number => number === 30).length > 0 ? "Found 30" : "30 Not Found";
 
-// Using for()
-let found70 = false;
-let found30 = false;
+// console.log('Using filter() to determine value:');
+// console.log(filterNumber70);
+// console.log(filterNumber30);
 
-for (let i = 0; i < randomNumbers.length; i++) {
-  if (randomNumbers[i] === 70) {
-    found70 = true;
-  }
-  if (randomNumbers[i] === 30) {
-    found30 = true;
-  }
-}
+// // Using for()
+// let foundNumber70 = false;
+// let foundNumber30 = false;
 
-let result70 = found70 ? "Found 70" : "70 Not Found";
-let result30 = found30 ? "Found 30" : "30 Not Found";
+// for (let i = 0; i < randomNumbers.length; i++) {
+//   if (randomNumbers[i] === 70) {
+//     foundNumber70 = true;
+//   }
+//   if (randomNumbers[i] === 30) {
+//     foundNumber30 = true;
+//   }
+// }
 
-console.log(result70);
-console.log(result30);
+// const result70 = foundNumber70 ? "Found 70" : "70 Not Found";
+// const result30 = foundNumber30 ? "Found 30" : "30 Not Found";
 
-// 2. Find the biggest number in randomNumbers. Print result and index of them
-let maxNumber = randomNumbers[0];
-let maxIndex = 0;
+// console.log('Using for() to determine value:');
+// console.log(result70);
+// console.log(result30);
 
-for (let i = 1; randomNumbers.length > i; i++) {
+// // 2. Find the biggest number in randomNumbers. Print result and index of them
+// let maxNumber = randomNumbers[0];
+// let maxIndex = 0;
 
-  if (randomNumbers[i] > maxNumber) {
-    maxNumber = randomNumbers[i];
-    maxIndex = i;
-  }
+// for (let i = 1; randomNumbers.length > i; i++) {
+//   if (randomNumbers[i] > maxNumber) {
+//     maxNumber = randomNumbers[i];
+//     maxIndex = i;
+//   }
+// }
 
-}
+// console.log('Value of biggest number in randomNumbers is ' + maxNumber);
+// console.log('Index of biggest number in randomNumbers is ' + maxIndex);
 
-console.log(maxNumber);
-console.log(maxIndex);
+// // 3. Plus each number in randomNumbers with 5. Result should be [15, 25, 55 …]. Find at least 2 ways to do this
 
-// 3. Plus each number in randomNumbers with 5. Result should be [15, 25, 55 …]. Find at least 2 ways to do this
+// // Using Map()
 
-// Using Map()
-let plusFive = randomNumbers.map(num => num + 5);
+// const plusFive = randomNumbers.map(num => num + 5);
 
-console.log(plusFive);
-// Using loop
-let plusFiveLoop = [];
+// console.log('Using map() to create new array:');
+// console.log(plusFive);
+// // Using loop
+// let plusFiveLoop = [];
 
-for (let i = 0; i < randomNumbers.length; i++) {
-  plusFiveLoop.push(randomNumbers[i] + 5);
-}
+// for (let i = 0; i < randomNumbers.length; i++) {
+//   plusFiveLoop.push(randomNumbers[i] + 5);
+// }
 
-console.log(plusFiveLoop);
+// console.log('Using for() to create new array:');
+// console.log(plusFiveLoop);
 
-// Using forEach()
-let newNumbers = [];
+// // Using forEach()
+// let newNumbers = [];
 
-randomNumbers.forEach(function (num) {
-  newNumbers.push(num + 5)
-});
+// randomNumbers.forEach(function (num) {
+//   newNumbers.push(num + 5)
+// });
 
-console.log(newNumbers);
+// console.log('Using forEach() to create new array:');
+// console.log(newNumbers);
+
+//Object exercise
+const users = [
+  { name: 'Kenny', age: 15 },
+  { name: 'Alice', age: 18 },
+  { name: 'Tom', age: 5 },
+  { name: 'Henry', age: 30 },
+  { name: 'Mike', age: 17 }, 
+];
+// 1. Get all users that their ages are over 18
+const usersOver18 = users.filter(user => user.age > 18);
+
+console.log('Get all users that their ages are over 18');
+console.log(usersOver18);
+
+// 2. Find user have letter “e” in their name
+const usersWithE = users.filter(user => user.name.toLowerCase().includes('e'));
+
+console.log('Users have letter “e” in their name');
+console.log(usersWithE);
+
+// 3. Uppercase people name
+const usersUpperCase = users.map(user => ({
+  name: user.name.toUpperCase(),
+  age: user.age
+}));
+
+console.log('Uppercase people name:');
+console.log(usersUpperCase);
+
+// 4. Order user by their ages from younger to older
+const usersSortedByAge = users.sort((a, b) => a.age - b.age)
+
+console.log('Order user by their ages from younger to older: ')
+console.log(usersSortedByAge);
