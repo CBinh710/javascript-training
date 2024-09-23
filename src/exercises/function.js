@@ -12,11 +12,15 @@ function printUsername(user) {
 }
 
 // 2. Write a function that find all users that their ages in ranges
+
+const x = 10;
+const y = 20;
+
 function findUserInRange(users, fromAge, toAge) {
   return users.filter(user => user.age >= fromAge && user.age <= toAge);
 }
 
-const usersInRange = findUserInRange(users, 10, 20);
+const usersInRange = findUserInRange(users, x, y);
 
 console.log(usersInRange);
 
