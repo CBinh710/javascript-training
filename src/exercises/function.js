@@ -11,16 +11,18 @@ function printUsername(user) {
   console.log(user.name);
 }
 
+handleUserByAction(users, printUsername);
+
 // 2. Write a function that find all users that their ages in ranges
 
-const x = 10;
-const y = 20;
+const minAge = 10;
+const maxAge = 20;
 
 function findUserInRange(users, fromAge, toAge) {
   return users.filter(user => user.age >= fromAge && user.age <= toAge);
 }
 
-const usersInRange = findUserInRange(users, x, y);
+const usersInRange = findUserInRange(users, minAge, maxAge);
 
 console.log(usersInRange);
 
@@ -35,6 +37,6 @@ function handleUserByAction(users, action) {
 handleUserByAction(users, printUsername);
 
 //Pass a function to print user names and ages
-handleUserByAction(users, function(user) {
+handleUserByAction(users, (user) => {
   console.log(user.name + ' is ' + user.age + ' years old');
 });
