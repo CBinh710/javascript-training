@@ -1,30 +1,31 @@
 const users = [
-    { name: 'Kenny', age: 15 },
-    { name: 'Alice', age: 18 },
-    { name: 'Tom', age: 5 },
-    { name: 'Henry', age: 30 },
-    { name: 'Mike', age: 17 }, 
+  { name: 'Kenny', age: 15 },
+  { name: 'Alice', age: 18 },
+  { name: 'Tom', age: 5 },
+  { name: 'Henry', age: 30 },
+  { name: 'Mike', age: 17 }, 
 ];
-  
-  // 1. Write a function that prints usernames
+
+// 1. Write a function that prints usernames
 function printUsernames(users) {
-  users.forEach(users => {
-      console.log(users.name)       
-  });
+users.forEach(users => {
+    console.log(users.name)       
+});
 }
 
 printUsernames(users)
-  // 2. Write a function that print all users that their ages in ranges
+  // 2. Write a function that find all users that their ages in ranges
   // Ex: findUserInRange(users, fromAge, toAge)
-function findUserInRange(users, fromAge, toAge){
-  users.forEach(function(user) {
-    if (user.age >= fromAge && user.age <= toAge){
-      console.log(user.name + ', Age:' + user.age)
-    }
-  })
+function findUserInRange(users, fromAge, toAge) {
+  return users.filter(user => user.age >= fromAge && user.age <= toAge);
 }
 
-findUserInRange(users, 10, 20);
+// Gọi hàm và in kết quả
+const usersInRange = findUserInRange(users, 10, 20);
+
+console.log(usersInRange);
+// Output:
+// [ { name: 'Kenny', age: 15 }, { name: 'Alice', age: 18 }, { name: 'Mike', age: 17 } ]
 
   // 3. Write a function that accepts a function as input to handle users
   // Ex: handleUserByAction(users, printName)
@@ -33,11 +34,6 @@ function handleUserByAction(users, action) {
     action(user);
   });
 }
-
-// Example: Pass a function to print user names
-handleUserByAction(users, function(user) {
-  console.log(user.name);
-});
 
 // Example: Pass a function to print user names and ages
 handleUserByAction(users, function(user) {
