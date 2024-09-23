@@ -7,13 +7,9 @@ const users = [
 ];
 
 // 1. Write a function that prints usernames
-function printUsernames(users) {
-  users.forEach(users => {
-    console.log(users.name)       
-  });
+function printUsername(user) {
+  console.log(user.name);
 }
-
-printUsernames(users)
 
 // 2. Write a function that find all users that their ages in ranges
 function findUserInRange(users, fromAge, toAge) {
@@ -30,6 +26,9 @@ function handleUserByAction(users, action) {
     action(user);
   });
 }
+
+//Pass a function to print user names
+handleUserByAction(users, printUsername);
 
 //Pass a function to print user names and ages
 handleUserByAction(users, function(user) {
