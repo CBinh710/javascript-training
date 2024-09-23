@@ -8,12 +8,13 @@ const users = [
 
 // 1. Write a function that prints usernames
 function printUsernames(users) {
-users.forEach(users => {
+  users.forEach(users => {
     console.log(users.name)       
-});
+  });
 }
 
 printUsernames(users)
+
 // 2. Write a function that find all users that their ages in ranges
 function findUserInRange(users, fromAge, toAge) {
   return users.filter(user => user.age >= fromAge && user.age <= toAge);
@@ -22,6 +23,7 @@ function findUserInRange(users, fromAge, toAge) {
 const usersInRange = findUserInRange(users, 10, 20);
 
 console.log(usersInRange);
+
 // 3. Write a function that accepts a function as input to handle users
 function handleUserByAction(users, action) {
   users.forEach(user => {
