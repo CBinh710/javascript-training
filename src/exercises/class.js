@@ -26,8 +26,9 @@ class User {
     return `This is ${this.name}. He is ${this.age} years old.`;
   }
 
-  isAdult() {
-    return this.age >= 18 ? true : false;
+  isAdult(adultAge) {
+    adultAge = 18;
+    return this.age >= adultAge ? true : false;
   }
 }
 
