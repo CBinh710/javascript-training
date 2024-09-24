@@ -26,7 +26,8 @@ class User {
     return `This is ${this.name}. He is ${this.age} years old.`;
   }
 
-  isAdult(adultAge = 18) {
+  isAdult() {
+    const adultAge = 18
     return this.age >= adultAge;
   }
 }
