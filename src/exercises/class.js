@@ -27,8 +27,8 @@ class User {
   }
 
   isAdult() {
-    const adultAge = 18
-    
+    const adultAge = 18;
+
     return this.age >= adultAge;
   }
 }
