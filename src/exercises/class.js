@@ -27,7 +27,7 @@ class User {
   }
 
   isAdult() {
-    return this.age >= 18;
+    return this.age >= 18 ? true : false;
   }
 }
 
@@ -38,3 +38,4 @@ console.log(user.name);
 console.log(user.getInfo()); 
 console.log(user.isAdult());
 console.log(user2.isAdult());
+  
