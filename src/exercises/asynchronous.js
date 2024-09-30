@@ -20,7 +20,7 @@ async function getProductById(id) {
   }
 }
 
-getProductById(1)
+getProductById(5)
 
 async function updateProductById(id, newName) {
   try {
@@ -57,11 +57,11 @@ async function createNewProduct(newProduct) {
   }
 }
 
-createNewProduct({ name: 'Chau Binh', categoryId: 1 });
+// createNewProduct({ name: 'Chau Binh', categoryId: 1 });
 
 async function deleteProductById(id) {
   try {
-    const response = await fetch(`https://655c1a03ab37729791a9d383.mockapi.io/products/${id}`, {
+    const response = await fetch(`https://655c1a03ab37729791a9d383.mockapi.io/categories/1/products/${id}`, {
       method: 'DELETE',
     });
 
@@ -75,7 +75,7 @@ async function deleteProductById(id) {
   }
 }
 
-deleteProductById(5);
+deleteProductById(7);
 
 async function getProductsWithCategoryName() {
   try {
