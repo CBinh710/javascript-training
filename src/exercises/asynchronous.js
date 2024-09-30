@@ -2,6 +2,7 @@ async function getAllProducts() {
   try {
     const response = await fetch('https://655c1a03ab37729791a9d383.mockapi.io/products');
     const data = await response.json();
+    
     console.log('All Products:', data);
   } catch (error) {
     console.error('Error:', error);
@@ -14,6 +15,7 @@ async function getProductById(id) {
   try {
     const response = await fetch(`https://655c1a03ab37729791a9d383.mockapi.io/products/${id}`);
     const data = await response.json();
+
     console.log('Product by ID:', data)
   } catch (error) {
     console.error('Error:', error);
@@ -32,6 +34,7 @@ async function updateProductById(id, newName) {
       body: JSON.stringify({ name: newName })
     });
     const data = await response.json();
+
     console.log('Updated Product:', data);
   } catch (error) {
     console.log('Error:', error);
@@ -51,6 +54,7 @@ async function createNewProduct(newProduct) {
     });
 
     const data = await response.json();
+
     console.log('New Product Created:', data);
   } catch (error) {
     console.error('Error creating product:', error);
