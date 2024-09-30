@@ -7,6 +7,7 @@ async function getAllProducts() {
     console.error('Error:', error);
   }
 }
+
 getAllProducts();
 
 async function getProductById(id) {
@@ -18,6 +19,7 @@ async function getProductById(id) {
     console.error('Error:', error);
   }
 }
+
 getProductById(1)
 
 async function updateProductById(id, newName) {
@@ -35,21 +37,65 @@ async function updateProductById(id, newName) {
     console.log('Error:', error);
   }
 }
+
 updateProductById(1, 'Binh Chau');
 
-async function createProduct(newProduct) {
+async function createNewProduct(newProduct) {
   try {
     const response = await fetch('https://655c1a03ab37729791a9d383.mockapi.io/products', {
       method: 'POST',
       headers: {
-        'Content-type': 'application/json'
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ newProduct })
+      body: JSON.stringify(newProduct),
     });
+
     const data = await response.json();
-    console.log('Create new product:', data);
+    console.log('New Product Created:', data);
   } catch (error) {
-    console.log('Error:', error);
+    console.error('Error creating product:', error);
   }
 }
-createProduct({ name: 'Shoppe', categoryId: 1 });
+
+createNewProduct({ name: 'Chau Binh', categoryId: 1 });
+
+async function deleteProductById(id) {
+  try {
+    const response = await fetch(`https://655c1a03ab37729791a9d383.mockapi.io/products/${id}`, {
+      method: 'DELETE',
+    });
+
+    if (response.ok) {
+      console.log(`Product with ID ${id} deleted successfully.`);
+    } else {
+      console.log(`Failed to delete product with ID ${id}.`);
+    }
+  } catch (error) {
+    console.error(`Error deleting product with ID ${id}:`, error);
+  }
+}
+
+deleteProductById(5);
+
+async function getProductsWithCategoryName() {
+  try {
+    const [productsResponse, categoriesResponse] = await Promise.all([
+      fetch('https://655c1a03ab37729791a9d383.mockapi.io/products'),
+      fetch('https://655c1a03ab37729791a9d383.mockapi.io/categories'),
+    ]);
+
+    const products = await productsResponse.json();
+    const categories = await categoriesResponse.json();
+
+    const productsWithCategory = products.map(product => {
+      const category = categories.find(cat => cat.id == product.categoryId);
+      return { ...product, categoryName: category ? category.name : 'Unknown' };
+    });
+
+    console.log('Products with Category Name:', productsWithCategory);
+  } catch (error) {
+    console.error('Error fetching products or categories:', error);
+  }
+}
+
+getProductsWithCategoryName();
