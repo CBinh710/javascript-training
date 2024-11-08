@@ -1,0 +1,22 @@
+{
+  "extends": ["airbnb", "prettier"],
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": ["error"]
+  },
+
+  "overrides": [
+    {
+      "files": ["src/**/*.js"],
+      "excludedFiles": [
+        "node_modules/**",
+        "dist/**/*",
+        ".parcel-cache/**",
+        ".gitignore",
+        "package-lock.json",
+        ".vscode/**",
+        "eslint.config.mjs"
+      ]
+    }
+  ],
+}
