@@ -40,42 +40,60 @@ for(let i = 0; boxes.length > i; i++){
 }
 
 //Using querySelector to choose first "item" class and change it's color to "red"
-const itemElement = document.querySelector(".item")
-const changeColorItem = itemElement.style.color = "red"
+// const itemElement = document.querySelector(".item")
+// const changeColorItem = itemElement.style.color = "red"
 
-//Using querySelectorAll to choose all content and change it to "My name is Binh"
-const chooseAllItem = document.querySelectorAll(".item")
-chooseAllItem.forEach( item => {
-  item.textContent = "My name is Binh"    
-});
+// //Using querySelectorAll to choose all content and change it to "My name is Binh"
+// const chooseAllItem = document.querySelectorAll(".item")
+// chooseAllItem.forEach( item => {
+//   item.textContent = "My name is Binh"    
+// });
 
-//Write JavaScript code to add a new <li> element with the content "New item" to the end of the element with id="container".
-const newElement = document.createElement("li");
-newElement.textContent = "New item";
+// //Write JavaScript code to add a new <li> element with the content "New item" to the end of the element with id="container".
+// const newElement = document.createElement("li");
+// newElement.textContent = "New item";
 
-const addNewItem = document.getElementById("container");
-addNewItem.append(newElement); 
+// const addNewItem = document.getElementById("container");
+// addNewItem.append(newElement); 
 
-//Write JS code to remove first element with the class box from the DOM
-const firstItem = document.querySelector(".item")
-firstItem.remove();
+// //Write JS code to remove first element with the class box from the DOM
+// const firstItem = document.querySelector(".item")
+// firstItem.remove();
 
-//Write JavaScript code so that when a user clicks on an element with id="button", the message "Button clicked!" will appear in the console.
-const button = document.getElementById("button");
+// //Write JavaScript code so that when a user clicks on an element with id="button", the message "Button clicked!" will appear in the console.
+// const button = document.getElementById("button");
 
-button.addEventListener("click", function(){
-  console.log("Button clicked!")
-});
+// button.addEventListener("click", function(){
+//   console.log("Button clicked!")
+// });
 
-//Write JavaScript code to change the background color of an element with class="item" to red when the user hovers over it.
-const hoveredItem = document.querySelectorAll(".item");
+// //Write JavaScript code to change the background color of an element with class="item" to red when the user hovers over it.
+// const hoveredItem = document.querySelectorAll(".item");
 
-hoveredItem.forEach(item => {
-  item.addEventListener("mouseover", function() {
-    item.style.backgroundColor = "red";
-  })
+// hoveredItem.forEach(item => {
+//   item.addEventListener("mouseover", function() {
+//     item.style.backgroundColor = "red";
+//   })
 
-  item.addEventListener("mouseout", function(){
-    item.style.backgroundColor = "";
-  })
-})
+//   item.addEventListener("mouseout", function(){
+//     item.style.backgroundColor = "";
+//   })
+// })
+
+// Change the content of the p element
+document.getElementById("content").textContent = "Face bo ok";
+
+// Change the properties of the a element
+document.getElementById("link").href = "https://newsite.com";
+document.getElementById("link").textContent = "New site";
+
+// Add a CSS class to the div element with the class "box"
+document.querySelector(".item").classList.add("highlight");
+
+// Add a new item to the list
+const newItem = document.createElement("li");
+newItem.textContent = "Item 4";
+document.getElementById("container").appendChild(newItem);
+
+ // Change the style of element p document.getElementById("intro").style.color = "blue";
+ document.getElementById("content").style.fontSize = "20px";
