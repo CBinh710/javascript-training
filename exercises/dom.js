@@ -166,27 +166,62 @@
 // 	},3000)
 // })
 
-document.getElementById('outer').addEventListener('click', () => {
-  console.log('Outer div clicked (bubbling)');
+// document.getElementById('outer').addEventListener('click', () => {
+//   console.log('Outer div clicked (bubbling)');
+// });
+
+// document.getElementById('middle').addEventListener('click', () => {
+//   console.log('Middle div clicked (bubbling)');
+// });
+
+// document.getElementById('inner').addEventListener('click', (event) => {
+//   event.stopPropagation();
+// 	console.log('Inner div clicked (bubbling)');
+// });
+
+// document.getElementById('outer').addEventListener('click', () => {
+//   console.log('Outer div clicked (capturing)');
+// }, true);
+
+// document.getElementById('middle').addEventListener('click', () => {
+//   console.log('Middle div clicked (capturing)');
+// }, true);
+
+// document.getElementById('inner').addEventListener('click', () => {
+//   console.log('Inner div clicked (capturing)');
+// }, true);
+
+//Add ul after submit
+const form = document.querySelector("#form");
+const list_item = document.getElementById("list_item");
+
+form.addEventListener("submit", e => {
+	e.preventDefault();
+	
+	const username = document.getElementById("username").value;
+	const message = document.getElementById("message").value
+//
+	const newLi = document.createElement("li");
+	newLi.textContent = username + ":" + message;
+//Create new li
+	list_item.append(newLi);
+//Reset form
+	form.reset();
 });
 
-document.getElementById('middle').addEventListener('click', () => {
-  console.log('Middle div clicked (bubbling)');
-});
+//Delete li elements when click on it and dont use delegation
+// const lis = document.querySelectorAll("li");
+// //browser each element
+// lis.forEach((li) => {
+// 	li.addEventListener("click", () => {
+// 		li.remove();
+// 	});
+// });
 
-document.getElementById('inner').addEventListener('click', (event) => {
-  event.stopPropagation();
-	console.log('Inner div clicked (bubbling)');
-});
+list_item.addEventListener("click", (e) => {
+	const li = e.target;
 
-document.getElementById('outer').addEventListener('click', () => {
-  console.log('Outer div clicked (capturing)');
-}, true);
-
-document.getElementById('middle').addEventListener('click', () => {
-  console.log('Middle div clicked (capturing)');
-}, true);
-
-document.getElementById('inner').addEventListener('click', () => {
-  console.log('Inner div clicked (capturing)');
-}, true);
+	if (li.tagName === "LI"){
+		li.remove()
+	}
+})
