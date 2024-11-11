@@ -80,20 +80,88 @@ for(let i = 0; boxes.length > i; i++){
 //   })
 // })
 
-// Change the content of the p element
-document.getElementById("content").textContent = "Face bo ok";
+// // Change the content of the p element
+// document.getElementById("content").textContent = "Face bo ok";
 
-// Change the properties of the a element
-document.getElementById("link").href = "https://newsite.com";
-document.getElementById("link").textContent = "New site";
+// // Change the properties of the a element
+// document.getElementById("link").href = "https://newsite.com";
+// document.getElementById("link").textContent = "New site";
 
-// Add a CSS class to the div element with the class "box"
-document.querySelector(".item").classList.add("highlight");
+// // Add a CSS class to the div element with the class "item"
+// document.querySelector(".item").classList.add("highlight");
 
-// Add a new item to the list
-const newItem = document.createElement("li");
-newItem.textContent = "Item 4";
-document.getElementById("container").appendChild(newItem);
+// // Add a new item to the list
+// const newItem = document.createElement("li");
+// newItem.textContent = "Item 4";
+// document.getElementById("container").appendChild(newItem);
 
- // Change the style of element p document.getElementById("intro").style.color = "blue";
- document.getElementById("content").style.fontSize = "20px";
+//  // Change the style of element p document.getElementById("intro").style.color = "blue";
+//  document.getElementById("content").style.fontSize = "20px";
+//Event samples
+
+//Display alert "Button clicked" when click mouse
+const button = document.getElementById('button');
+button.addEventListener('click', function(){
+  alert('Button clicked');
+});
+
+//Change background color after hover to header and restore when mouse out
+const hoverHeader = document.getElementById("header");
+
+hoverHeader.addEventListener('mouseover', function(){
+	hoverHeader.style.backgroundColor = "red"
+});
+
+hoverHeader.addEventListener('mouseout',function(){
+	hoverHeader.style.backgroundColor = ""
+})
+//Create a "Click me" button and each time the user clicks the button, display the number of clicks
+let count = 0;
+const buttonClick = document.getElementById("clickButton");
+const countDisplay = document.getElementById("countDisplay")
+
+buttonClick.addEventListener('click', function(){
+	count++;
+	countDisplay.textContent = `Times clicked: ${count}`
+});
+//Create a form with an input field and a submit button. When the user presses the submit button, stop the default submit action and display a message.
+const form = document.getElementById("myForm");
+const input = document.getElementById("myInput");
+
+form.addEventListener('submit', function(event){
+	event.preventDefault();
+	alert("Nooo")
+});
+
+//Create an input box and when the user enters text, display that text below the input box.
+const inputText = document.getElementById("inputText");
+const output = document.getElementById("output");
+
+inputText.addEventListener('input', function(){
+	output.textContent = inputText.value;
+})
+
+//Create an input field and display information about the character the user just pressed when the "keydown" and "keyup" events occur.
+const keyInput = document.getElementById("keyInput");
+const ketDisplay = document.getElementById("keyDisplay");
+
+keyInput.addEventListener("keydown",function(event){
+	keyDisplay.textContent = "Key pressed (keydown):" + event.key;
+});
+
+keyInput.addEventListener("keyup",function(event){
+	keyDisplay.textContent = "Key released (keyup):" + event.key;
+});
+
+//When the user moves the mouse within the browser window, display the mouse position (X and Y coordinates).
+document.addEventListener("mousemove", function(event){
+	const mousePosition = this.getElementById("mousePosition");
+	mousePosition.textContent = `Mouse position: X = ${event.clientX}, Y = ${event.clientY}`
+})
+
+//Change background after 3s
+window.addEventListener("load", function(event){
+	setTimeout(function(){
+		document.body.style.background = "lightblue"
+	},3000)
+})
