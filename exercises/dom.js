@@ -29,15 +29,15 @@
 //     console.log(`${index + 1}: ${item.textContent}`);
 // })
 //Using getElementById to get change data
-document.getElementById("header").textContent = "Hello everyone"
+// document.getElementById("header").textContent = "Hello everyone"
 //Using getElementByClassName to access all element of class "item" index = 1 and change background color
-const boxes = document.getElementsByClassName("item")
+// const boxes = document.getElementsByClassName("item")
 
-for(let i = 0; boxes.length > i; i++){
-  if(i==1){
-    boxes[i].style.backgroundColor = "green";
-  }
-}
+// for(let i = 0; boxes.length > i; i++){
+//   if(i==1){
+//     boxes[i].style.backgroundColor = "green";
+//   }
+// }
 
 //Using querySelector to choose first "item" class and change it's color to "red"
 // const itemElement = document.querySelector(".item")
@@ -100,68 +100,93 @@ for(let i = 0; boxes.length > i; i++){
 //Event samples
 
 //Display alert "Button clicked" when click mouse
-const button = document.getElementById('button');
-button.addEventListener('click', function(){
-  alert('Button clicked');
+// const button = document.getElementById('button');
+// button.addEventListener('click', function(){
+//   alert('Button clicked');
+// });
+
+// //Change background color after hover to header and restore when mouse out
+// const hoverHeader = document.getElementById("header");
+
+// hoverHeader.addEventListener('mouseover', function(){
+// 	hoverHeader.style.backgroundColor = "red"
+// });
+
+// hoverHeader.addEventListener('mouseout',function(){
+// 	hoverHeader.style.backgroundColor = ""
+// })
+// //Create a "Click me" button and each time the user clicks the button, display the number of clicks
+// let count = 0;
+// const buttonClick = document.getElementById("clickButton");
+// const countDisplay = document.getElementById("countDisplay")
+
+// buttonClick.addEventListener('click', function(){
+// 	count++;
+// 	countDisplay.textContent = `Times clicked: ${count}`
+// });
+// //Create a form with an input field and a submit button. When the user presses the submit button, stop the default submit action and display a message.
+// const form = document.getElementById("myForm");
+// const input = document.getElementById("myInput");
+
+// form.addEventListener('submit', function(event){
+// 	event.preventDefault();
+// 	alert("Nooo")
+// });
+
+// //Create an input box and when the user enters text, display that text below the input box.
+// const inputText = document.getElementById("inputText");
+// const output = document.getElementById("output");
+
+// inputText.addEventListener('input', function(){
+// 	output.textContent = inputText.value;
+// })
+
+// //Create an input field and display information about the character the user just pressed when the "keydown" and "keyup" events occur.
+// const keyInput = document.getElementById("keyInput");
+// const ketDisplay = document.getElementById("keyDisplay");
+
+// keyInput.addEventListener("keydown",function(event){
+// 	keyDisplay.textContent = "Key pressed (keydown):" + event.key;
+// });
+
+// keyInput.addEventListener("keyup",function(event){
+// 	keyDisplay.textContent = "Key released (keyup):" + event.key;
+// });
+
+// //When the user moves the mouse within the browser window, display the mouse position (X and Y coordinates).
+// document.addEventListener("mousemove", function(event){
+// 	const mousePosition = this.getElementById("mousePosition");
+// 	mousePosition.textContent = `Mouse position: X = ${event.clientX}, Y = ${event.clientY}`
+// })
+
+// //Change background after 3s
+// window.addEventListener("load", function(event){
+// 	setTimeout(function(){
+// 		document.body.style.background = "lightblue"
+// 	},3000)
+// })
+
+document.getElementById('outer').addEventListener('click', () => {
+  console.log('Outer div clicked (bubbling)');
 });
 
-//Change background color after hover to header and restore when mouse out
-const hoverHeader = document.getElementById("header");
-
-hoverHeader.addEventListener('mouseover', function(){
-	hoverHeader.style.backgroundColor = "red"
+document.getElementById('middle').addEventListener('click', () => {
+  console.log('Middle div clicked (bubbling)');
 });
 
-hoverHeader.addEventListener('mouseout',function(){
-	hoverHeader.style.backgroundColor = ""
-})
-//Create a "Click me" button and each time the user clicks the button, display the number of clicks
-let count = 0;
-const buttonClick = document.getElementById("clickButton");
-const countDisplay = document.getElementById("countDisplay")
-
-buttonClick.addEventListener('click', function(){
-	count++;
-	countDisplay.textContent = `Times clicked: ${count}`
-});
-//Create a form with an input field and a submit button. When the user presses the submit button, stop the default submit action and display a message.
-const form = document.getElementById("myForm");
-const input = document.getElementById("myInput");
-
-form.addEventListener('submit', function(event){
-	event.preventDefault();
-	alert("Nooo")
+document.getElementById('inner').addEventListener('click', (event) => {
+  event.stopPropagation();
+	console.log('Inner div clicked (bubbling)');
 });
 
-//Create an input box and when the user enters text, display that text below the input box.
-const inputText = document.getElementById("inputText");
-const output = document.getElementById("output");
+document.getElementById('outer').addEventListener('click', () => {
+  console.log('Outer div clicked (capturing)');
+}, true);
 
-inputText.addEventListener('input', function(){
-	output.textContent = inputText.value;
-})
+document.getElementById('middle').addEventListener('click', () => {
+  console.log('Middle div clicked (capturing)');
+}, true);
 
-//Create an input field and display information about the character the user just pressed when the "keydown" and "keyup" events occur.
-const keyInput = document.getElementById("keyInput");
-const ketDisplay = document.getElementById("keyDisplay");
-
-keyInput.addEventListener("keydown",function(event){
-	keyDisplay.textContent = "Key pressed (keydown):" + event.key;
-});
-
-keyInput.addEventListener("keyup",function(event){
-	keyDisplay.textContent = "Key released (keyup):" + event.key;
-});
-
-//When the user moves the mouse within the browser window, display the mouse position (X and Y coordinates).
-document.addEventListener("mousemove", function(event){
-	const mousePosition = this.getElementById("mousePosition");
-	mousePosition.textContent = `Mouse position: X = ${event.clientX}, Y = ${event.clientY}`
-})
-
-//Change background after 3s
-window.addEventListener("load", function(event){
-	setTimeout(function(){
-		document.body.style.background = "lightblue"
-	},3000)
-})
+document.getElementById('inner').addEventListener('click', () => {
+  console.log('Inner div clicked (capturing)');
+}, true);

@@ -6,7 +6,7 @@
   <title>Accessing DOM Elements</title>
 </head>
 <body>
-  <div id="main">
+  <!-- <div id="main">
     <h1 id="header" class="title">Title</h1>
     <p id="content">This is content of paragraphs</p>
     <a id="link" href="www.facebook.com">facebook.com</a>
@@ -32,7 +32,16 @@
     <p id="keyDisplay">a</p>
 
     <p id="mousePosition">Move your mouse around!</p>
-  </div>
+  </div> -->
+  <div id="outer" style="padding: 20px; background-color: lightcoral;">
+    Outer
+    <div id="middle" style="padding: 20px; background-color: lightblue;">
+      Middle
+      <div id="inner" style="padding: 20px; background-color: lightgreen;">
+        Inner
+      </div>
+    </div>
+  </div>  
 </body>
 <script src="./dom.js"></script>
 </html>
