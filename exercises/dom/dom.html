@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessing DOM Elements</title>
+</head>
+<body>
+  <!-- Section 1: DOM Elements for Querying and Modifying -->
+  <div id="main">
+    <!-- Title Header -->
+    <h1 id="header" class="title">Title</h1>  <!-- Example for Querying and Modifying DOM -->
+
+    <!-- Content paragraph -->
+    <p id="content">This is content of paragraphs</p> <!-- Example for Querying and Modifying DOM -->
+    
+    <!-- Link element -->
+    <a id="link" href="www.facebook.com">facebook.com</a> <!-- Example for Querying and Modifying DOM -->
+    
+    <!-- List with items -->
+    <ul id="container">
+      <li class="item">Item 1</li>
+      <li class="item">Item 2</li>
+      <li class="item">Item 3</li>
+    </ul> <!-- Example for Querying and Modifying DOM -->
+    
+    <!-- Buttons for EventListener -->
+    <button id="button">Click here!</button> <!-- Example for EventListener -->
+    <br/>
+    <button id="clickButton">Click me</button> <!-- Example for EventListener -->
+    <p id="countDisplay">Times clicked: 0</p>
+
+    <!-- Input Form -->
+    <form id="myForm">
+      <input type="text" id="myInput" placeholder="Enter text">
+      <button type="submit">Help me</button>
+    </form>
+
+    <!-- Text input and display output -->
+    <input type="text" id="inputText" placeholder="Enter text">
+    <p id="output">Text here</p>
+
+    <!-- Key input and display -->
+    <input type="text" id="keyInput" placeholder="Type a key">
+    <p id="keyDisplay">a</p>
+
+    <!-- Mouse position display -->
+    <p id="mousePosition">Move your mouse around!</p>
+  </div>
+
+  <h1>Event Delegation</h1>
+  
+  <!-- Event delegation form -->
+  <form action="./send.php" id="form">
+    <input type="text" id="username" placeholder="username">
+    <input type="text" id="message" placeholder="message">
+    <input type="submit" value="send">
+  </form>
+  
+  <!-- List for Event Delegation -->
+  <ul id="list_item">
+    <li>Message 1</li>
+    <li>Message 2</li>
+    <p>Text</p>
+  </ul>
+
+</body>
+<!-- <script src="./query.js"></script>
+<script src="./evenListener.js"></script>
+<script src="./capturingandbubbling.js"></script> -->
+<script src="./delegation.js"></script>
+</html>
