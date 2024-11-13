@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Registration Form</title>
+  <style>
+    /* Basic styling for form layout */
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f2f2f2;
+    }
+    .form-container {
+      width: 400px;
+      padding: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .form-container div {
+      margin-top: 10px;
+      color: #333;
+    }
+    input[type="text"],
+    input[type="password"] {
+      width: 94%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+    .error {
+      color: red;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 15px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    button[type="submit"] {
+      background-color: #7952B3;
+      color: white;
+      border: none;
+    }
+    button[type="reset"] {
+      background-color: #f44336;
+      color: white;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <form id="sign-up-form">
+      <h1>Sign Up</h1>
+
+      <div>Username:</div>
+      <input type="text" id="username" name="username" required>
+      <div id="usernameError" class="error"></div>
+
+      <div>Display name:</div>
+      <input type="text" id="displayname" name="displayname">
+
+      <div>Password:</div>
+      <input type="password" id="password" name="password" required>
+      <div id="passwordError" class="error"></div>
+
+      <div>Confirm Password:</div>
+      <input type="password" id="confirmedpassword" name="confirmedpassword" required>
+      <div id="confirmedpasswordError" class="error"></div>
+
+      <button type="submit">Submit</button>
+      <button type="reset">Reset</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('sign-up-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // Clear previous error messages
+      document.getElementById('usernameError').innerText = '';
+      document.getElementById('passwordError').innerText = '';
+      document.getElementById('confirmedpasswordError').innerText = '';
+
+      // Get form values
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const confirmedPassword = document.getElementById('confirmedpassword').value;
+
+      // Validation checks
+      let hasError = false;
+
+      // Username validation
+      if (!username) {
+        document.getElementById('usernameError').innerText = 'Username is required';
+        hasError = true;
+      } else if (!/^[A-Za-z]+$/.test(username)) {
+        document.getElementById('usernameError').innerText = 'Username should contain only alphabet characters';
+        hasError = true;
+      }
+
+      // Password validation
+      if (!password) {
+        document.getElementById('passwordError').innerText = 'Password is required';
+        hasError = true;
+      } else if (password.length < 8) {
+        document.getElementById('passwordError').innerText = 'Password should contain at least 8 characters';
+        hasError = true;
+      }
+
+      // Confirmed password validation
+      if (confirmedPassword !== password) {
+        document.getElementById('confirmedpasswordError').innerText = 'Confirmed password didn’t match the password';
+        hasError = true;
+      }
+
+      // If no errors, submit the form (or proceed with further actions)
+      if (!hasError) {
+        alert('Form submitted successfully!');
+
+      }
+    });
+
+    document.getElementById('sign-up-form').addEventListener('reset', function() {
+      document.getElementById('usernameError').innerText = '';
+      document.getElementById('passwordError').innerText = '';
+      document.getElementById('confirmedpasswordError').innerText = '';
+    });	
+  </script>
+</body>
+</html>
