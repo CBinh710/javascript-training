@@ -141,8 +141,9 @@
     });
 
     document.getElementById('sign-up-form').addEventListener('reset', function() {
-      for(let i = 0; document.querySelectorAll('.error').length > i; i++) {
-        document.querySelectorAll('.error')[i].innerText = '';
+      const errorElements = document.querySelectorAll('.error');
+      for(let i = 0; errorElements.length > i; i++) {
+        errorElements[i].innerText = '';
       }
     });	
     
