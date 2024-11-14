@@ -69,20 +69,28 @@
     <form id="sign-up-form">
       <h1>Sign Up</h1>
 
-      <div>Username:</div>
-      <input type="text" id="username" name="username" required>
-      <div id="usernameError" class="error"></div>
+      <div class="usernameContainer">
+        <p>Username:</p>
+        <input type="text" id="username" name="username">
+        <p id="usernameError" class="error"></p>
+      </div>
+      
+      <div class="displaynameContainer">
+        <p>Display name:</p>
+        <input type="text" id="displayname" name="displayname">
+      </div>
 
-      <div>Display name:</div>
-      <input type="text" id="displayname" name="displayname">
+      <div class="passwordContainer">
+        <p>Password:</p>
+        <input type="password" id="password" name="password">
+        <p id="passwordError" class="error"></p>
+      </div>
 
-      <div>Password:</div>
-      <input type="password" id="password" name="password" required>
-      <div id="passwordError" class="error"></div>
-
-      <div>Confirm Password:</div>
-      <input type="password" id="confirmedpassword" name="confirmedpassword" required>
-      <div id="confirmedpasswordError" class="error"></div>
+      <div class="confirmedPasswordContainer">
+        <p>Confirm Password:</p>
+        <input type="password" id="confirmedpassword" name="confirmedpassword">
+        <p id="confirmedpasswordError" class="error"></p>
+      </div>
 
       <button type="submit">Submit</button>
       <button type="reset">Reset</button>
@@ -93,15 +101,12 @@
     document.getElementById('sign-up-form').addEventListener('submit', function(event) {
       event.preventDefault();
 
-      // Clear previous error messages
-      document.getElementById('usernameError').innerText = '';
-      document.getElementById('passwordError').innerText = '';
-      document.getElementById('confirmedpasswordError').innerText = '';
+      const formElement = document.getElementById('sign-up-form');
+      const formData = new FormData(formElement);
 
-      // Get form values
-      const username = document.getElementById('username').value;
-      const password = document.getElementById('password').value;
-      const confirmedPassword = document.getElementById('confirmedpassword').value;
+      const username = formData.get('username');
+      const password = formData.get('password');
+      const confirmedPassword = formData.get('confirmedpassword');
 
       // Validation checks
       let hasError = false;
@@ -129,19 +134,18 @@
         document.getElementById('confirmedpasswordError').innerText = 'Confirmed password didn’t match the password';
         hasError = true;
       }
-
       // If no errors, submit the form (or proceed with further actions)
       if (!hasError) {
         alert('Form submitted successfully!');
-
       }
     });
 
     document.getElementById('sign-up-form').addEventListener('reset', function() {
-      document.getElementById('usernameError').innerText = '';
-      document.getElementById('passwordError').innerText = '';
-      document.getElementById('confirmedpasswordError').innerText = '';
+      for(let i = 0; document.querySelectorAll('.error').length > i; i++) {
+        document.querySelectorAll('.error')[i].innerText = '';
+      }
     });	
-  </script>
+    
+  </script> 
 </body>
 </html>
