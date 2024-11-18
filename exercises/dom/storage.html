@@ -30,12 +30,34 @@
   <button id="viewData">View All Stored Data</button>
   <button id="clearData">Clear All Data</button>
 
-	<div id="output"></div>
+  <div id="output"></div>
+  
   <script>
-    document.getElementById('bookingForm').addEventListener('submit', function(event) {
+    const formElement = document.getElementById('bookingForm');
+    const fields = ['name', 'datetime', 'email', 'phone'];
+    
+    // Load form data from sessionStorage when the page is loaded
+    function loadFormData() {
+      fields.forEach(field => {
+        const savedValue = sessionStorage.getItem(field);
+        if (savedValue) {
+          document.getElementById(field).value = savedValue;
+        }
+      });
+    }
+
+    // Save form data to sessionStorage whenever the user types in an input field
+    fields.forEach(field => {
+      const inputElement = document.getElementById(field);
+      inputElement.addEventListener('input', () => {
+        sessionStorage.setItem(field, inputElement.value);
+      });
+    });
+
+    // Handle form submission
+    formElement.addEventListener('submit', function(event) {
       event.preventDefault();
 
-      const formElement = document.getElementById('bookingForm');
       const formData = new FormData(formElement);
 
       const name = formData.get('name');
@@ -43,10 +65,9 @@
       const email = formData.get('email');
       const phone = formData.get('phone');
 
-      // Validation checks
       let hasError = false;
 
-      // Name validation
+      // Validate input fields
       if (!name) {
         document.getElementById('nameError').innerText = 'Name is required';
         hasError = true;
@@ -57,7 +78,6 @@
         document.getElementById('nameError').innerText = '';
       }
 
-      // Date and time validation
       if (!datetime) {
         document.getElementById('datetimeError').innerText = 'Date and time is required';
         hasError = true;
@@ -65,16 +85,14 @@
         document.getElementById('datetimeError').innerText = '';
       }
 
-      // Phone validation
       if (!phone) {
         document.getElementById('phoneError').innerText = 'Phone number is required';
         hasError = true;
       } else if (!/^((\+84)|0)(3|5|7|8|9)\d{8}$/.test(phone)) {
         document.getElementById('phoneError').innerText = 'Phone number is not in correct format';
         hasError = true;
-      } 
+      }
 
-      // Email validation
       if (!email) {
         document.getElementById('emailError').innerText = 'Email is required';
         hasError = true;
@@ -83,57 +101,60 @@
         hasError = true;
       }
 
-      // If no errors, save to localStorage and display success message
+      // If no validation errors, save the booking data
       if (!hasError) {
-
-			  const uniqueID = `booking_${Date.now()}_${Math.floor(Math.random() * 1000)}`;
-
+        const uniqueID = `booking_${Date.now()}_${Math.floor(Math.random() * 1000)}`;
         const bookingData = {
           id: uniqueID,
-          name: name,
-          datetime: datetime,
-          email: email,
-          phone: phone,
+          name,
+          datetime,
+          email,
+          phone,
         };
-
-        localStorage.setItem(uniqueID, JSON.stringify(bookingData));
-
+        sessionStorage.setItem(uniqueID, JSON.stringify(bookingData));
         alert(`Form submitted successfully! Your booking ID is: ${uniqueID}`);
-				
-				const errorElements = document.querySelectorAll('.error');
-      	errorElements.forEach(errorElement => {
-        errorElement.innerText = '';
-     		});
 
+        // Clear temporary sessionStorage data for the form fields
+        fields.forEach(field => sessionStorage.removeItem(field));
+        
+        // Reset the form and clear error messages
         formElement.reset();
-			}
-    });	
+        document.querySelectorAll('.error').forEach(error => (error.innerText = ''));
+      }
+    });
 
+    // Display all data stored in sessionStorage
     document.getElementById('viewData').addEventListener('click', function() {
       const output = document.getElementById('output');
-      output.innerHTML = ''; // Clear any previous output
+      output.innerHTML = '';
 
-      const keys = Object.keys(localStorage);
+      const keys = Object.keys(sessionStorage);
       if (keys.length === 0) {
-        output.innerText = 'No data found in localStorage.';
+        output.innerText = 'No data found in sessionStorage.';
         return;
       }
 
       keys.forEach(key => {
-        const data = JSON.parse(localStorage.getItem(key));
-        const dataDiv = document.createElement('div');
-        dataDiv.innerText = `ID: ${data.id}, Name: ${data.name}, Date/Time: ${data.datetime}, Email: ${data.email}, Phone: ${data.phone}`;
-        output.appendChild(dataDiv);
+        const data = JSON.parse(sessionStorage.getItem(key));
+        if (data && data.id) {
+          const dataDiv = document.createElement('div');
+          dataDiv.innerText = `ID: ${data.id}, Name: ${data.name}, Date/Time: ${data.datetime}, Email: ${data.email}, Phone: ${data.phone}`;
+          output.appendChild(dataDiv);
+        }
       });
     });
 
-		document.getElementById('clearData').addEventListener('click', function() {
+    // Clear all data in sessionStorage
+    document.getElementById('clearData').addEventListener('click', function() {
       if (confirm('Are you sure you want to clear all data?')) {
-        localStorage.clear();
+        sessionStorage.clear();
         alert('All data has been cleared.');
-        document.getElementById('output').innerHTML = ''; // Clear output display
+        document.getElementById('output').innerHTML = '';
       }
     });
-  </script> 
+
+    // Call loadFormData when the page is loaded
+    loadFormData();
+  </script>
 </body>
 </html>
