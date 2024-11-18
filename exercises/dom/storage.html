@@ -1,34 +1,139 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Form Persistence</title>
+  <title>Form Persistence</title>
 </head>
 <body>
-    <form id="userForm">
-        <label>Name:</label>
-        <input type="text" id="name" name="name"><br><br>
-        <label>Email:</label>
-        <input type="email" id="email" name="email"><br><br>
-        <label>Phone:</label>
-        <input type="tel" id="phone" name="phone"><br><br>
-        <button type="submit">Submit</button>
-    </form>
 
-    <script>
-        const form = document.getElementById("userForm");
+  <h1>Booking Form</h1>
+  <form id="bookingForm">
+    <label>Name:</label>	
+    <input type="text" id="name" name="name"><br><br>
+    <p id="nameError" class="error"></p>
 
-        // Load saved data from sessionStorage on page load
-        form.name.value = sessionStorage.getItem("name") || "";
-        form.email.value = sessionStorage.getItem("email") || "";
-        form.phone.value = sessionStorage.getItem("phone") || "";
+    <label>Date and time:</label>
+    <input type="datetime-local" id="datetime" name="datetime"><br><br>
+    <p id="datetimeError" class="error"></p>
 
-        form.addEventListener("input", () => {
-            sessionStorage.setItem("name", form.name.value);
-            sessionStorage.setItem("email", form.email.value);
-            sessionStorage.setItem("phone", form.phone.value);
-        });
+    <label>Email</label>
+    <input type="email" id="email" name="email"><br><br>
+    <p id="emailError" class="error"></p>
 
-        form.addEventListener("submit", () => sessionStorage.clear());
-    </script>
+    <label>Phone:</label>
+    <input type="tel" id="phone" name="phone"><br><br>
+    <p id="phoneError" class="error"></p>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <h2>Actions</h2>
+  <button id="viewData">View All Stored Data</button>
+  <button id="clearData">Clear All Data</button>
+
+	<div id="output"></div>
+  <script>
+    document.getElementById('bookingForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const formElement = document.getElementById('bookingForm');
+      const formData = new FormData(formElement);
+
+      const name = formData.get('name');
+      const datetime = formData.get('datetime');
+      const email = formData.get('email');
+      const phone = formData.get('phone');
+
+      // Validation checks
+      let hasError = false;
+
+      // Name validation
+      if (!name) {
+        document.getElementById('nameError').innerText = 'Name is required';
+        hasError = true;
+      } else if (!/^[A-Za-z\s]+$/.test(name)) {
+        document.getElementById('nameError').innerText = 'Name should contain only alphabet characters and spaces';
+        hasError = true;
+      } else {
+        document.getElementById('nameError').innerText = '';
+      }
+
+      // Date and time validation
+      if (!datetime) {
+        document.getElementById('datetimeError').innerText = 'Date and time is required';
+        hasError = true;
+      } else {
+        document.getElementById('datetimeError').innerText = '';
+      }
+
+      // Phone validation
+      if (!phone) {
+        document.getElementById('phoneError').innerText = 'Phone number is required';
+        hasError = true;
+      } else if (!/^((\+84)|0)(3|5|7|8|9)\d{8}$/.test(phone)) {
+        document.getElementById('phoneError').innerText = 'Phone number is not in correct format';
+        hasError = true;
+      } 
+
+      // Email validation
+      if (!email) {
+        document.getElementById('emailError').innerText = 'Email is required';
+        hasError = true;
+      } else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
+        document.getElementById('emailError').innerText = 'Email is not in correct format';
+        hasError = true;
+      }
+
+      // If no errors, save to localStorage and display success message
+      if (!hasError) {
+
+			  const uniqueID = `booking_${Date.now()}_${Math.floor(Math.random() * 1000)}`;
+
+        const bookingData = {
+          id: uniqueID,
+          name: name,
+          datetime: datetime,
+          email: email,
+          phone: phone,
+        };
+
+        localStorage.setItem(uniqueID, JSON.stringify(bookingData));
+
+        alert(`Form submitted successfully! Your booking ID is: ${uniqueID}`);
+				
+				const errorElements = document.querySelectorAll('.error');
+      	errorElements.forEach(errorElement => {
+        errorElement.innerText = '';
+     		});
+
+        formElement.reset();
+			}
+    });	
+
+    document.getElementById('viewData').addEventListener('click', function() {
+      const output = document.getElementById('output');
+      output.innerHTML = ''; // Clear any previous output
+
+      const keys = Object.keys(localStorage);
+      if (keys.length === 0) {
+        output.innerText = 'No data found in localStorage.';
+        return;
+      }
+
+      keys.forEach(key => {
+        const data = JSON.parse(localStorage.getItem(key));
+        const dataDiv = document.createElement('div');
+        dataDiv.innerText = `ID: ${data.id}, Name: ${data.name}, Date/Time: ${data.datetime}, Email: ${data.email}, Phone: ${data.phone}`;
+        output.appendChild(dataDiv);
+      });
+    });
+
+		document.getElementById('clearData').addEventListener('click', function() {
+      if (confirm('Are you sure you want to clear all data?')) {
+        localStorage.clear();
+        alert('All data has been cleared.');
+        document.getElementById('output').innerHTML = ''; // Clear output display
+      }
+    });
+  </script> 
 </body>
 </html>
