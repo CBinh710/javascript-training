@@ -10,20 +10,17 @@
   --color-filter-orange: #F57906;
   --color-filter-green: #00C12B;
 
+  --font-family-base: satoshi-regular;
+  --font-family-secondary: inter;
 
-   /* Font gia đình */
-   --font-family-base: satoshi-regular;
-   --font-family-secondary: inter;
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 20px;
+  --font-size-xl: 24px;
+  --font-size-xxl: 40px;
 
-   --font-size-xs: 12px;
-   --font-size-sm: 14px;
-   --font-size-md: 16px;
-   --font-size-lg: 20px;
-   --font-size-xl: 24px;
-   --font-size-xxl: 40px;
-
-   --breakpoint-sm: 390px;
-   --breakpoint-md: 768px;
-   --breakpoint-lg: 1440px;
-
+  --breakpoint-sm: 390px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1440px;
 }
