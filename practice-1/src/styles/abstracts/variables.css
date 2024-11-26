@@ -10,8 +10,8 @@
   --color-filter-orange: #F57906;
   --color-filter-green: #00C12B;
 
-  --font-family-base: satoshi-regular;
-  --font-family-secondary: inter;
+  --font-family-primary: satoshi-regular;
+  --font-family-secondary: inter-medium;
 
   --font-size-xs: 12px;
   --font-size-sm: 14px;
