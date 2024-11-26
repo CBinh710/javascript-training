@@ -1,0 +1,23 @@
+.btn {
+  font-family: var(--font-family-primary);
+  border-radius: 62px;
+  border: 0;
+}
+
+.btn-primary {
+  padding: 11.5px 85.5px;
+  color: var(--color-primary);
+  background-color: var(--color-dark);
+}
+
+.btn-primary-outline {
+  padding: 11.5px 85.5px;
+  color: var(--color-dark);
+  background-color: var(--color-primary);
+}
+
+.btn-secondary {
+  padding: 15px 44px;
+  color: var(--color-primary);
+  background-color: var(--color-light);
+}
