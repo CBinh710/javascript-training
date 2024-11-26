@@ -1,0 +1,26 @@
+:root {
+  --color-primary: #FFFFFF;
+  --color-secondary: #D6DCE5;
+  --color-warm: #FF3333;
+  --color-dark: #000000;
+  --color-light: #06CAF5;
+  --color-filter-violet: #7D06F5;
+  --color-filter-blue: #063AF5;
+  --color-filter-pink: #F506A4;
+  --color-filter-orange: #F57906;
+  --color-filter-green: #00C12B;
+
+  --font-family-primary: satoshi-regular;
+  --font-family-secondary: inter-medium;
+
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 20px;
+  --font-size-xl: 24px;
+  --font-size-xxl: 40px;
+
+  --breakpoint-sm: 390px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1440px;
+}
