@@ -1,39 +1,39 @@
 @font-face {
   font-family: inter-black;
-  src: url('/practice-1/src/assets/fonts/inter/Inter-Black.ttf');
+  src: url('../../assets/fonts/inter/Inter-Black.ttf');
 }
 
 @font-face {
   font-family: inter-bold;
-  src: url('/practice-1/src/assets/fonts/inter/Inter-Bold.ttf');
+  src: url('../../assets/fonts/inter/Inter-Bold.ttf');
 }
 
 @font-face {
   font-family: inter-medium;
-  src: url('/practice-1/src/assets/fonts/inter/Inter-Medium.ttf');
+  src: url('../../assets/fonts/inter/Inter-Medium.ttf');
 }
 
 @font-face {
   font-family: inter-semibold;
-  src: url('/practice-1/src/assets/fonts/inter/Inter-SemiBold.ttf');
+  src: url('../../assets/fonts/inter/Inter-SemiBold.ttf');
 }
 
 @font-face {
   font-family: satoshi-bold;
-  src: url('/practice-1/src/assets/fonts/satoshi/Satoshi-Bold.otf');
+  src: url('../../assets/fonts/satoshi/Satoshi-Bold.otf');
 }
 
 @font-face {
   font-family: satoshi-lightitalic;
-  src: url('/practice-1/src/assets/fonts/satoshi/Satoshi-LightItalic.otf');
+  src: url('../../assets/fonts/satoshi/Satoshi-LightItalic.otf');
 }
 
 @font-face {
   font-family: satoshi-medium;
-  src: url('/practice-1/src/assets/fonts/satoshi/Satoshi-Medium.otf');
+  src: url('../../assets/fonts/satoshi/Satoshi-Medium.otf');
 }
 
 @font-face {
   font-family: satoshi-regular;
-  src: url('/practice-1/src/assets/fonts/satoshi/Satoshi-Regular.otf');
+  src: url('../../assets/fonts/satoshi/Satoshi-Regular.otf');
 }
