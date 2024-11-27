@@ -9,11 +9,19 @@
   font-size: var(--font-size-md);
 }
 
+.input-icon-label {
+  display: flex;
+  align-items: center;
+  border-radius: 62px;
+  padding-left: 16px;
+  opacity: 40%;
+}
+
+.input-icon-label-accent-bg {
+  background-color: var(--color-secondary);
+}
+
 .input-sm {
   font-size: var(--font-size-sm);
   padding: 5px 0;
-}
-
-.input-none-border {
-  border: none;
 }
