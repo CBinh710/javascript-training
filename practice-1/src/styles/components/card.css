@@ -4,6 +4,12 @@
   font-family: var(--font-family-primary-bold);
 }
 
+.product-image-container {
+  width: 295px;
+  height: 298px;
+  border-radius: 20px;
+}
+
 .product-name {
   font-size: var(--font-size-lg);
   margin-top: 16px;
