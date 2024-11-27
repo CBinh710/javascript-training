@@ -18,37 +18,3 @@
 .input-secondary {
   border: none;
 }
-
-.description-heading-form {
-  font-family: inter-medium;
-}
-
-.description-container {
-  border: solid var(--color-secondary);
-  padding: 14px 16px;
-  border-radius: 12px;
-}
-
-.input-container {
-  display: flex;
-  align-items: center;
-  background: var(--color-secondary);
-  border-radius: 62px;
-  padding: 12px;
-  opacity: 40%;
-  width: 100%;
-}
-
-.input-container-primary-color {
-  background: var(--color-primary);
-}
-
-.wrapper {
-  display: flex;
-  justify-content: space-between;
-  gap: 50px;
-}
-
-body {
-  padding: 100px;
-}
