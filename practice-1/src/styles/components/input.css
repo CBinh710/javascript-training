@@ -1,0 +1,27 @@
+.primary-input-component {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  margin-left: 12px;
+  width: 100%;
+}
+
+.primary-input-container {
+  display: flex;
+  align-items: center;
+  background: var(--color-secondary);
+  border-radius: 62px;
+  padding: 12px;
+  opacity: 40%;
+  flex-grow: 1;
+  width: 100%;
+}
+
+.secondary-input-container {
+  background: var(--color-primary);
+}
+
+
+.wrapper {
+  display: flex;
+}
