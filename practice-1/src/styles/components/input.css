@@ -25,3 +25,12 @@
   font-size: var(--font-size-sm);
   padding: 5px 0;
 }
+
+.input-none-border {
+  border: none;
+}
+
+.image-container {
+  width: 22px;
+  height: 22px;
+}
