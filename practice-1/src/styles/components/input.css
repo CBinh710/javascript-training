@@ -9,8 +9,11 @@
   font-size: var(--font-size-md);
 }
 
-.input-transparent {
-  border: none;
+.input-sm {
   font-size: var(--font-size-sm);
   padding: 5px 0;
+}
+
+.input-none-border {
+  border: none;
 }
