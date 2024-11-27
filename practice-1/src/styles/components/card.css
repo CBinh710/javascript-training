@@ -1,23 +1,32 @@
-.product-card-container {
+.card {
   width: 295px;
   height: 408px;
   font-family: var(--font-family-primary-bold);
 }
 
-.product-image-container {
+.card-image {
   width: 295px;
   height: 298px;
   border-radius: 20px;
 }
 
-.product-name {
+.card-name {
   font-size: var(--font-size-lg);
   margin-top: 16px;
 }
 
-.rating-container {
+.card-rating {
   display: flex;
   padding: 8px;
+}
+
+.rating-star {
+  display: flex;
+}
+
+.star-icon {
+  width: 19px;
+  height: 19px;
 }
 
 .half-star {
@@ -25,23 +34,23 @@
   clip-path: inset(0 50% 0 0);
 }
 
-.rating-number {
+.rating-label {
   font-family: var(--font-family-primary);
   font-size: var(--font-size-sm);
 }
 
-.discount-price {
+.price-discount {
   opacity: 0.4;
 }
 
-.price-container {
+.card-price {
   display: flex;
   gap: 10px;
   font-size: var(--font-size-xl);
   align-items: center;
 }
 
-.discount-percent {
+.price-discount-percent {
   font-family: var(--font-family-primary-medium);
   font-size: var(--font-size-xs);
   color: var(--color-warm);
