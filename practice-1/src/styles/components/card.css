@@ -56,7 +56,7 @@
   font-family: var(--font-family-primary-medium);
   font-size: var(--font-size-xs);
   color: var(--color-warm);
-  background-color: #FFEBEB;
+  background-color: var(--color-warm-blur);
   padding: 6px 14px;
   border-radius: 62px;
 }
