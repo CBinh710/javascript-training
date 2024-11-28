@@ -1,0 +1,62 @@
+.card {
+  width: 295px;
+  height: 408px;
+  font-family: var(--font-family-primary-bold);
+}
+
+.card .card-image {
+  width: 295px;
+  height: 298px;
+  border-radius: 20px;
+}
+
+.card .card-name {
+  font-size: var(--font-size-lg);
+  margin-top: 16px;
+}
+
+.card .card-rating {
+  display: inline-block;
+  padding: 8px;
+}
+
+.card .rating-star {
+  display: inline-block;
+}
+
+.card .star-icon {
+  width: 19px;
+  height: 19px;
+  display: inline-block;
+}
+
+.card .half-star {
+  overflow: hidden;
+  clip-path: inset(0 50% 0 0);
+}
+
+.card .rating-label {
+  display: inline-block;
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-sm);
+}
+
+.card .price-discount {
+  opacity: 0.4;
+}
+
+.card .card-price {
+  display: flex;
+  gap: 10px;
+  font-size: var(--font-size-xl);
+  align-items: center;
+}
+
+.card .price-discount-percent {
+  font-family: var(--font-family-primary-medium);
+  font-size: var(--font-size-xs);
+  color: var(--color-warm);
+  background-color: var(--color-warm-blur);
+  padding: 6px 14px;
+  border-radius: 62px;
+}

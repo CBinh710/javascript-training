@@ -2,6 +2,7 @@
   --color-primary: #FFFFFF;
   --color-secondary: #F0F0F0;
   --color-warm: #FF3333;
+  --color-warm-blur: #FFEBEB;
   --color-dark: #000000;
   --color-light: #06CAF5;
   --color-filter-violet: #7D06F5;
@@ -11,6 +12,8 @@
   --color-filter-green: #00C12B;
 
   --font-family-primary: satoshi-regular;
+  --font-family-primary-bold: satoshi-bold;
+  --font-family-primary-medium: satoshi-medium;
   --font-family-secondary: inter-medium;
 
   --font-size-xs: 12px;
