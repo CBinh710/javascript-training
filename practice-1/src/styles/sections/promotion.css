@@ -1,0 +1,24 @@
+.promotion {
+  display: flex;
+  color: var(--color-primary);
+  background-color: var(--color-dark);
+  height: 38px;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-family-primary);
+  font-weight: 100;
+  font-size: var(--font-size-sm);
+}
+
+.promotion-sign-up {
+  color: var(--color-primary);
+  font-family: var(--font-family-primary);
+  font-weight: 400;
+}
+
+@media screen and (max-width: 768px) {
+  .promotion {
+    font-size: var(--font-size-xs);
+  }
+}
+
