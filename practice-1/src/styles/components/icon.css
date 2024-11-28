@@ -6,12 +6,12 @@
 	border: none;
 }
 
-.icon-circle {
+.icon .icon-circle {
   border-radius: 50%;
   padding: 8px;
 }
 
-.icon-rectangle {
+.icon .icon-rectangle {
   width: 35px;
   height: 15px;
   padding: 10px 7px;
@@ -20,27 +20,27 @@
   border: solid 0.5px var(--color-secondary);
 }
 
-.icon-sm {
+.icon .icon-sm {
 	width: 12px;
 	height: 12px;
   border: solid 0.5px var(--color-secondary);
 }
 
-.icon-sm-dark {
+.icon .icon-sm-dark {
   background-color: var(--color-dark);
 }
 
-.icon-md {
+.icon .icon-md {
 	width: 16px;
 	height: 16px;
   background-color: var(--color-secondary);
 }
 
-.icon-lg {
+.icon .icon-lg {
 	width: 20px;
 	height: 20px;
 }
 
-.icon-blur {
+.icon .icon-blur {
 	opacity: 0.4;
 }
