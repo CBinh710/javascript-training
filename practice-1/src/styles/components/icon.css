@@ -5,7 +5,7 @@
   background-color: transparent;
   border: none;
 }
-
+/* Classification by icon shape */
 .icon .icon-circle {
   border-radius: 50%;
   padding: 8px;
@@ -18,22 +18,10 @@
   background-color: var(--color-primary);
   border-radius: 5px;
 }
-
+/* Classification by icon size */
 .icon .icon-sm {
   width: 12px;
   height: 12px;
-}
-
-.icon .icon-dark {
-  background-color: var(--color-dark);
-}
-
-.icon .icon-light {
-  background-color: var(--color-secondary);
-}
-
-.icon-outline {
-  border: solid 0.5px var(--color-secondary);
 }
 
 .icon .icon-md {
@@ -45,7 +33,19 @@
   width: 20px;
   height: 20px;
 }
+/* Classification by icon background */
+.icon .icon-dark {
+  background-color: var(--color-dark);
+}
 
+.icon .icon-light {
+  background-color: var(--color-secondary);
+}
+/* Classification by icon transparency*/
 .icon .icon-blur {
   opacity: 0.4;
+}
+/* Classification by icon border*/
+.icon-outline {
+  border: solid 0.5px var(--color-secondary);
 }
