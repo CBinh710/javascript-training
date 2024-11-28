@@ -33,9 +33,7 @@
 .icon-md {
 	width: 16px;
 	height: 16px;
-  padding: 8px;
   background-color: var(--color-secondary);
-  border-radius: 50%;
 }
 
 .icon-lg {
