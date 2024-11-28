@@ -21,12 +21,13 @@
 }
 
 .rating-star {
-  display: flex;
+  display: inline-block;
 }
 
 .star-icon {
   width: 19px;
   height: 19px;
+  display: inline-block;
 }
 
 .half-star {
