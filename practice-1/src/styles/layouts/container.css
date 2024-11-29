@@ -1,12 +1,12 @@
 .container {
   margin: 0 auto;
   padding: 0 15px;
+  min-width: 358px;
 }
 
-/* Support tablet screen at min width 768px*/
 @media only screen and (min-width: 768px) {
   .container {
-    width: 700px;
+    max-width: 700px;
   }
 }
 
