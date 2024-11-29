@@ -1,17 +1,14 @@
 .promotion-container {
-  min-width: 390px;
+  background-color: var(--color-dark);
+  text-align: center;
 }
 
 .promotion-text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 34px;
+  padding: 10px;
   font-family: var(--font-family-primary);
   font-weight: 100;
   font-size: var(--font-size-xs);
   color: var(--color-primary);
-  background-color: var(--color-dark);
 }
 
 .promotion-sign-up {
@@ -23,8 +20,6 @@
 /* Support tablet and desktop screen at min width 768px*/
 @media only screen and (min-width: 768px) {
   .promotion-text {
-    height: 38px;
     font-size: var(--font-size-sm);
   }
 }
-
