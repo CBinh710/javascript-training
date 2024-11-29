@@ -1,0 +1,25 @@
+.promotion {
+  background-color: var(--color-dark);
+  text-align: center;
+}
+
+.promotion-text {
+  padding: 10px;
+  font-family: var(--font-family-primary);
+  font-weight: 100;
+  font-size: var(--font-size-xs);
+  color: var(--color-primary);
+}
+
+.promotion-sign-up {
+  font-family: var(--font-family-primary);
+  font-weight: 400;
+  color: var(--color-primary);
+}
+
+/* Support tablet and desktop screen at min width 768px*/
+@media only screen and (min-width: 768px) {
+  .promotion-text {
+    font-size: var(--font-size-sm);
+  }
+}
