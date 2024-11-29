@@ -1,3 +1,7 @@
+.promotion-container {
+  min-width: 390px;
+}
+
 .promotion-text {
   display: flex;
   justify-content: center;
