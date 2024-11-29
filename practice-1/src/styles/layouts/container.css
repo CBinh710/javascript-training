@@ -3,6 +3,14 @@
   padding-inline: 16px;
 }
 
+/* Support tablet screen at min width 768px*/
+@media only screen and (min-width: 768px) {
+  .container {
+    padding-inline: 50px;
+  }
+}
+
+/* Support desktop screen at min width 1440px*/
 @media only screen and (min-width: 1440px) {
   .container {
     padding-inline: 100px;
