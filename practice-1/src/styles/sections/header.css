@@ -29,6 +29,11 @@
   display: none;
 }
 
+.section-divider {
+  border: solid 1px;
+  opacity: 10%;
+}
+
 @media only screen and (min-width: 768px) {
   .logo {
     width: 160px;
