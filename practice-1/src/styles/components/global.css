@@ -1,3 +1,11 @@
 .pointer {
 	cursor: pointer;
 }
+
+.flex {
+  display: flex;
+}
+
+.align-center {
+  align-items: center;
+}

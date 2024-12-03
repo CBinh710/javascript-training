@@ -1,11 +1,9 @@
-.header {
+.header-container {
 	padding: 20px 0;
-	display: flex;
+  margin: 0 15px;
 	justify-content: space-between;
-	align-items: center;
   font-family: var(--font-family-primary);
   border-bottom: solid 1px var(--color-secondary);
-  margin: 0 15px
 }
 
 .logo {
@@ -17,9 +15,13 @@
 	margin: 0 12px;
 }
 
-.nav-container {
+.nav {
 	display: flex;
   align-items: center;
+}
+
+.link-item {
+  padding: 20px 0;
 }
 
 .nav-links,
@@ -33,7 +35,7 @@
     height: 22px;
   }
 
-  .nav {
+  .nav-icon {
     display: none;
   }
 
@@ -54,18 +56,11 @@
 }
 
 @media only screen and (min-width: 1440px) {
-  .header {
-    margin: 0 auto;
-  }
-
   .header-search-icon {
     display: none;
   }
 
   .header-actions {
-    width: 48px;
-    display: flex;
-    align-items: center;
     flex-grow: 1
   }
 
