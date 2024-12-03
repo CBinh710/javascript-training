@@ -1,13 +1,11 @@
 .header-container {
 	padding: 20px 0;
-  margin: 0 15px;
 	justify-content: space-between;
   font-family: var(--font-family-primary);
   border-bottom: solid 1px var(--color-secondary);
 }
 
 .logo {
-	width: 128px;
 	height: 18px;
 }
 
@@ -18,6 +16,10 @@
 .nav {
 	display: flex;
   align-items: center;
+}
+
+.nav-icon {
+  margin-right: 16px;
 }
 
 .link-item {
