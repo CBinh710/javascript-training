@@ -1,6 +1,7 @@
 .promotion {
   background-color: var(--color-dark);
   text-align: center;
+  min-width: 390px;
 }
 
 .promotion-text {

@@ -6,6 +6,6 @@
 /* Support desktop screen at min width 1440px*/
 @media only screen and (min-width: 1440px) {
   .container {
-    max-width: 1270px;
+    max-width: 1240px;
   }
 }
