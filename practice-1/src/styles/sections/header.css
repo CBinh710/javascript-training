@@ -1,14 +1,11 @@
-.header-wrapper {
-  border-bottom: 1px solid var(--color-secondary);
-  margin-inline: 20px;
-}
-
 .header {
 	padding: 20px 0;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
   font-family: var(--font-family-primary);
+  border-bottom: solid 1px var(--color-secondary);
+  margin: 0 15px
 }
 
 .logo {
@@ -57,6 +54,10 @@
 }
 
 @media only screen and (min-width: 1440px) {
+  .header {
+    margin: 0 auto;
+  }
+
   .header-search-icon {
     display: none;
   }
