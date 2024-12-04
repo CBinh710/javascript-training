@@ -26,19 +26,20 @@
 }
 
 .product-card-container .breadcrumb-link {
+  opacity: 0.6;
   text-decoration: none;
   color: var(--color-dark);
   margin-right: 4px;
 }
 
 .product-card-container .icon-rotate {
+  opacity: 0.6;
   width: 14px;
   height: 14px;
   transform: rotate(-90deg);
 }
 
 .product-card-container .breadcrumb-header {
-  opacity: 0.6;
   margin-left: 6px;
 }
 
