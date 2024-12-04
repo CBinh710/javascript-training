@@ -1,3 +1,4 @@
+/* Product container styles */
 .product-card-container {
   margin-top: 20px;
 }
@@ -11,28 +12,23 @@
   flex: 1;
 }
 
-.product-card-container .todo {
-  display: none;
-  width: 295px;
-}
-
 .product-card-container .product-card-container{
   margin-top: 20px;
 }
 
-.product-card-container .breadcrumb {
+.breadcrumb {
   font-family: var(--font-family-primary);
   font-size: var(--font-size-sm);
 }
 
-.product-card-container .breadcrumb-link {
+.breadcrumb-link {
   opacity: 0.6;
   text-decoration: none;
   color: var(--color-dark);
   margin-right: 4px;
 }
 
-.product-card-container .icon-rotate {
+.icon-rotate {
   opacity: 0.6;
   width: 12px;
   height: 7px;
@@ -70,56 +66,13 @@
   position: absolute;
   top: 10px;
   right: 10px;
+  border: none;
+  border-radius: 0.5;
+  padding: 5px 8px;
   background: var(--color-warm);
   color: var(--color-primary);
-  border: none;
-  border-radius: 50%;
-  padding: 5px 8px;
   opacity: 0;
   transition: opacity 0.3s ease;
-}
-
-.product-card-container .pagination {
-  margin-top: 20px;
-  margin-bottom: 50px;
-  justify-content: space-between;
-  font-family: var(--font-family-primary-medium);
-  font-size: var(--font-size-xs);
-}
-
-.product-card-container .previous-arrow-icon {
-  margin-right: 8px;
-}
-
-.product-card-container .next-arrow-icon {
-  margin-left: 8px;
-  transform: rotate(180deg);
-}
-
-.product-card-container .page-link {
-  text-decoration: none;
-  color: var(--color-dark);
-}
-
-.product-card-container .page-item {
-  opacity: 0.5;
-  width: min(36px);
-  height: auto;
-  min-height: 36px;
-  border-radius: 8px;
-  text-align: center;
-  line-height: min(36px);
-  cursor: pointer;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.product-card-container .previous-arrow,
-.next-arrow {
-  padding: 8px;
-  border: solid 1px var(--color-secondary);
-  border-radius: 8px;
 }
 
 .card-container:hover {
@@ -133,18 +86,65 @@
   opacity: 1;
 }
 
-.product-card-container .page-item:hover {
+/* Pagination styles */
+.pagination {
+  margin-top: 20px;
+  margin-bottom: 50px;
+  justify-content: space-between;
+  font-family: var(--font-family-primary-medium);
+  font-size: var(--font-size-xs);
+}
+
+.previous-arrow-icon {
+  margin-right: 8px;
+}
+
+.next-arrow-icon {
+  margin-left: 8px;
+  transform: rotate(180deg);
+}
+
+.page-link {
+  text-decoration: none;
+  color: var(--color-dark);
+}
+
+.page-item {
+  opacity: 0.5;
+  width: 36px;
+  height: auto;
+  min-height: 36px;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 36px;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.previous-arrow,
+.next-arrow {
+  padding: 8px;
+  border: solid 1px var(--color-secondary);
+  border-radius: 8px;
+}
+
+.page-item:hover {
   opacity: 1;
   background-color: var(--color-secondary);
 }
 
-@media only screen and (min-width: 1440px) {
-  .product-card-container .todo {
-    display: flex;
-    margin-right: 20px;
-  }
+/* TODO */
+.filter-container {
+  display: none;
+  width: 295px;
+}
 
-  .product-card-container .breadcrumb-header {
+/* Support desktop screen at min width 1440px*/
+@media only screen and (min-width: 1440px) {
+  /* Product container styles */
+  .breadcrumb-header {
     margin-left: 12px;
   }
 
@@ -154,12 +154,19 @@
     gap: 14px;
   }
 
-  .product-card-container .page-item {
-    width: min(40px);
+  .icon-filter {
+    display: none;
+  }
+
+  /* Pagination styles */
+  .page-item {
+    width: 40px;
     min-height: 40px;
   }
 
-  .icon-filter {
-    display: none;
+  /* TODO */
+  .filter-container {
+    display: flex;
+    margin-right: 20px;
   }
 }
