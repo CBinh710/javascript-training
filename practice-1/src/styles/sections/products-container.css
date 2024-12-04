@@ -3,25 +3,17 @@
 }
 
 .product-card-container .product-card-actions {
-  display: flex;
   justify-content: space-between;
-  align-items: center;
   margin-bottom: 20px;
-}
-
-.product-card-container .catalog-container {
-  display: flex;
 }
 
 .product-card-container .main-content-container {
   flex: 1;
 }
 
-.product-card-container .filter-container {
+.product-card-container .todo {
   display: none;
   width: 295px;
-  height: 200px;
-  border: 2px solid;
 }
 
 .product-card-container .product-card-container{
@@ -29,8 +21,6 @@
 }
 
 .product-card-container .breadcrumb {
-  display: flex;
-  align-items: center;
   font-family: var(--font-family-primary);
   font-size: var(--font-size-sm);
 }
@@ -48,7 +38,7 @@
 }
 
 .product-card-container .breadcrumb-header {
-  opacity: 60%;
+  opacity: 0.6;
   margin-left: 6px;
 }
 
@@ -57,9 +47,7 @@
   font-size: var(--font-size-xl);
 }
 
-.product-card-container .actions {
-  display: flex;
-  align-items: center;
+.product-card-container .manage-product-actions {
   gap: 9px;
 }
 
@@ -113,7 +101,7 @@
 }
 
 .product-card-container .page-item {
-  opacity: 50%;
+  opacity: 0.5;
   padding: 8px;
 }
 
@@ -122,6 +110,11 @@
   padding: 8px;
   border: solid 1px var(--color-secondary);
   border-radius: 8px;
+}
+
+.card-container:hover {
+  opacity: 0.8;
+  border-bottom: solid 2px;
 }
 
 .product-card-container .card-container:hover .btn-delete {
@@ -137,7 +130,7 @@
 }
 
 @media only screen and (min-width: 1440px) {
-  .product-card-container .filter-container {
+  .product-card-container .todo {
     display: flex;
     margin-right: 20px;
   }
