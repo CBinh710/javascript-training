@@ -141,4 +141,8 @@
     grid-auto-rows: minmax(408px, auto);
     gap: 14px;
   }
+
+  .icon-filter {
+    display: none;
+  }
 }
