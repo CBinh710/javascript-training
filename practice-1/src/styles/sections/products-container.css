@@ -103,7 +103,16 @@
 
 .product-card-container .page-item {
   opacity: 0.5;
-  padding: 8px;
+  width: min(36px);
+  height: auto;
+  min-height: 36px;
+  border-radius: 8px;
+  text-align: center;
+  line-height: min(36px);
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .product-card-container .previous-arrow,
@@ -126,9 +135,6 @@
 
 .product-card-container .page-item:hover {
   opacity: 1;
-  border: solid 1px transparent;
-  border-radius: 8px;
-  padding: 8px 16px;
   background-color: var(--color-secondary);
 }
 
@@ -148,8 +154,9 @@
     gap: 14px;
   }
 
-  .page-list .page-item {
-    padding: 10px 15px;
+  .product-card-container .page-item {
+    width: min(40px);
+    min-height: 40px;
   }
 
   .icon-filter {
