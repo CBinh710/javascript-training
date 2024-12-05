@@ -33,7 +33,7 @@
   text-overflow: ellipsis;
 }
 
-.page-item:hover {
+.page-item.page-item:hover {
   opacity: 1;
   background-color: var(--color-secondary);
 }
