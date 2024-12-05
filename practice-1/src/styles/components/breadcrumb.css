@@ -4,27 +4,27 @@
   font-size: var(--font-size-sm);
 }
 
-.breadcrumb-link {
+.breadcrumb .breadcrumb-link {
   opacity: 0.6;
   text-decoration: none;
   color: var(--color-dark);
   margin-right: 4px;
 }
 
-.icon-rotate {
+.breadcrumb .icon-rotate {
   opacity: 0.6;
   width: 12px;
   height: 7px;
   transform: rotate(-90deg);
 }
 
-.breadcrumb-header {
+.breadcrumb .breadcrumb-header {
   margin-left: 6px;
 }
 
 @media only screen and (min-width: 1440px) {
   /* Breadscrumb styles */
-  .breadcrumb-header {
+  .breadcrumb .breadcrumb-header {
     margin-left: 12px;
   }
 }
