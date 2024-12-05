@@ -8,15 +8,15 @@
   margin-bottom: 20px;
 }
 
-.product-card-container .main-content-container {
+.product-card-container .product-card-management-container {
   flex: 1;
 }
 
-.product-card-container .product-card-container{
+.product-card-container {
   margin-top: 20px;
 }
 
-.product-card-container .product-header {
+.product-card-container .product-heading {
   font-family: var(--font-family-primary-bold);
   font-size: var(--font-size-xl);
 }
@@ -61,6 +61,11 @@
 
 .product-card-container .card-container:hover .btn-delete {
   opacity: 1;
+}
+
+.pagination-container {
+  margin-top: 20px;
+  margin-bottom: 50px;
 }
 
 /* Support desktop screen at min width 1440px*/
