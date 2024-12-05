@@ -12,10 +12,6 @@
   flex: 1;
 }
 
-.product-card-container {
-  margin-top: 20px;
-}
-
 .product-card-container .product-heading {
   font-family: var(--font-family-primary-bold);
   font-size: var(--font-size-xl);
