@@ -54,7 +54,7 @@
 
 .card-container:hover {
   opacity: 0.8;
-  box-shadow: 5px 5px rgba(245, 245, 245, 0.986);
+  box-shadow: 5px 5px 10px #f5f5f5fb;
   border-radius: 20px;
   cursor: pointer;
 }
