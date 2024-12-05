@@ -1,0 +1,13 @@
+/* TODO: filter container */
+.filter-container {
+  display: none;
+  width: 295px;
+}
+
+@media only screen and (min-width: 1440px) {
+  /* TODO: filter container */
+  .filter-container {
+    display: flex;
+    margin-right: 20px;
+  }
+}
