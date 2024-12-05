@@ -1,27 +1,25 @@
 /* Pagination styles */
 .pagination {
-  margin-top: 20px;
-  margin-bottom: 50px;
   justify-content: space-between;
   font-family: var(--font-family-primary-medium);
   font-size: var(--font-size-xs);
 }
 
-.previous-arrow-icon {
+.pagination .previous-arrow-icon {
   margin-right: 8px;
 }
 
-.next-arrow-icon {
+.pagination .next-arrow-icon {
   margin-left: 8px;
   transform: rotate(180deg);
 }
 
-.page-link {
+.pagination .page-link {
   text-decoration: none;
   color: var(--color-dark);
 }
 
-.page-item {
+.pagination .page-item {
   opacity: 0.5;
   width: 36px;
   height: auto;
@@ -35,21 +33,21 @@
   text-overflow: ellipsis;
 }
 
-.previous-arrow,
-.next-arrow {
+.pagination .previous-arrow,
+.pagination .next-arrow {
   padding: 8px;
   border: solid 1px var(--color-secondary);
   border-radius: 8px;
 }
 
-.page-item:hover {
+.pagination-container .page-item:hover {
   opacity: 1;
   background-color: var(--color-secondary);
 }
 
 @media only screen and (min-width: 1440px) {
   /* Pagination styles */
-  .page-item {
+  .pagination-container .page-item {
     width: 40px;
     min-height: 40px;
   }
