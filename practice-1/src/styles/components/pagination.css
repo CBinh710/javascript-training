@@ -33,16 +33,16 @@
   text-overflow: ellipsis;
 }
 
+.page-item:hover {
+  opacity: 1;
+  background-color: var(--color-secondary);
+}
+
 .pagination .previous-arrow,
 .pagination .next-arrow {
   padding: 8px;
   border: solid 1px var(--color-secondary);
   border-radius: 8px;
-}
-
-.pagination-container .page-item:hover {
-  opacity: 1;
-  background-color: var(--color-secondary);
 }
 
 @media only screen and (min-width: 1440px) {
