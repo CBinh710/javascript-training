@@ -1,23 +1,31 @@
 .card {
-  width: 295px;
-  height: 408px;
+  width: 172px;
+  height: 257px;
   font-family: var(--font-family-primary-bold);
 }
 
-.card .card-image {
-  width: 295px;
-  height: 298px;
+.card .card-image-container{
+  width: 172px;
+  height: 174px;
   border-radius: 20px;
+}
+
+.card .card-image {
+  width: 100%;
+  height: auto;
 }
 
 .card .card-name {
   font-size: var(--font-size-lg);
-  margin-top: 16px;
+  margin-top: 10px;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card .card-rating {
   display: inline-block;
-  padding: 8px;
 }
 
 .card .rating-star {
@@ -25,8 +33,8 @@
 }
 
 .card .star-icon {
-  width: 19px;
-  height: 19px;
+  width: 16px;
+  height: 16px;
   display: inline-block;
 }
 
@@ -38,7 +46,7 @@
 .card .rating-label {
   display: inline-block;
   font-family: var(--font-family-primary);
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
 }
 
 .card .price-discount {
@@ -46,17 +54,68 @@
 }
 
 .card .card-price {
+  margin-top: 4px;
   display: flex;
-  gap: 10px;
-  font-size: var(--font-size-xl);
   align-items: center;
+  gap: 5px;
+  font-size: var(--font-size-lg);
 }
 
 .card .price-discount-percent {
   font-family: var(--font-family-primary-medium);
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-xxs);
   color: var(--color-warm);
   background-color: var(--color-warm-blur);
-  padding: 6px 14px;
+  padding: 3px 8px;
   border-radius: 62px;
+}
+
+.card-container:nth-child(n+7) {
+  display: none;
+}
+
+@media only screen and (min-width: 1440px) {
+  .card {
+    width: 295px;
+    height: 408px;
+  }
+
+  .card .card-image-container {
+    width: 295px;
+    height: 298px;
+  }
+
+  .card .card-name {
+    font-size: var(--font-size-lg);
+    margin-top: 16px;
+  }
+
+  .card .card-rating {
+    padding: 8px;
+  }
+
+  .card .star-icon {
+    width: 19px;
+    height: 19px;
+  }
+
+  .card .rating-label {
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-sm);
+  }
+
+  .card .card-price {
+    gap: 10px;
+    font-size: var(--font-size-xl);
+  }
+
+  .card .price-discount-percent {
+    font-family: var(--font-family-primary-medium);
+    font-size: var(--font-size-xs);
+    padding: 6px 14px;
+  }
+
+  .card-container:nth-child(n+7) {
+    display: block;
+  }
 }
