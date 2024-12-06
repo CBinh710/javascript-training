@@ -17,6 +17,7 @@
 }
 
 .filter-heading {
+  justify-content: center;
   border-bottom: solid 1px var(--color-secondary);
   padding-bottom: 16px;
   margin-bottom: 26px;
@@ -284,8 +285,10 @@
 }
 
 @media only screen and (min-width: 1440px) {
+  
   /* TODO: filter container */
   .filter-container {
+    width: 257px;
     margin-right: 20px;
   }
 
@@ -299,9 +302,6 @@
   }
 
   .filter-ui {
-    width: 295px;
-    display: block;
-    position: static;
-    background-color: var(--color-primary);
+    display: none;
   }
 }
