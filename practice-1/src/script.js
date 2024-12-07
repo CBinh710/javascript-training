@@ -1,7 +1,7 @@
 //Handles for responsive of filter
 const filterIcon = document.getElementById('filter');
 const filterForm = document.getElementById('filter-form');
-const closeButton = document.getElementById('icon-close');
+const closeButton = document.getElementById('close-filter-icon');
 
 filterIcon.addEventListener('click', function() {
   filterForm.style.display = 'flex';

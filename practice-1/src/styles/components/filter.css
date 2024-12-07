@@ -40,7 +40,9 @@
 /*Filter by color */
 .filter-by-color {
   border-bottom: solid 1px var(--color-secondary);
+  border-top: solid 1px var(--color-secondary);
   padding-bottom: 21px;
+  padding-top: 19px;
   margin-bottom: 19px;
 }
 
@@ -309,6 +311,10 @@
   .catalog-container {
     display: flex;
     margin-top: 24px;
+  }
+
+  .sizes-container {
+    gap: 10px;
   }
 
   .color-container {
