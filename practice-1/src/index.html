@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shop.co</title>
     <link rel="stylesheet" href="./styles/main.css">
-    <script>
-      
-    </script>
   </head>
   <body>
     <section class="promotion">
@@ -55,171 +52,175 @@
           </div>
 
           <div class="catalog-container">
-            <div class="filter-container desktop-filter">
-              <div class="filter-heading flex">
-                <h3>Filters</h3>
-              </div>
-
-              <div class="filter-by-price">
-                <div class="flex space-between">
-                  <h4>Price</h4>
-                  <img class="top-arrow" src="./assets/images/icons/bottom-arrow.svg" alt="">
+            <div class="large-screen-filter">
+              <div class="filter-container">
+                <div class="filter-heading">
+                  <h3>Filters</h3>
                 </div>
-                
-                <div class="slider" id="slider-distance">
-                  <div class="slider-inverse">
-                    <div class="inverse-left" style="width:70%;"></div>
-                    <div class="inverse-right" style="width:70%;"></div>
-                    <div class="range" style="left:30%;right:40%;"></div>
-                    <span class="thumb" style="left:30%;"></span>
-                    <span class="thumb" style="left:60%;"></span>
-                    <div class="sign" style="left:30%;">
-                      <span id="value">$50</span>
-                    </div>
-                    <div class="sign" style="left:60%;">
-                      <span id="value">$200</span>
-                    </div>
+
+                <div class="filter-by-price">
+                  <div class="flex space-between">
+                    <h4>Price</h4>
+                    <img class="top-arrow" src="./assets/images/icons/bottom-arrow.svg" alt="Top arrow icon">
                   </div>
-                  <input class="slider-range" type="range" tabindex="0" value="30" max="100" min="0" step="0.05" oninput="
-                    this.value=Math.min(this.value,this.parentNode.childNodes[5].value-1);
-                    var value=(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.value)-(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.min);
-                    var children = this.parentNode.childNodes[1].childNodes;
-                    children[1].style.width=value+'%';
-                    children[5].style.left=value+'%';
-                    children[7].style.left=value+'%';children[11].style.left=value+'%';
-                    children[11].childNodes[1].innerHTML='$' + this.value;" />
-                  
-                  <input class="slider-range" type="range" tabindex="0" value="60" max="100" min="0" step="1" oninput="
-                    this.value=Math.max(this.value,this.parentNode.childNodes[3].value-(-1));
-                    var value=(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.value)-(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.min);
-                    var children = this.parentNode.childNodes[1].childNodes;
-                    children[3].style.width=(100-value)+'%';
-                    children[5].style.right=(100-value)+'%';
-                    children[9].style.left=value+'%';children[13].style.left=value+'%';
-                    children[13].childNodes[1].innerHTML='$' + this.value;" />
-                </div>
-                
-              </div>
 
-              <div class="filter-by-color">
-                <div class="flex space-between">
-                  <h4>Colors</h4>
-                  <img class="top-arrow" src="./assets/images/icons/bottom-arrow.svg" alt="">
-                </div>
-                <form class="flex color-container"> 
-                  <label>
-                    <input class="default-input" type="checkbox">
-                    <span class="input-circle color-green"></span>
-                  </label>
+                  <div class="slider" id="slider-distance">
+                    <div class="slider-inverse">
+                      <div class="inverse-left" style="width:70%;"></div>
+                      <div class="inverse-right" style="width:70%;"></div>
+                      <div class="range" style="left:30%;right:40%;"></div>
+                      <span class="thumb" style="left:30%;"></span>
+                      <span class="thumb" style="left:60%;"></span>
+                      <div class="sign" style="left:30%;">
+                        <span id="value">$300</span>
+                      </div>
+                      <div class="sign" style="left:60%;">
+                        <span id="value">$600</span>
+                      </div>
+                    </div>
+                    <input
+                      class="slider-range"
+                      type="range"
+                      tabindex="0"
+                      value="300"
+                      max="1000"
+                      min="0"
+                      step="5"
+                      oninput="handleLeftSlider(this)"
+                    />
+                    <input
+                      class="slider-range"
+                      type="range"
+                      tabindex="0"
+                      value="300"
+                      max="1000"
+                      min="0"
+                      step="5"
+                      oninput="handleRightSlider(this)"
+                    />
+                  </div>
 
-                  <label>
-                    <input class="default-input" type="checkbox">
-                    <span class="input-circle color-red"></span>
-                  </label>
-
-                  <label>
-                    <input class="default-input" type="checkbox">
-                    <span class="input-circle color-gold"></span>
-                  </label>
-
-                  <label>
-                    <input class="default-input" type="checkbox">
-                    <span class="input-circle color-orange"></span>
-                  </label>
-
-                  <label>
-                    <input class="default-input" type="checkbox">
-                    <span class="input-circle color-skyblue"></span>
-                  </label>
-
-                  <label>
-                    <input class="default-input" type="checkbox">
-                    <span class="input-circle color-blue"></span>
-                  </label>
-
-                  <label>
-                    <input class="default-input" type="checkbox">
-                    <span class="input-circle color-violet"></span>
-                  </label>
-
-                  <label>
-                    <input class="default-input" type="checkbox">
-                    <span class="input-circle color-pink"></span>
-                  </label>
-
-                  <label>
-                    <input class="default-input" type="checkbox">
-                    <span class="input-circle color-white"></span>
-                  </label>
-
-                  <label>
-                    <input class="default-input" type="checkbox">
-                    <span class="input-circle color-black"></span>
-                  </label>
-                </form>
-              </div>
-
-              <div class="filter-by-size">
-                <div class="flex space-between">
-                  <h4>Size</h4>
-                  <img class="top-arrow" src="./assets/images/icons/bottom-arrow.svg" alt="">
                 </div>
 
-                <form class="sizes-container flex"> 
-                  <label>
-                    <input class="default-input" type="checkbox">
-                    <div class="sizes">XX-Small</div>
-                  </label>
+                <div class="filter-by-color">
+                  <div class="flex space-between">
+                    <h4>Colors</h4>
+                    <img class="top-arrow" src="./assets/images/icons/bottom-arrow.svg" alt="Top arrow icon>
+                  </div>
+                  <form class="flex color-container">
+                    <label>
+                      <input class="default-input" type="checkbox">
+                      <span class="input-circle color-green"></span>
+                    </label>
 
-                  <label>
-                    <input class="default-input" type="checkbox">
-                    <div class="sizes">X-Small</div>
-                  </label>
+                    <label>
+                      <input class="default-input" type="checkbox">
+                      <span class="input-circle color-red"></span>
+                    </label>
 
-                  <label>
-                    <input class="default-input" type="checkbox">
-                    <div class="sizes">Small</div>
-                  </label>
+                    <label>
+                      <input class="default-input" type="checkbox">
+                      <span class="input-circle color-gold"></span>
+                    </label>
 
-                  <label>
-                    <input class="default-input" type="checkbox">
-                    <div class="sizes">Medium</div>
-                  </label>
+                    <label>
+                      <input class="default-input" type="checkbox">
+                      <span class="input-circle color-orange"></span>
+                    </label>
 
-                  <label>
-                    <input class="default-input" type="checkbox" checked>
-                    <div class="sizes">Large</div>
-                  </label>
+                    <label>
+                      <input class="default-input" type="checkbox">
+                      <span class="input-circle color-skyblue"></span>
+                    </label>
 
-                  <label>
-                    <input class="default-input" type="checkbox">
-                    <div class="sizes">X-Large</div>
-                  </label>
+                    <label>
+                      <input class="default-input" type="checkbox">
+                      <span class="input-circle color-blue"></span>
+                    </label>
 
-                  <label>
-                    <input class="default-input" type="checkbox">
-                    <div class="sizes">XX-Large</div>
-                  </label>
+                    <label>
+                      <input class="default-input" type="checkbox">
+                      <span class="input-circle color-violet"></span>
+                    </label>
 
-                  <label>
-                    <input class="default-input" type="checkbox">
-                    <div class="sizes">3X-Large</div>
-                  </label>
+                    <label>
+                      <input class="default-input" type="checkbox">
+                      <span class="input-circle color-pink"></span>
+                    </label>
 
-                  <label>
-                    <input class="default-input" type="checkbox">
-                    <div class="sizes">4X-Large</div>
-                  </label>
-                </form>
+                    <label>
+                      <input class="default-input" type="checkbox">
+                      <span class="input-circle color-white"></span>
+                    </label>
+
+                    <label>
+                      <input class="default-input" type="checkbox">
+                      <span class="input-circle color-black"></span>
+                    </label>
+                  </form>
+                </div>
+
+                <div class="filter-by-size">
+                  <div class="flex space-between">
+                    <h4>Size</h4>
+                    <img class="top-arrow" src="./assets/images/icons/bottom-arrow.svg" alt="Top arrow icon">
+                  </div>
+
+                  <form class="sizes-container flex">
+                    <label>
+                      <input class="default-input" type="checkbox">
+                      <div class="sizes">XX-Small</div>
+                    </label>
+
+                    <label>
+                      <input class="default-input" type="checkbox">
+                      <div class="sizes">X-Small</div>
+                    </label>
+
+                    <label>
+                      <input class="default-input" type="checkbox">
+                      <div class="sizes">Small</div>
+                    </label>
+
+                    <label>
+                      <input class="default-input" type="checkbox">
+                      <div class="sizes">Medium</div>
+                    </label>
+
+                    <label>
+                      <input class="default-input" type="checkbox" checked>
+                      <div class="sizes">Large</div>
+                    </label>
+
+                    <label>
+                      <input class="default-input" type="checkbox">
+                      <div class="sizes">X-Large</div>
+                    </label>
+
+                    <label>
+                      <input class="default-input" type="checkbox">
+                      <div class="sizes">XX-Large</div>
+                    </label>
+
+                    <label>
+                      <input class="default-input" type="checkbox">
+                      <div class="sizes">3X-Large</div>
+                    </label>
+
+                    <label>
+                      <input class="default-input" type="checkbox">
+                      <div class="sizes">4X-Large</div>
+                    </label>
+                  </form>
+                </div>
+
+                <button class="btn btn-primary">Apply Filter</button>
               </div>
-
-              <button class="btn btn-primary">Apply Filter</button>
             </div>
-
             <!-- TODO: filter UI -->
-              
+
             <!---->
-            
+
             <div class="product-card-management-container">
               <div class="product-card-actions flex align-center">
                 <h2 class="product-heading">Casual</h2>
@@ -452,15 +453,14 @@
             </div>
           </div>
         </div>
-      </section>
-    </div>
-    <script src="script.js" ></script>
+     </div>
+    </section>
 
-    <div id="filter-form" class="filter-ui">
+    <div id="filter-form" class="small-screen-filter">
       <div class="filter-container">
         <div class="filter-heading flex space-between">
           <h3>Filters</h3>
-          <img id="btn-close" class="pointer" src="./assets/images/icons/close.svg" alt="">
+          <img id="icon-close" class="pointer" src="./assets/images/icons/close.svg" alt="Close icon">
         </div>
 
         <div class="filter-by-price">
@@ -468,7 +468,7 @@
             <h4>Price</h4>
             <img class="top-arrow" src="./assets/images/icons/bottom-arrow.svg" alt="">
           </div>
-          
+
           <div class="slider" id="slider-distance">
             <div class="slider-inverse">
               <div class="inverse-left" style="width:70%;"></div>
@@ -477,31 +477,33 @@
               <span class="thumb" style="left:30%;"></span>
               <span class="thumb" style="left:60%;"></span>
               <div class="sign" style="left:30%;">
-                <span id="value">$50</span>
+                <span id="value">$300</span>
               </div>
               <div class="sign" style="left:60%;">
-                <span id="value">$200</span>
+                <span id="value">$600</span>
               </div>
             </div>
-            <input class="slider-range" type="range" tabindex="0" value="30" max="100" min="0" step="0.05" oninput="
-              this.value=Math.min(this.value,this.parentNode.childNodes[5].value-1);
-              var value=(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.value)-(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.min);
-              var children = this.parentNode.childNodes[1].childNodes;
-              children[1].style.width=value+'%';
-              children[5].style.left=value+'%';
-              children[7].style.left=value+'%';children[11].style.left=value+'%';
-              children[11].childNodes[1].innerHTML='$' + this.value;" />
-            
-            <input class="slider-range" type="range" tabindex="0" value="60" max="100" min="0" step="1" oninput="
-              this.value=Math.max(this.value,this.parentNode.childNodes[3].value-(-1));
-              var value=(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.value)-(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.min);
-              var children = this.parentNode.childNodes[1].childNodes;
-              children[3].style.width=(100-value)+'%';
-              children[5].style.right=(100-value)+'%';
-              children[9].style.left=value+'%';children[13].style.left=value+'%';
-              children[13].childNodes[1].innerHTML='$' + this.value;" />
+            <input
+              class="slider-range"
+              type="range"
+              tabindex="0"
+              value="300"
+              max="1000"
+              min="0"
+              step="10"
+              oninput="handleLeftSlider(this)"
+            />
+            <input
+              class="slider-range"
+              type="range"
+              tabindex="0"
+              value="300"
+              max="1000"
+              min="0"
+              step="10"
+              oninput="handleRightSlider(this)"
+            />
           </div>
-          
         </div>
 
         <div class="filter-by-color">
@@ -509,7 +511,7 @@
             <h4>Colors</h4>
             <img class="top-arrow" src="./assets/images/icons/bottom-arrow.svg" alt="">
           </div>
-          <form class="flex color-container"> 
+          <form class="flex color-container">
             <label>
               <input class="default-input" type="checkbox">
               <span class="input-circle color-green"></span>
@@ -568,7 +570,7 @@
             <img class="top-arrow" src="./assets/images/icons/bottom-arrow.svg" alt="">
           </div>
 
-          <form class="sizes-container flex"> 
+          <form class="sizes-container flex">
             <label>
               <input class="default-input" type="checkbox">
               <div class="sizes">XX-Small</div>
@@ -619,5 +621,6 @@
         <button class="btn btn-primary">Apply Filter</button>
       </div>
     </div>
+    <script src="./script.js"></script>
   </body>
 </html>
