@@ -1,6 +1,7 @@
 :root {
   --color-primary: #FFFFFF;
   --color-secondary: #F0F0F0;
+  --color-third: #606060;
   --color-warm: #FF3333;
   --color-warm-blur: #FFEBEB;
   --color-dark: #000000;
@@ -11,6 +12,7 @@
   --color-filter-orange: #F57906;
   --color-filter-green: #00C12B;
   --color-filter-gold: #F5DD06;
+  --color-background-primary: #f7f5f5e5;
 
   --font-family-primary: satoshi-regular;
   --font-family-primary-bold: satoshi-bold;

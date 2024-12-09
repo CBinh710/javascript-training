@@ -1,7 +1,7 @@
 .small-screen-filter {
   display: flex;
   position: fixed;
-  background-color: #f7f5f5e5;
+  background-color: var(--color-background-primary);
   z-index: 1000;
   top: 0;
   left: 0;
@@ -59,7 +59,7 @@
   left: 14px;
   width: 6px;
   height: 12px;
-  border: solid #fff;
+  border: solid var(--color-primary);
   border-width: 0 3px 3px 0;
   transform: rotate(45deg);
 }
@@ -141,7 +141,7 @@
   padding: 10px 20px;
   font-family: var(--font-family-primary);
   font-size: var(--font-size-sm);
-  color: #606060;
+  color: var(--color-third);
   background-color: var(--color-secondary);
   cursor: pointer;
 }
@@ -217,13 +217,23 @@
   z-index: 3;
 }
 
-/* Support desktop screen at min width 1440px*/
-@media only screen and (min-width: 1440px) {
+/* Support desktop screen at min width 768px*/
+@media only screen and (min-width: 768px) {
   .filter-container {
     font-size: var(--font-size-lg);
+    width: 600px;
+  }
+}
+
+/* Support desktop screen at min width 1440px*/
+@media only screen and (min-width: 1440px) {
+  .large-screen-filter {
+    margin-right: 20px;
+  }
+  
+  .filter-container {
     width: 247px;
     padding: 20px 24px 408px 24px;
-    margin-right: 20px;
   }
 
   .filter-heading {
