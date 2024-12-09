@@ -1,10 +1,7 @@
-/* TODO: filter container */
 .small-screen-filter {
-  display: flex;
   position: fixed;
   background-color: #f7f5f5e5;
   z-index: 1000;
-  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -15,6 +12,7 @@
 
 .large-screen-filter {
   display: none;
+  text-align: center;
 }
 
 .filter-container {
@@ -296,9 +294,8 @@
   font-size: var(--font-size-sm);
 }
 
+/* Support desktop screen at min width 1440px*/
 @media only screen and (min-width: 1440px) {
-
-  /* TODO: filter container */
   .filter-container {
     width: 257px;
     margin-right: 20px;
