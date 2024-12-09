@@ -19,44 +19,12 @@ window.addEventListener('click', function(event) {
 });
 
 //Handles for slider bar
-function handleLeftSlider(input) {
-  input.value = Math.min(
-    input.value,
-    input.parentNode.childNodes[5].value - 1
-  );
-  var value =
-    (100 /
-      (parseInt(input.max) - parseInt(input.min))) *
-      parseInt(input.value) -
-    (100 /
-      (parseInt(input.max) - parseInt(input.min))) *
-      parseInt(input.min);
+var slider = document.getElementById("slider-range");
+var output = document.getElementById("slider-price");
+output.innerHTML = slider.value;
 
-  var children = input.parentNode.childNodes[1].childNodes;
-  children[1].style.width = value + '%';
-  children[5].style.left = value + '%';
-  children[7].style.left = value + '%';
-  children[11].style.left = value + '%';
-  children[11].childNodes[1].innerHTML = '$' + input.value;
-}
-
-function handleRightSlider(input) {
-  input.value = Math.max(
-    input.value,
-    input.parentNode.childNodes[3].value - (-1)
-  );
-  var value =
-    (100 /
-      (parseInt(input.max) - parseInt(input.min))) *
-      parseInt(input.value) -
-    (100 /
-      (parseInt(input.max) - parseInt(input.min))) *
-      parseInt(input.min);
-
-  var children = input.parentNode.childNodes[1].childNodes;
-  children[3].style.width = 100 - value + '%';
-  children[5].style.right = 100 - value + '%';
-  children[9].style.left = value + '%';
-  children[13].style.left = value + '%';
-  children[13].childNodes[1].innerHTML = '$' + input.value;
+slider.oninput = function() {
+  output.innerHTML = this.value;
+  valPercent = (this.value/slider.max)*100;
+  slider.style.background = `linear-gradient(to right, #000 ${valPercent}%, #f7f5f5e5 ${valPercent}%)`;
 }

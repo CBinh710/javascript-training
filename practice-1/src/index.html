@@ -64,42 +64,10 @@
                     <div class="icon icon-md"><img class="top-arrow" src="./assets/images/icons/bottom-arrow.svg" alt="Arrow icon"></div>
                   </div>
 
-                  <div class="slider" id="slider-distance">
-                    <div class="slider-inverse">
-                      <div class="inverse-left" style="width:70%;"></div>
-                      <div class="inverse-right" style="width:70%;"></div>
-                      <div class="range" style="left:30%;right:40%;"></div>
-                      <span class="thumb" style="left:30%;"></span>
-                      <span class="thumb" style="left:60%;"></span>
-                      <div class="sign" style="left:30%;">
-                        <span id="value">$300</span>
-                      </div>
-                      <div class="sign" style="left:60%;">
-                        <span id="value">$600</span>
-                      </div>
-                    </div>
-                    <input
-                      class="slider-range"
-                      type="range"
-                      tabindex="0"
-                      value="300"
-                      max="1000"
-                      min="0"
-                      step="5"
-                      oninput="handleLeftSlider(this)"
-                    />
-                    <input
-                      class="slider-range"
-                      type="range"
-                      tabindex="0"
-                      value="300"
-                      max="1000"
-                      min="0"
-                      step="5"
-                      oninput="handleRightSlider(this)"
-                    />
+                  <div class="slider-container">
+                    <input type="range" min="0" max="250" value="50" class="slider" id="slider-range">
+                    <p class="price-range">$<span id="slider-price"></span></p>
                   </div>
-
                 </div>
 
                 <div class="filter-by-color">
