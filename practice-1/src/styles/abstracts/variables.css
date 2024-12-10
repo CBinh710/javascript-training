@@ -12,7 +12,7 @@
   --color-filter-orange: #F57906;
   --color-filter-green: #00C12B;
   --color-filter-gold: #F5DD06;
-  --color-background-primary: #f7f5f5e5;
+  --color-background-primary: rgba(0, 0, 0, 0.2);
 
   --font-family-primary: satoshi-regular;
   --font-family-primary-bold: satoshi-bold;

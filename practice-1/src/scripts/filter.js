@@ -10,12 +10,14 @@ filterIcon.addEventListener('click', function() {
 
 closeButton.addEventListener('click', function() {
   filterForm.style.display = 'none';
+  document.body.style.overflow = 'auto';
 });
 
 
 window.addEventListener('click', function(event) {
   if (event.target === filterForm) {
     filterForm.style.display = 'none';
+    document.body.style.overflow = 'auto';
   }
 });
 
