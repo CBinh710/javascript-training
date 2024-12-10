@@ -25,6 +25,7 @@
   font-family: var(--font-family-primary-bold);
   background-color: var(--color-primary);
   font-size: var(--font-size-lg);
+  line-height: 1.4;
   opacity: 1;
 }
 
@@ -243,7 +244,7 @@
   }
 
   .small-screen-filter {
-    display: none;
+    display: none !important;
   }
 
   .filter-by-color {
