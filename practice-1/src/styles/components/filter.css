@@ -196,7 +196,7 @@
   text-align: center;
 }
 
-/* Support desktop screen at min width 1440px*/
+/* Support desktop screen at width under 390px*/
 @media only screen and (max-width: 389px) {
   .filter-container {
     padding: 10px 9px;
