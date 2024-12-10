@@ -24,6 +24,7 @@
   padding: 20px 18px;
   font-family: var(--font-family-primary-bold);
   background-color: var(--color-primary);
+  font-size: var(--font-size-lg);
   opacity: 1;
 }
 
