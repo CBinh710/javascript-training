@@ -1,29 +1,39 @@
 //Handles for responsive of filter
-const filterIcon = document.getElementById('filter');
-const filterForm = document.getElementById('filter-form');
-const closeButton = document.getElementById('close-filter-icon');
+document.addEventListener('DOMContentLoaded', function () {
+  const filterIcon = document.getElementById('filter');
+  const filterForm = document.getElementById('filter-form');
+  const closeButton = document.getElementById('close-filter-icon');
 
-filterIcon.addEventListener('click', function() {
-  filterForm.style.display = 'flex';
-  document.body.style.overflow = 'hidden';
-});
-
-closeButton.addEventListener('click', function() {
-  filterForm.style.display = 'none';
-  document.body.style.overflow = 'auto';
-});
-
-window.addEventListener('click', function(event) {
-  if (event.target === filterForm) {
-    filterForm.style.display = 'none';
-    document.body.style.overflow = 'auto';
+  function toggleBodyScroll(enable) {
+    document.body.style.overflow = enable ? 'auto' : 'hidden';
   }
-});
 
-window.addEventListener('resize', function () {
-  if (window.innerWidth >= 1440) {
-    document.body.style.overflow = 'auto';
-  }
+  filterIcon.addEventListener('click', function () {
+    filterForm.classList.remove('hidden');
+    filterForm.classList.add('flex');
+    toggleBodyScroll(false);
+  });
+
+  closeButton.addEventListener('click', function () {
+    filterForm.classList.remove('flex');
+    filterForm.classList.add('hidden');
+    toggleBodyScroll(true);
+  });
+
+  window.addEventListener('click', function (event) {
+    if (event.target === filterForm) {
+      filterForm.classList.add('hidden');
+      filterForm.classList.remove('flex');
+      toggleBodyScroll(true);
+    }
+  });
+
+
+  window.addEventListener('resize', function () {
+    if (window.innerWidth >= 1440) {
+      toggleBodyScroll(true); // Bật lại scroll
+    }
+  });
 });
 
 //Handles for slider bar in mobile screen
