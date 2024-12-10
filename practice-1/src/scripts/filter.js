@@ -5,6 +5,7 @@ const closeButton = document.getElementById('close-filter-icon');
 
 filterIcon.addEventListener('click', function() {
   filterForm.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
 });
 
 closeButton.addEventListener('click', function() {
