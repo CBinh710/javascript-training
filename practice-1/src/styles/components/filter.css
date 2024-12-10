@@ -19,7 +19,7 @@
 .filter-container {
   width: 100%;
   border: solid 1px var(--color-secondary);
-  border-radius: 20px;
+  border-start-start-radius: 20px;
   padding: 20px 18px;
   font-family: var(--font-family-primary-bold);
   background-color: var(--color-primary);
@@ -222,6 +222,7 @@
   .filter-container {
     width: 247px;
     padding: 20px 24px 408px 24px;
+    border-radius: 20px;
   }
 
   .filter-heading {
