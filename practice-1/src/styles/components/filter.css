@@ -163,7 +163,7 @@
   height: 6px;
   margin-bottom: 10px;
   border-radius: 5px;  
-  background: linear-gradient(to right, #000 25% , #f7f5f5e5 25%);
+  background: linear-gradient(to right, #000 20% , #f7f5f5e5 20%);
   outline: none;
   -webkit-transition: .2s;
   transition: opacity .2s;
@@ -191,6 +191,7 @@
   font-family: var(--font-family-primary-medium);
   font-size: var(--font-size-sm);
   line-height: 1.4;
+  text-align: center;
 }
 
 /* Support desktop screen at min width 768px*/
@@ -239,12 +240,16 @@
     gap: 8px;
   }
 
+  .slider {
+    background: linear-gradient(to right, #000 25% , #f7f5f5e5 25%);
+  }
+
   .color-container {
     gap: 15px;
   }
 
   .small-screen-filter {
-    display: none !important;
+    display: none;
   }
 
   .filter-by-color {

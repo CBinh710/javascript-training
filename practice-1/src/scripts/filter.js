@@ -18,7 +18,18 @@ window.addEventListener('click', function(event) {
   }
 });
 
-//Handles for slider bar
+//Handles for slider bar in mobile screen
+var sliderSmall = document.getElementById("slider-range-small");
+var outputSmall = document.getElementById("slider-price-small");
+outputSmall.innerHTML = sliderSmall.value;
+
+sliderSmall.oninput = function() {
+  outputSmall.innerHTML = this.value;
+  valPercentSmall = (this.value/sliderSmall.max)*100;
+  sliderSmall.style.background = `linear-gradient(to right, #000 ${valPercentSmall}%, #f7f5f5e5 ${valPercentSmall}%)`;
+}
+
+//Handles for slider bar in desktop screen
 var slider = document.getElementById("slider-range");
 var output = document.getElementById("slider-price");
 output.innerHTML = slider.value;
