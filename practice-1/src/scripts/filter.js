@@ -13,10 +13,15 @@ closeButton.addEventListener('click', function() {
   document.body.style.overflow = 'auto';
 });
 
-
 window.addEventListener('click', function(event) {
   if (event.target === filterForm) {
     filterForm.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }
+});
+
+window.addEventListener('resize', function () {
+  if (window.innerWidth >= 1440) {
     document.body.style.overflow = 'auto';
   }
 });
