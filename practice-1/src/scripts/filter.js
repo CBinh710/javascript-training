@@ -31,14 +31,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
   window.addEventListener('resize', function () {
     if (window.innerWidth >= 1440) {
-      toggleBodyScroll(true); // Bật lại scroll
+      toggleBodyScroll(true);
     }
   });
 });
 
 //Handles for slider bar in mobile screen
-var sliderSmall = document.getElementById("slider-range-small");
-var outputSmall = document.getElementById("slider-price-small");
+const sliderSmall = document.getElementById("slider-range-small");
+const outputSmall = document.getElementById("slider-price-small");
 outputSmall.innerHTML = sliderSmall.value;
 
 sliderSmall.oninput = function() {
@@ -48,8 +48,8 @@ sliderSmall.oninput = function() {
 }
 
 //Handles for slider bar in desktop screen
-var slider = document.getElementById("slider-range");
-var output = document.getElementById("slider-price");
+const slider = document.getElementById("slider-range");
+const output = document.getElementById("slider-price");
 output.innerHTML = slider.value;
 
 slider.oninput = function() {

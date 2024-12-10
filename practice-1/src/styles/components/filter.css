@@ -1,5 +1,6 @@
 /* Support mobile and tablet screen*/
 .small-screen-filter {
+  display: flex;
   position: fixed;
   background-color: var(--color-background-primary);
   z-index: 1000;
@@ -19,7 +20,8 @@
 .filter-container {
   width: 100%;
   border: solid 1px var(--color-secondary);
-  border-start-start-radius: 20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
   padding: 20px 18px;
   font-family: var(--font-family-primary-bold);
   background-color: var(--color-primary);
@@ -206,9 +208,10 @@
   }
 }
 
+/* Support lanscape screen*/
 @media (orientation: landscape) {
   .filter-container {
-    max-height: 200px;
+    max-height: 300px;
     overflow-y: auto;
   }
 }
@@ -223,6 +226,7 @@
     width: 247px;
     padding: 20px 24px 408px 24px;
     border-radius: 20px;
+    max-height: 100%;
   }
 
   .filter-heading {
