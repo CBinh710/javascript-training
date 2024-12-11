@@ -1,0 +1,63 @@
+.add-form-heading {
+  font-family: var(--font-family-secondary-bold);
+  font-size: var(--font-size-xxl);
+  text-align: center;
+}
+
+.add-form-image {
+  justify-content: center;
+  margin-top: 100px;
+  margin-bottom: 87px;
+}
+
+.add-form-sub-heading {
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-md);
+  line-height: 1.5;
+  color: var(--color-heading-secondary);
+}
+
+.add-form-rating-container {
+  margin-top: 16px;
+}
+
+.add-form-rating {
+  margin-left: 16px;
+  gap: 16px;
+}
+
+.add-form-rating-label {
+  justify-content: center;
+  width: 62px;
+  height: 52px;
+  border: solid 2px var(--color-border-secondary);
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.add-form-rating-star {
+  width: 14px;
+  height: 15px;
+  margin-left: 4px;
+}
+
+.add-form-color-container {
+  margin-top: 24px;
+}
+
+.add-form-colors {
+  margin-left: 11px;
+  gap: 15px;
+}
+
+.add-form-sizes-container {
+  margin-top: 30px;
+  margin-bottom: 45px;
+}
+
+.add-form-sizes {
+  margin-top: 0;
+  margin-left: 17px;
+  padding: 0px;
+  border: none;
+}
