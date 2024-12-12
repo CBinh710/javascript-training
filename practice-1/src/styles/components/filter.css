@@ -1,6 +1,5 @@
 /* Support mobile and tablet screen*/
 .small-screen-filter {
-  display: flex;
   position: fixed;
   background-color: var(--color-background-primary);
   z-index: 1000;
