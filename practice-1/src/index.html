@@ -191,7 +191,7 @@
                 <h2 class="product-heading">Casual</h2>
                 <div class="manage-product-actions flex align-center">
                   <img id="filter" class="icon icon-circle icon-light icon-filter icon-md pointer" src="./assets/images/icons/filter.svg" alt="Filter icon">
-                  <button class="btn pointer">Add</button>
+                  <button id="add-product" class="btn pointer">Add</button>
                 </div>
               </div>
 
@@ -419,7 +419,94 @@
           </div>
         </div>
      </div>
-  </section>
+    </section>
+
+    <div class="secondary-background">
+      <section>
+        <div class="container">
+          <div class="subscribe">
+            <h3 class="subscribe-heading">STAY UPTO DATE ABOUT OUR LATEST OFFERS</h3>
+            <form action="#">
+              <label class="input-header-label input-icon-label subscribe-label flex" >
+                <img class="icon icon-lg" src="./assets/images/icons/email.svg" alt="Email icon">
+                <input class="input input-none-border subscribe-input-text" type="text" placeholder="Enter your email address">
+              </label>
+              <button class="btn btn-primary-outline subscribe-button">Subscribe to Newsletter</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div class="container">
+          <div class="footer">
+            <div class="footer-heading">
+              <img class="footer-heading-icon" src="./assets/images/icons/logo.svg" alt="Shop.co logo">
+              <p class="footer-heading-describe">We have clothes that suits your style and which you're proud to wear. From women to men.</p>
+              <div class="social-media-container flex">
+                <img class="icon icon-circle icon-outline icon-sm" src="./assets/images/icons/twitter.svg" alt="Twitter icon">
+                <img class="icon icon-circle icon-outline icon-sm icon-dark" src="./assets/images/icons/facebook.svg" alt="Facebook icon">
+                <img class="icon icon-circle icon-outline icon-sm" src="./assets/images/icons/instagram.svg" alt="Instagram icon">
+                <img class="icon icon-circle icon-outline icon-sm" src="./assets/images/icons/github.svg" alt="Github icon">
+              </div>
+            </div>
+
+            <div class="footer-content flex">
+              <div class="footer-list">
+                <h4 class="footer-item-heading">COMPANY</h4>
+                <ul>
+                  <li class="footer-item"><a class="footer-link" href="#">About</a></li>
+                  <li class="footer-item"><a class="footer-link" href="#">Features</a></li>
+                  <li class="footer-item"><a class="footer-link" href="#">Works</a></li>
+                  <li class="footer-item"><a class="footer-link" href="#">Career</a></li>
+                </ul>
+              </div>
+
+              <div class="footer-list">
+                <h4 class="footer-item-heading">HELP</h4>
+                <ul>
+                  <li class="footer-item"><a class="footer-link" href="#">Customer Support</a></li>
+                  <li class="footer-item"><a class="footer-link" href="#">Delivery Details</a></li>
+                  <li class="footer-item"><a class="footer-link" href="#">Terms & Conditions</a></li>
+                  <li class="footer-item"><a class="footer-link" href="#">Privacy Policy</a></li>
+                </ul>
+              </div>
+
+              <div class="footer-list">
+                <h4 class="footer-item-heading">FAQ</h4>
+                <ul>
+                  <li class="footer-item"><a class="footer-link" href="#">Account</a></li>
+                  <li class="footer-item"><a class="footer-link" href="#">Manage Deliveries</a></li>
+                  <li class="footer-item"><a class="footer-link" href="#">Orders</a></li>
+                  <li class="footer-item"><a class="footer-link" href="#">Payment</a></li>
+                </ul>
+              </div>
+
+              <div class="footer-list">
+                <h4 class="footer-item-heading">RESOURCES</h4>
+                <ul>
+                  <li class="footer-item"><a class="footer-link" href="#">Free eBook</a></li>
+                  <li class="footer-item"><a class="footer-link" href="#">Development Tutorial</a></li>
+                  <li class="footer-item"><a class="footer-link" href="#">How to - Blog</a></li>
+                  <li class="footer-item"><a class="footer-link" href="#">Youtube Playlist</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <div class="container">
+        <div class="payment-method flex align-center">
+          <p>Shop.co &#169; 2000-2023, All Rights Reserved</p>
+          <div class="payment-method-icon-container flex">
+            <img class="icon icon-rectangle icon-outline" src="./assets/images/icons/visa.svg" alt="Visa icon">
+            <img class="icon icon-rectangle icon-outline" src="./assets/images/icons/mastercard.svg" alt="MasterCard icon">
+            <img class="icon icon-rectangle icon-outline" src="./assets/images/icons/apple-pay.svg" alt="Apple pay icon">
+            <img class="icon icon-rectangle icon-outline" src="./assets/images/icons/googlepay.svg" alt="Google pay icon">
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div id="filter-form" class="small-screen-filter hidden">
       <form class="filter-container">
@@ -557,176 +644,140 @@
       </form>
     </div>
 
-    <div class="container">
-      <form action="" class="add-form">
-        <h3 class="add-form-heading">Add new product</h3>
-        <figure class="add-form-image flex">
-          <img src="./assets/images/products/gradient-graphic-t-shirt.png" alt="">
-        </figure>
+    <div id="add-product-container" class="add-product-container hidden">
+      <div class="container">
+        <form action="" class="add-form">
+          <h3 class="add-form-heading">Add new product</h3>
 
-        <input class="input" type="text" placeholder="Product Name">
-        <div class="flex space-between">
-          <input class="input" type="text" placeholder="Price ($)">
-          <input class="input" type="text" placeholder="Discount (%)">
-        </div>
-
-        <div class="flex align-center add-form-rating-container">
-          <h4 class="add-form-sub-heading">Rating:</h4>
-          <div class="flex add-form-rating">
-            <label>
-              <input class="input-hidden" type="checkbox" name="Rating" value="1">
-              <span class="flex align-center add-form-sub-heading add-form-rating-label">
-                1
-                <img class="add-form-rating-star" src="./assets/images/icons/star.svg" alt="Star rating icon">
-              </span>
-            </label>
-
-            <label>
-              <input class="input-hidden" type="checkbox" name="Rating" value="1">
-              <span class="flex align-center add-form-sub-heading add-form-rating-label">
-                2
-                <img class="add-form-rating-star" src="./assets/images/icons/star.svg" alt="Star rating icon">
-              </span>
-            </label>
-
-            <label>
-              <input class="input-hidden" type="checkbox" name="Rating" value="1">
-              <span class="flex align-center add-form-sub-heading add-form-rating-label">
-                3
-                <img class="add-form-rating-star" src="./assets/images/icons/star.svg" alt="Star rating icon">
-              </span>
-            </label>
-
-            <label>
-              <input class="input-hidden" type="checkbox" name="Rating" value="1">
-              <span class="flex align-center add-form-sub-heading add-form-rating-label">
-                4
-                <img class="add-form-rating-star" src="./assets/images/icons/star.svg" alt="Star rating icon">
-              </span>
-            </label>
-
-            <label>
-              <input class="input-hidden" type="checkbox" name="Rating" value="1">
-              <span class="flex align-center add-form-sub-heading add-form-rating-label">
-                5
-                <img class="add-form-rating-star" src="./assets/images/icons/star.svg" alt="Star rating icon">
-              </span>
-            </label>
+          <div class="file-upload">
+            <div class="file-select">
+              <div class="file-select-button" id="fileName">Choose File</div>
+              <div class="file-select-name" id="noFile">No file chosen...</div>
+              <input type="file" name="chooseFile" id="chooseFile">
+            </div>
           </div>
-        </div>
 
-        <div class="flex align-center add-form-color-container">
-          <h4 class="add-form-sub-heading">Color:</h4>
-          <div class="flex add-form-colors">
-            <label>
-              <input class="input-hidden" type="checkbox" name="color" value="green">
-              <span class="input-circle color-green"></span>
-            </label>
-
-            <label>
-              <input class="input-hidden" type="checkbox" name="color" value="red">
-              <span class="input-circle color-red"></span>
-            </label>
-
-            <label>
-              <input class="input-hidden" type="checkbox" name="color" value="gold">
-              <span class="input-circle color-gold"></span>
-            </label>
-
-            <label>
-              <input class="input-hidden" type="checkbox" name="color" value="orange">
-              <span class="input-circle color-orange"></span>
-            </label>
-
-            <label>
-              <input class="input-hidden" type="checkbox" name="color" value="skyblue">
-              <span class="input-circle color-skyblue"></span>
-            </label>
-
-            <label>
-              <input class="input-hidden" type="checkbox" name="color" value="blue">
-              <span class="input-circle color-blue"></span>
-            </label>
-
-            <label>
-              <input class="input-hidden" type="checkbox" name="color" value="violet">
-              <span class="input-circle color-violet"></span>
-            </label>
-
-            <label>
-              <input class="input-hidden" type="checkbox" name="color" value="pink">
-              <span class="input-circle color-pink"></span>
-            </label>
-
-            <label>
-              <input class="input-hidden" type="checkbox" name="color" value="white">
-              <span class="input-circle color-white"></span>
-            </label>
-
-            <label>
-              <input class="input-hidden" type="checkbox" name="color" value="black">
-              <span class="input-circle color-black"></span>
-            </label>
+          <input class="input add-form-input product-name-input" type="text" placeholder="Product Name" name="product name" value="default">
+          <div class="flex space-between product-cost-input">
+            <input class="input add-form-input" type="text" placeholder="Price ($)" name="price" value="default">
+            <input class="input add-form-input" type="text" placeholder="Discount (%)" name="discount" value="default">
           </div>
-        </div>
 
-        <div class="filter-by-size flex add-form-sizes-container">
-          <h4 class="add-form-sub-heading">Size:</h4>
-          <div class="sizes-container flex add-form-sizes">
-            <label>
-              <input class="input-hidden" type="checkbox" name="size" value="XX-Small">
-              <p class="sizes">XX-Small</p>
-            </label>
+          <div class="flex add-form-color-container">
+            <h4 class="add-form-sub-heading">Color:</h4>
+            <div class="flex add-form-colors">
+              <label>
+                <input class="input-hidden" type="checkbox" name="color" value="green">
+                <span class="input-circle color-green"></span>
+              </label>
 
-            <label>
-              <input class="input-hidden" type="checkbox" name="size" value="X-Small">
-              <p class="sizes">X-Small</p>
-            </label>
+              <label>
+                <input class="input-hidden" type="checkbox" name="color" value="red">
+                <span class="input-circle color-red"></span>
+              </label>
 
-            <label>
-              <input class="input-hidden" type="checkbox" name="size" value="Small">
-              <p class="sizes">Small</p>
-            </label>
+              <label>
+                <input class="input-hidden" type="checkbox" name="color" value="gold">
+                <span class="input-circle color-gold"></span>
+              </label>
 
-            <label>
-              <input class="input-hidden" type="checkbox" name="size" value="Medium">
-              <p class="sizes">Medium</p>
-            </label>
+              <label>
+                <input class="input-hidden" type="checkbox" name="color" value="orange">
+                <span class="input-circle color-orange"></span>
+              </label>
 
-            <label>
-              <input class="input-hidden" type="checkbox" name="size" value="Large" checked>
-              <p class="sizes">Large</p>
-            </label>
+              <label>
+                <input class="input-hidden" type="checkbox" name="color" value="skyblue">
+                <span class="input-circle color-skyblue"></span>
+              </label>
 
-            <label>
-              <input class="input-hidden" type="checkbox" name="size" value="X-Large">
-              <p class="sizes">X-Large</p>
-            </label>
+              <label>
+                <input class="input-hidden" type="checkbox" name="color" value="blue">
+                <span class="input-circle color-blue"></span>
+              </label>
 
-            <label>
-              <input class="input-hidden" type="checkbox" name="size" value="XX-Large">
-              <p class="sizes">XX-Large</p>
-            </label>
+              <label>
+                <input class="input-hidden" type="checkbox" name="color" value="violet">
+                <span class="input-circle color-violet"></span>
+              </label>
 
-            <label>
-              <input class="input-hidden" type="checkbox" name="size" value="3X-Large">
-              <p class="sizes">3X-Large</p>
-            </label>
+              <label>
+                <input class="input-hidden" type="checkbox" name="color" value="pink">
+                <span class="input-circle color-pink"></span>
+              </label>
 
-            <label>
-              <input class="input-hidden" type="checkbox" name="size" value="4X-Large">
-              <p class="sizes">4X-Large</p>
-            </label>
+              <label>
+                <input class="input-hidden" type="checkbox" name="color" value="white">
+                <span class="input-circle color-white"></span>
+              </label>
+
+              <label>
+                <input class="input-hidden" type="checkbox" name="color" value="black">
+                <span class="input-circle color-black"></span>
+              </label>
+            </div>
           </div>
-        </div>
 
-        <div>
-          <label for="desciption-detail">Description Detail</label><br><br>
-          <input id="desciption-detail" type="text" placeholder="Submit Your Order Information - Item Name, Decoration Size, Quantity, Due Date and any other details">
-        </div>
+          <div class="filter-by-size flex add-form-sizes-container">
+            <h4 class="add-form-sub-heading">Size:</h4>
+            <div class="sizes-container flex add-form-sizes">
+              <label>
+                <input class="input-hidden" type="checkbox" name="size" value="XX-Small">
+                <p class="sizes">XX-Small</p>
+              </label>
 
-        <button class="btn" type="submit">Submit</button>
-      </form>
+              <label>
+                <input class="input-hidden" type="checkbox" name="size" value="X-Small">
+                <p class="sizes">X-Small</p>
+              </label>
+
+              <label>
+                <input class="input-hidden" type="checkbox" name="size" value="Small">
+                <p class="sizes">Small</p>
+              </label>
+
+              <label>
+                <input class="input-hidden" type="checkbox" name="size" value="Medium">
+                <p class="sizes">Medium</p>
+              </label>
+
+              <label>
+                <input class="input-hidden" type="checkbox" name="size" value="Large" checked>
+                <p class="sizes">Large</p>
+              </label>
+
+              <label>
+                <input class="input-hidden" type="checkbox" name="size" value="X-Large">
+                <p class="sizes">X-Large</p>
+              </label>
+
+              <label>
+                <input class="input-hidden" type="checkbox" name="size" value="XX-Large">
+                <p class="sizes">XX-Large</p>
+              </label>
+
+              <label>
+                <input class="input-hidden" type="checkbox" name="size" value="3X-Large">
+                <p class="sizes">3X-Large</p>
+              </label>
+
+              <label>
+                <input class="input-hidden" type="checkbox" name="size" value="4X-Large">
+                <p class="sizes">4X-Large</p>
+              </label>
+            </div>
+          </div>
+
+          <div class="add-product-description">
+            <label for="desciption-detail" class="desciption-heading">Description Detail</label><br/>
+            <textarea class="description-text" id="desciption-detail" placeholder="Submit Your Order Information - Item Name, Decoration Size, Quantity, Due Date and any other details"></textarea>
+          </div>
+
+          <button class="btn btn-submit btn-primary flex" type="submit">Submit</button>
+          <button id="btn-cancel" class="btn btn-cancel flex" type="button">Cancel</button>
+
+        </form>
+      </div>
     </div>
     <script src="./scripts/filter.js"></script>
   </body>

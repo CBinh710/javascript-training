@@ -1,0 +1,73 @@
+.subscribe {
+  background-color: var(--color-dark);
+  color: var(--color-primary);
+  padding: 32px 23px 28px 23px;
+  border-radius: 20px;
+}
+
+
+.subscribe .subscribe-heading {
+  font-family: var(--font-family-secondary-black);
+  font-size: var(--font-size-xxl);
+}
+
+
+.subscribe .subscribe-label {
+  margin-top: 32px;
+  margin-bottom: 12px;
+  background-color: var(--color-primary);
+  opacity: 1;
+}
+
+
+.subscribe .subscribe-input-text {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-sm);
+}
+
+.subscribe .subscribe-button {
+  font-family: var(--font-family-primary-medium);
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+
+/* Support tablet and desktop screen at min width 768px*/
+@media only screen and (min-width: 768px) {
+  .subscribe {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+
+  .subscribe .subscribe-heading {
+    width: 50%;
+  }
+
+
+  .subscribe .subscribe-label {
+    margin-top: 0;
+  }
+}
+
+
+/* Support tablet and desktop screen at min width 1440px*/
+@media only screen and (min-width: 1440px) {
+  .subscribe {
+    padding: 36px 64px;
+  }
+
+
+  .subscribe .subscribe-heading {
+    font-family: var(--font-family-secondary-black);
+    font-size: var(--font-size-xxxl);
+  }
+
+
+  .subscribe .subscribe-button {
+    width: 349px;
+  }
+}
