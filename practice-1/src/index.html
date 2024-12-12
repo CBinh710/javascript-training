@@ -51,19 +51,146 @@
             <p class="breadcrumb-header" href="#">Casual</p>
           </div>
 
-          <div class="catalog-container flex">
+          <div class="catalog-container">
+            <div class="large-screen-filter">
+              <form class="filter-container">
+                <div class="filter-heading">
+                  <h3>Filters</h3>
+                </div>
 
-            <!-- TODO: filter UI -->
-            <div class="filter-container">
+                <div class="filter-by-price">
+                  <div class="flex space-between">
+                    <h4>Price</h4>
+                    <div class="icon icon-md"><img class="top-arrow" src="./assets/images/icons/bottom-arrow.svg" alt="Arrow icon"></div>
+                  </div>
 
+                  <div class="slider-container">
+                    <input type="range" min="0" max="250" value="50" class="slider" id="slider-range">
+                    <p class="price-range">$<span id="slider-price"></span></p>
+                  </div>
+                </div>
+
+                <div class="filter-by-color">
+                  <div class="flex space-between">
+                    <h4>Colors</h4>
+                    <div class="icon icon-md"><img class="top-arrow" src="./assets/images/icons/bottom-arrow.svg" alt="Arrow icon"></div>
+                  </div>
+                  <div class="flex color-container">
+                    <label>
+                      <input class="input-hidden" type="checkbox" name="color" value="green">
+                      <span class="input-circle color-green"></span>
+                    </label>
+
+                    <label>
+                      <input class="input-hidden" type="checkbox" name="color" value="red">
+                      <span class="input-circle color-red"></span>
+                    </label>
+
+                    <label>
+                      <input class="input-hidden" type="checkbox" name="color" value="gold">
+                      <span class="input-circle color-gold"></span>
+                    </label>
+
+                    <label>
+                      <input class="input-hidden" type="checkbox" name="color" value="orange">
+                      <span class="input-circle color-orange"></span>
+                    </label>
+
+                    <label>
+                      <input class="input-hidden" type="checkbox" name="color" value="skyblue">
+                      <span class="input-circle color-skyblue"></span>
+                    </label>
+
+                    <label>
+                      <input class="input-hidden" type="checkbox" name="color" value="blue">
+                      <span class="input-circle color-blue"></span>
+                    </label>
+
+                    <label>
+                      <input class="input-hidden" type="checkbox" name="color" value="violet">
+                      <span class="input-circle color-violet"></span>
+                    </label>
+
+                    <label>
+                      <input class="input-hidden" type="checkbox" name="color" value="pink">
+                      <span class="input-circle color-pink"></span>
+                    </label>
+
+                    <label>
+                      <input class="input-hidden" type="checkbox" name="color" value="white">
+                      <span class="input-circle color-white"></span>
+                    </label>
+
+                    <label>
+                      <input class="input-hidden" type="checkbox" name="color" value="black">
+                      <span class="input-circle color-black"></span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="filter-by-size">
+                  <div class="flex space-between">
+                    <h4>Size</h4>
+                    <div class="icon icon-md"><img class="top-arrow" src="./assets/images/icons/bottom-arrow.svg" alt="Arrow icon"></div>
+                  </div>
+
+                  <div class="sizes-container flex">
+                    <label>
+                      <input class="input-hidden" type="checkbox" name="size" value="XX-Small">
+                      <p class="sizes">XX-Small</p>
+                    </label>
+
+                    <label>
+                      <input class="input-hidden" type="checkbox" name="size" value="X-Small">
+                      <p class="sizes">X-Small</p>
+                    </label>
+
+                    <label>
+                      <input class="input-hidden" type="checkbox" name="size" value="Small">
+                      <p class="sizes">Small</p>
+                    </label>
+
+                    <label>
+                      <input class="input-hidden" type="checkbox" name="size" value="Medium">
+                      <p class="sizes">Medium</p>
+                    </label>
+
+                    <label>
+                      <input class="input-hidden" type="checkbox" name="size" value="Large" checked>
+                      <p class="sizes">Large</p>
+                    </label>
+
+                    <label>
+                      <input class="input-hidden" type="checkbox" name="size" value="X-Large">
+                      <p class="sizes">X-Large</p>
+                    </label>
+
+                    <label>
+                      <input class="input-hidden" type="checkbox" name="size" value="XX-Large">
+                      <p class="sizes">XX-Large</p>
+                    </label>
+
+                    <label>
+                      <input class="input-hidden" type="checkbox" name="size" value="3X-Large">
+                      <p class="sizes">3X-Large</p>
+                    </label>
+
+                    <label>
+                      <input class="input-hidden" type="checkbox" name="size" value="4X-Large">
+                      <p class="sizes">4X-Large</p>
+                    </label>
+                  </div>
+                </div>
+
+                <button class="btn btn-primary pointer">Apply Filter</button>
+              </form>
             </div>
-            <!---->
-            
+
             <div class="product-card-management-container">
               <div class="product-card-actions flex align-center">
                 <h2 class="product-heading">Casual</h2>
                 <div class="manage-product-actions flex align-center">
-                  <img class="icon icon-circle icon-light icon-filter pointer" src="./assets/images/icons/filter.svg" alt="Filter icon">
+                  <img id="filter" class="icon icon-circle icon-light icon-filter icon-md pointer" src="./assets/images/icons/filter.svg" alt="Filter icon">
                   <button class="btn pointer">Add</button>
                 </div>
               </div>
@@ -291,7 +418,144 @@
             </div>
           </div>
         </div>
-      </section>
+     </div>
+  </section>
+
+    <div id="filter-form" class="small-screen-filter hidden">
+      <form class="filter-container">
+        <div class="filter-heading flex space-between">
+          <h3>Filters</h3>
+          <img id="close-filter-icon" class="pointer" src="./assets/images/icons/close.svg" alt="Close icon">
+        </div>
+
+        <div class="filter-by-price">
+          <div class="flex space-between">
+            <h4>Price</h4>
+            <div class="icon icon-md"><img class="top-arrow" src="./assets/images/icons/bottom-arrow.svg" alt="Arrow icon"></div>
+          </div>
+
+          <div class="slider-container">
+            <input type="range" min="0" max="250" value="50" class="slider" id="slider-range-small">
+            <p class="price-range">$<span id="slider-price-small"></span></p>
+          </div>
+          
+        </div>
+
+        <div class="filter-by-color">
+          <div class="flex space-between">
+            <h4>Colors</h4>
+            <div class="icon icon-md"><img class="top-arrow" src="./assets/images/icons/bottom-arrow.svg" alt="Arrow icon"></div>
+          </div>
+          <div class="flex color-container">
+            <label>
+              <input class="input-hidden" type="checkbox" name="color" value="green">
+              <span class="input-circle color-green"></span>
+            </label>
+
+            <label>
+              <input class="input-hidden" type="checkbox" name="color" value="red">
+              <span class="input-circle color-red"></span>
+            </label>
+
+            <label>
+              <input class="input-hidden" type="checkbox" name="color" value="gold">
+              <span class="input-circle color-gold"></span>
+            </label>
+
+            <label>
+              <input class="input-hidden" type="checkbox" name="color" value="orange">
+              <span class="input-circle color-orange"></span>
+            </label>
+
+            <label>
+              <input class="input-hidden" type="checkbox" name="color" value="skyblue">
+              <span class="input-circle color-skyblue"></span>
+            </label>
+
+            <label>
+              <input class="input-hidden" type="checkbox" name="color" value="blue">
+              <span class="input-circle color-blue"></span>
+            </label>
+
+            <label>
+              <input class="input-hidden" type="checkbox" name="color" value="violet">
+              <span class="input-circle color-violet"></span>
+            </label>
+
+            <label>
+              <input class="input-hidden" type="checkbox" name="color" value="pink">
+              <span class="input-circle color-pink"></span>
+            </label>
+
+            <label>
+              <input class="input-hidden" type="checkbox" name="color" value="white">
+              <span class="input-circle color-white"></span>
+            </label>
+
+            <label>
+              <input class="input-hidden" type="checkbox" name="color" value="black">
+              <span class="input-circle color-black"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="filter-by-size">
+          <div class="flex space-between">
+            <h4>Size</h4>
+            <div class="icon icon-md"><img class="top-arrow" src="./assets/images/icons/bottom-arrow.svg" alt="Arrow icon"></div>
+          </div>
+
+          <div class="sizes-container flex">
+            <label>
+              <input class="input-hidden" type="checkbox" name="size" value="XX-Small">
+              <p class="sizes">XX-Small</p>
+            </label>
+
+            <label>
+              <input class="input-hidden" type="checkbox" name="size" value="X-Small">
+              <p class="sizes">X-Small</p>
+            </label>
+
+            <label>
+              <input class="input-hidden" type="checkbox" name="size" value="Small">
+              <p class="sizes">Small</p>
+            </label>
+
+            <label>
+              <input class="input-hidden" type="checkbox" name="size" value="Medium">
+              <p class="sizes">Medium</p>
+            </label>
+
+            <label>
+              <input class="input-hidden" type="checkbox" name="size" value="Large" checked>
+              <p class="sizes">Large</p>
+            </label>
+
+            <label>
+              <input class="input-hidden" type="checkbox" name="size" value="X-Large">
+              <p class="sizes">X-Large</p>
+            </label>
+
+            <label>
+              <input class="input-hidden" type="checkbox" name="size" value="XX-Large">
+              <p class="sizes">XX-Large</p>
+            </label>
+
+            <label>
+              <input class="input-hidden" type="checkbox" name="size" value="3X-Large">
+              <p class="sizes">3X-Large</p>
+            </label>
+
+            <label>
+              <input class="input-hidden" type="checkbox" name="size" value="4X-Large">
+              <p class="sizes">4X-Large</p>
+            </label>
+          </div>
+        </div>
+
+        <button class="btn btn-primary pointer">Apply Filter</button>
+      </form>
     </div>
+    <script src="./scripts/filter.js"></script>
   </body>
 </html>
