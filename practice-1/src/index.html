@@ -21,7 +21,7 @@
           <nav class="nav">
             <img src="./assets/images/icons/nav.svg" class="icon nav-icon flex align-center" alt="Nav icon">
             <a href="#"><img src="./assets/images/icons/logo.svg" class="logo" alt="Brand icon"></a>
-            <ul class="nav-links hidden" id="main-menu">
+            <ul class="nav-links hidden">
               <li><a class="link-item" href="#shop">Shop</a> <img src="./assets/images/icons/bottom-arrow.svg" alt="Bottom arrow icon"></li>
               <li><a class="link-item" href="#onsales">On Sale</a></li>
               <li><a class="link-item" href="#newarrivals">New Arrivals</a></li>
@@ -648,15 +648,7 @@
       <div class="container">
         <form action="" class="add-form">
           <h3 class="add-form-heading">Add new product</h3>
-
-          <div class="file-upload">
-            <div class="file-select">
-              <div class="file-select-button" id="fileName">Choose File</div>
-              <div class="file-select-name" id="noFile">No file chosen...</div>
-              <input type="file" name="chooseFile" id="chooseFile">
-            </div>
-          </div>
-
+          <input class="input add-form-input product-name-input" type="text" placeholder="Import image URL" name="chooseFile" id="chooseFile">
           <input class="input add-form-input product-name-input" type="text" placeholder="Product Name" name="product name" value="">
           <div class="flex space-between product-cost-input">
             <input class="input add-form-input" type="text" placeholder="Price ($)" name="price" value="">
@@ -780,7 +772,7 @@
       </div>
     </div>
 
-
+    <script src="./scripts/index.js"></script>
     <script src="./scripts/filter.js"></script>
   </body>
 </html>

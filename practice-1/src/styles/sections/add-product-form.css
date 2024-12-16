@@ -23,130 +23,15 @@
   font-family: var(--font-family-secondary-bold);
   font-size: var(--font-size-xxl);
   text-align: center;
-}
-
-.file-upload {
-  display: block;
-  text-align: center;
-  font-family: var(--font-family-secondary);
-  font-size: var(--font-size-md);
-  border-radius: 6px;
-  margin-top: 90px;
-  margin-bottom: 21px;
-}
-
-.file-upload .file-select {
-  display: block;
-  border: 2px solid var(--color-secondary);
-  color: var(--color-heading-secondary);
-  cursor: pointer;
-  height: 40px;
-  line-height: 40px;
-  text-align: left;
-  background: var(--color-primary);
-  overflow: hidden;
-  position: relative;
-}
-
-.file-upload .file-select .file-select-button{
-  background: var(--color-secondary);
-  padding: 0 10px;
-  display: inline-block;
-  height: 40px;
-  line-height: 40px;
-}
-
-.file-upload .file-select .file-select-name {
-  line-height: 40px;
-  display: inline-block;
-  padding: 0 10px;
-}
-
-.file-upload .file-select:hover {
-  border-color: var(--color-heading-secondary);
-  transition: all .2s ease-in-out;
-  -moz-transition: all .2s ease-in-out;
-  -webkit-transition: all .2s ease-in-out;
-  -o-transition: all .2s ease-in-out;
-}
-
-.file-upload .file-select:hover .file-select-button {
-  background: var(--color-heading-secondary);
-  color: var(--color-primary);
-  transition: all .2s ease-in-out;
-  -moz-transition: all .2s ease-in-out;
-  -webkit-transition: all .2s ease-in-out;
-  -o-transition: all .2s ease-in-out;
-}
-
-.file-upload.active .file-select {
-  border-color: var(--color-filter-green);
-  transition: all .2s ease-in-out;
-  -moz-transition: all .2s ease-in-out;
-  -webkit-transition: all .2s ease-in-out;
-  -o-transition: all .2s ease-in-out;
-}
-
-.file-upload.active .file-select .file-select-button {
-  background: var(--color-filter-green);
-  color: var(--color-primary);
-  transition: all .2s ease-in-out;
-  -moz-transition: all .2s ease-in-out;
-  -webkit-transition:all .2s ease-in-out;
-  -o-transition:all .2s ease-in-out;
-}
-
-.file-upload .file-select input[type=file] {
-  z-index: 100;
-  cursor: pointer;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  filter:alpha(opacity=0);
-}
-
-.file-upload .file-select.file-select-disabled {
-  opacity: 0.65;
-}
-
-.file-upload .file-select.file-select-disabled:hover {
-  cursor: default;
-  display: block;
-  border: 2px solid var(--color-secondary);
-  color: var(--color-heading-secondary);
-  cursor: pointer;
-  height: 40px;
-  line-height: 40px;
-  margin-top: 5px;
-  text-align: left;
-  background: var(--color-primary);
-  overflow: hidden;
-  position: relative;
-}
-
-.file-upload .file-select.file-select-disabled:hover .file-select-button {
-  background: var(--color-secondary);
-  color: var(--color-third);
-  padding: 0 10px;
-  display: inline-block;
-  height: 40px;
-  line-height: 40px;
-}
-
-.file-upload .file-select.file-select-disabled:hover .file-select-name {
-  line-height: 40px;
-  display: inline-block;
-  padding: 0 10px;
+  margin-bottom: 88px;
 }
 
 .product-name-input {
-  margin-bottom: 16px;
+  margin-top: 16px;
 }
 
 .product-cost-input {
+  margin-top: 16px;
   gap: 19px;
 }
 
@@ -206,15 +91,11 @@
   width: 50%;
 }
 
-.btn-cancel {
-  justify-content: center;
-  margin: 0 auto;
-  padding: 6px 33px;
-  width: 10%;
-  color: var(--color-dark);
-  background-color: var(--color-primary);
-  border: solid 1px var(--color-dark);
-  font-size: var(--font-size-xs);
+.error-message {
+  color: var(--color-warm);
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-xxs);
+  padding-left: 5px;
 }
 
 /* Support lanscape screen*/

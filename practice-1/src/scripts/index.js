@@ -92,3 +92,46 @@ const staticData = {
 		}
 	]
 };
+
+//Function show error messages below inputs
+function showError(input, messages) {
+	const existingError = input.nextElementSibling;
+	if (existingError && existingError.classList.contains('error-message')) {
+		existingError.remove();
+	}
+
+	const error = document.createElement('span');
+	error.className = 'error-message';
+	error.textContent = messages;
+	input.insertAdjacentElement('afterend', error);
+}
+
+//Clear all error messages
+function clearError(form) {
+	const errors = form.querySelectorAll('.error-message');
+	errors.forEach(error => error.remove());
+}
+
+//Validate function for the add product form
+function validateAddProductForm(event) {
+	event.preventDefault();
+
+	const imageURLInput = document.getElementById('chooseFile');
+	clearError(event.target);
+
+	let isValid = true;
+
+	const imageURL = imageURLInput.value.trim();
+	if (!imageURL || !/^https?:\/\/.+\.(png|jpg|jpeg)$/i.test(imageURL)) {
+		showError(imageURLInput, "Image URL must be valid and in PNG, JPEG, or JPG format.")
+		isValid = false;
+	}
+
+	if (isValid) {
+		alert('Product added successfully!');
+		location.reload();
+	}
+}
+
+const form = document.querySelector('.add-form');
+form.addEventListener('submit', validateAddProductForm);
