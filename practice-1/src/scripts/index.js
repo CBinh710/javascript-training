@@ -93,36 +93,46 @@ const staticData = {
 	]
 };
 
-//Function show error messages below inputs
+/**
+	This function will create an fake element to display error without using directly HTML element
+	nextElementSibling: Return the HTML content of the next sibling
+	insertAdjacentHTML('afterend', `...`): inserts HTML code into a specified position.
+ */
 function showError(input, messages) {
 	const existingError = input.nextElementSibling;
+	
 	if (existingError && existingError.classList.contains('error-message')) {
 		existingError.remove();
 	}
 
-	const error = document.createElement('span');
-	error.className = 'error-message';
-	error.textContent = messages;
-	input.insertAdjacentElement('afterend', error);
+	input.insertAdjacentHTML('afterend', `<span class="error-message">${messages}</span>`);
 }
 
 //Clear all error messages
 function clearError(form) {
 	const errors = form.querySelectorAll('.error-message');
+	
 	errors.forEach(error => error.remove());
 }
 
-//Validate function for the add product form
+/**
+	This function will validate input imported
+ */
+
 function validateAddProductForm(event) {
 	event.preventDefault();
 
 	const imageURLInput = document.getElementById('chooseFile');
+	
 	clearError(event.target);
 
 	let isValid = true;
 
+	//Validate imageURL 
 	const imageURL = imageURLInput.value.trim();
-	if (!imageURL || !/^https?:\/\/.+\.(png|jpg|jpeg)$/i.test(imageURL)) {
+	const validImageURL = /^https?:\/\/.+\.(png|jpg|jpeg)$/i.test(imageURL);
+
+	if (!imageURL || !validImageURL) {
 		showError(imageURLInput, "Image URL must be valid and in PNG, JPEG, or JPG format.")
 		isValid = false;
 	}
@@ -134,4 +144,5 @@ function validateAddProductForm(event) {
 }
 
 const form = document.querySelector('.add-form');
+
 form.addEventListener('submit', validateAddProductForm);
