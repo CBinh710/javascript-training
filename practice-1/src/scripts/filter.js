@@ -3,10 +3,24 @@ document.addEventListener('DOMContentLoaded', function () {
   const filterIcon = document.getElementById('filter');
   const filterForm = document.getElementById('filter-form');
   const closeButton = document.getElementById('close-filter-icon');
-
+  const addProduct = document.getElementById('add-product');
+  const displayAddForm = document.getElementById('add-product-container');
+  const cancelButton = document.getElementById('btn-cancel');
   function toggleBodyScroll(enable) {
     document.body.style.overflow = enable ? 'auto' : 'hidden';
   }
+
+  addProduct.addEventListener('click', function () {
+    displayAddForm.classList.remove('hidden');
+    displayAddForm.classList.add('flex');
+    toggleBodyScroll(false);
+  });
+
+  cancelButton.addEventListener('click', function () {
+    displayAddForm.classList.remove('flex');
+    displayAddForm.classList.add('hidden');
+    toggleBodyScroll(true);
+  });
 
   filterIcon.addEventListener('click', function () {
     filterForm.classList.remove('hidden');
@@ -21,13 +35,14 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   window.addEventListener('click', function (event) {
-    if (event.target === filterForm) {
+    if (event.target === filterForm || event.target === displayAddForm) {
       filterForm.classList.add('hidden');
       filterForm.classList.remove('flex');
+      displayAddForm.classList.remove('flex');
+      displayAddForm.classList.add('hidden');
       toggleBodyScroll(true);
     }
   });
-
 
   window.addEventListener('resize', function () {
     if (window.innerWidth >= 1440) {
@@ -57,3 +72,4 @@ slider.oninput = function() {
   valPercent = (this.value/slider.max)*100;
   slider.style.background = `linear-gradient(to right, #000 ${valPercent}%, #f7f5f5e5 ${valPercent}%)`;
 }
+  
