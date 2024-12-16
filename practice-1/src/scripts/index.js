@@ -7,7 +7,7 @@ const staticData = {
 			price: 290,
 			discount: 10,
 			color: ['pink', 'blue', 'skyblue'],
-			size: ['Small', 'Medium', 'Large', 'X-Large'],
+			size: ['s', 'm', 'l', 'xl'],
 			description: 'A must-have for days on the go, this adidas juniors hoodie is made from soft fleece to keep you comfortable wherever you go. Ribbed cuffs add comfort and a zip down the front lets you adjust the amount of coverage.'	
 		},
 		{
@@ -17,7 +17,7 @@ const staticData = {
 			price: 190,
 			discount: 15,
 			color: ['pink', 'blue', 'skyblue'],
-			size: ['XX-Small', 'Medium', 'Large'],
+			size: ['xxs', 'm', 'l'],
 			description: 'A must-have for days on the go, this adidas juniors hoodie is made from soft fleece to keep you comfortable wherever you go. Ribbed cuffs add comfort and a zip down the front lets you adjust the amount of coverage.'	
 		},
 		{
@@ -27,7 +27,7 @@ const staticData = {
 			price: 3900,
 			discount: 30,
 			color: ['orange', 'black', 'green'],
-			size: ['XX-Small', 'Large', 'X-Large'],
+			size: ['xxs', 'l', 'xl'],
 			description: 'A must-have for days on the go, this adidas juniors hoodie is made from soft fleece to keep you comfortable wherever you go. Ribbed cuffs add comfort and a zip down the front lets you adjust the amount of coverage.'	
 		},
 		{
@@ -37,7 +37,7 @@ const staticData = {
 			price: 1900,
 			discount: 20,
 			color: ['gold', 'blue', 'green'],
-			size: ['X-Small', 'Medium', 'XXX-Large'],
+			size: ['xs', 'm', 'xxxl'],
 			description: 'A must-have for days on the go, this adidas juniors hoodie is made from soft fleece to keep you comfortable wherever you go. Ribbed cuffs add comfort and a zip down the front lets you adjust the amount of coverage.'	
 		},
 		{
@@ -47,7 +47,7 @@ const staticData = {
 			price: 650,
 			discount: 50,
 			color: ['gold', 'pink', 'green'],
-			size: ['X-Small', 'Medium', 'Large', 'X-Large'],
+			size: ['xs', 'm', 'l', 'xl'],
 			description: 'A must-have for days on the go, this adidas juniors hoodie is made from soft fleece to keep you comfortable wherever you go. Ribbed cuffs add comfort and a zip down the front lets you adjust the amount of coverage.'	
 		},
 		{
@@ -57,7 +57,7 @@ const staticData = {
 			price: 1900,
 			discount: 30,
 			color: ['gold', 'black', 'skyblue'],
-			size: ['XX-Small', 'Large', 'X-Large'],
+			size: ['xxs', 'l', 'xl'],
 			description: 'A must-have for days on the go, this adidas juniors hoodie is made from soft fleece to keep you comfortable wherever you go. Ribbed cuffs add comfort and a zip down the front lets you adjust the amount of coverage.'	
 		},
 		{
@@ -67,7 +67,7 @@ const staticData = {
 			price: 50,
 			discount: 40,
 			color: ['gold', 'black', 'skyblue'],
-			size: ['Medium', 'Large', 'X-Large'],
+			size: ['m', 'l', 'xl'],
 			description: 'A must-have for days on the go, this adidas juniors hoodie is made from soft fleece to keep you comfortable wherever you go. Ribbed cuffs add comfort and a zip down the front lets you adjust the amount of coverage.'	
 		},
 		{
@@ -77,7 +77,7 @@ const staticData = {
 			price: 2000,
 			discount: 10,
 			color: ['violet', 'blue', 'skyblue'],
-			size: ['Small', 'Medium', 'X-Large', 'XX-Large'],
+			size: ['s', 'm', 'xl', 'xxl'],
 			description: 'A must-have for days on the go, this adidas juniors hoodie is made from soft fleece to keep you comfortable wherever you go. Ribbed cuffs add comfort and a zip down the front lets you adjust the amount of coverage.'	
 		},
 		{
@@ -87,7 +87,7 @@ const staticData = {
 			price: 1900,
 			discount: 24,
 			color: ['violet', 'blue', 'skyblue'],
-			size: ['Small', 'Medium', 'Large', 'X-Large'],
+			size: ['s', 'm', 'l', 'xl'],
 			description: 'A must-have for days on the go, this adidas juniors hoodie is made from soft fleece to keep you comfortable wherever you go. Ribbed cuffs add comfort and a zip down the front lets you adjust the amount of coverage.'	
 		}
 	]
