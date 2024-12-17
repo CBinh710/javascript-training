@@ -100,8 +100,8 @@ const staticData = {
  */
 function showError(input, messages) {
 	const existingError = input.nextElementSibling;
-	
-	if (existingError && existingError.classList.contains('error-message')) {
+
+	if (existingError && existingError.classList.contains('error-message') ) {
 		existingError.remove();
 	}
 
@@ -111,9 +111,20 @@ function showError(input, messages) {
 //Clear all error messages
 function clearError(form) {
 	const errors = form.querySelectorAll('.error-message');
-	
-	errors.forEach(error => error.remove());
+
+	errors.forEach(error => error.remove()); 
 }
+
+//Add event for cancel button
+const cancelButton = document.getElementById('btnCancel');
+
+cancelButton.addEventListener('click', function () {
+	// Clear all error message
+	clearError(form);
+
+	//Reset form
+	form.reset();
+});
 
 /**
 	This function will validate input imported
@@ -142,6 +153,7 @@ function validateAddProductForm(event) {
 		location.reload();
 	}
 }
+
 
 const form = document.querySelector('.add-form');
 

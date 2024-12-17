@@ -1,11 +1,11 @@
 //Handles for responsive of filter
 document.addEventListener('DOMContentLoaded', function () {
   const filterIcon = document.getElementById('filter');
-  const filterForm = document.getElementById('filter-form');
-  const closeButton = document.getElementById('close-filter-icon');
-  const addProduct = document.getElementById('add-product');
-  const displayAddForm = document.getElementById('add-product-container');
-  const cancelButton = document.getElementById('btn-cancel');
+  const filterForm = document.getElementById('filterForm');
+  const closeButton = document.getElementById('closeFilterIcon');
+  const addProduct = document.getElementById('addProduct');
+  const displayAddForm = document.getElementById('addProductContainer');
+  const cancelButton = document.getElementById('btnCancel');
   function toggleBodyScroll(enable) {
     document.body.style.overflow = enable ? 'auto' : 'hidden';
   }
@@ -52,8 +52,8 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 //Handles for slider bar in mobile screen
-const sliderSmall = document.getElementById("slider-range-small");
-const outputSmall = document.getElementById("slider-price-small");
+const sliderSmall = document.getElementById("sliderRangeSmall");
+const outputSmall = document.getElementById("sliderPriceSmall");
 outputSmall.innerHTML = sliderSmall.value;
 
 sliderSmall.oninput = function() {
@@ -63,8 +63,8 @@ sliderSmall.oninput = function() {
 }
 
 //Handles for slider bar in desktop screen
-const slider = document.getElementById("slider-range");
-const output = document.getElementById("slider-price");
+const slider = document.getElementById("sliderRange");
+const output = document.getElementById("sliderPrice");
 output.innerHTML = slider.value;
 
 slider.oninput = function() {
