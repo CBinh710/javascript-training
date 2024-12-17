@@ -108,11 +108,6 @@ function clearError(form) {
 	errors.forEach(error => error.innerHTML = '');
 }
 
-/**
- * Function to validate the 'Add Product' form
- * @param {Event} event - The submit event triggered by the form
- */
-
 function validateAddProductForm(event) {
 	// Prevent the default form submission behavior
 	event.preventDefault();
@@ -120,24 +115,29 @@ function validateAddProductForm(event) {
 	// Get the image URL input field and error display element
 	const imageError = document.querySelector('.imageError');
 	const imageURLInput = document.querySelector('.chooseFile');
-	// Flag to track whether the form is valid
-	let isValid = true;
-
+	
 	// Validate the Image URL field
-	const imageURL = imageURLInput.value.trim(); // Trim whitespace from the input
-	// Regular expression to check for valid image URLs ending with png, jpg, or jpeg
-	const VALIDURL = /^https?:\/\/.+\.(png|jpg|jpeg)$/i.test(imageURL);
+	const isValid = validateImageURL(imageURLInput.value);
 
-	// Display error message if the URL is empty or invalid
-	if (!imageURL || !VALIDURL) {
-		imageError.innerHTML = "Image URL must be valid and in PNG, JPEG, or JPG format.";
-		isValid = false; // Mark form as invalid
+	// If invalid, display the error
+	if (!isValid) {
+		displayImageError(imageError);
+	} else {
+		// If all fields pass validation, show success message
+		alert('Product added successfully!');
 	}
+}
 
-	// If all fields pass validation
-	if (isValid) {
-		alert('Product added successfully!'); // Show success message
-	}
+// Function to validate the Image URL
+function validateImageURL(imageURL) {
+	const trimmedURL = imageURL.trim(); // Trim whitespace from the input
+	const VALIDURL = /^https?:\/\/.+\.(png|jpg|jpeg)$/i.test(trimmedURL);
+	return !!trimmedURL && VALIDURL;
+}
+
+// Function to display the error message
+function displayImageError(imageError) {
+	imageError.innerHTML = "Image URL must be valid and in PNG, JPEG, or JPG format.";
 }
 
 // Add a 'submit' event listener to the form
