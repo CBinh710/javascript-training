@@ -108,7 +108,7 @@ function clearError(form) {
 	errors.forEach(error => error.innerHTML = '');
 }
 
-function validateAddProductForm(event) {
+const validateAddProductForm = (event) => {
 	// Prevent the default form submission behavior
 	event.preventDefault();
 
@@ -129,14 +129,14 @@ function validateAddProductForm(event) {
 }
 
 // Function to validate the Image URL
-function validateImageURL(imageURL) {
+const validateImageURL = (imageURL) => {
 	const trimmedURL = imageURL.trim(); // Trim whitespace from the input
 	const VALIDURL = /^https?:\/\/.+\.(png|jpg|jpeg)$/i.test(trimmedURL);
 	return !!trimmedURL && VALIDURL;
 }
 
 // Function to display the error message
-function displayImageError(imageError) {
+const displayImageError = (imageError) => {
 	imageError.innerHTML = "Image URL must be valid and in PNG, JPEG, or JPG format.";
 }
 
