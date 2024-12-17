@@ -4,6 +4,7 @@ const closeButton = document.getElementById('closeFilterIcon');
 const addProduct = document.getElementById('addProduct');
 const displayAddForm = document.getElementById('addProductContainer');
 const cancelButton = document.getElementById('btnCancel');
+const form = document.querySelector('.add-form');
 
 // Function to clear all error messages in the form
 function clearError(form) {

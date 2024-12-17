@@ -94,8 +94,6 @@ const staticData = {
 	]
 };
 
-const form = document.querySelector('.add-form');
-
 /**
  * Function to validate the 'Add Product' form
  * @param {Event} event - The submit event triggered by the form
