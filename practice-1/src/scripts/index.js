@@ -99,39 +99,28 @@ const staticData = {
 		}
 	]
 };
-// Function to clear all error messages in the form
+
 // Function to clear all error messages
 function clearError(form) {
-  // Select all elements with the class 'error-message' inside the form
   const errors = form.querySelectorAll('.error-message');
-
-  // Loop through each error element and clear its content
   errors.forEach(error => error.innerHTML = '');
 }
 
 const validateAddProductForm = (event) => {
-  // Prevent the default form submission behavior
   event.preventDefault();
 
-  // Initialize the result object
   const data = {
     is_valid: true,
     errors: {}
   };
 
-  // Get the image URL input field and error display element
   const imageError = document.querySelector('.imageError');
   const imageURLInput = document.querySelector('.chooseFile');
 
   // Validate the Image URL field
-  const isValid = validateImageURL(imageURLInput.value);
-
-  // If the Image URL is invalid, update the result object
-  if (!isValid) {
+  if (!validateImageURL(imageURLInput.value)) {
     data.is_valid = false;
     data.errors.imageURL = "Image URL must be valid and in PNG, JPEG, or JPG format.";
-    // Display error message on the UI
-    displayImageError(imageError);
   }
 
   return data;
@@ -139,32 +128,22 @@ const validateAddProductForm = (event) => {
 
 // Function to validate the Image URL
 const validateImageURL = (imageURL) => {
-  const trimmedURL = imageURL.trim(); // Trim whitespace from the input
-  const VALIDURL = /^https?:\/\/.+\.(png|jpg|jpeg)$/i.test(trimmedURL);
-  return !!trimmedURL && VALIDURL;
+  const trimmedURL = imageURL.trim();
+  return /^https?:\/\/.+\.(png|jpg|jpeg)$/i.test(trimmedURL);
 }
 
-// Function to display the error message
-const displayImageError = (imageError) => {
-  imageError.innerHTML = "Image URL must be valid and in PNG, JPEG, or JPG format.";
-}
-
-// Add a 'submit' event listener to the form
+// Submit event listener
 form.addEventListener('submit', (event) => {
-  // Clear any existing error messages
-  clearError(event.target);
+  clearError(event.target); // Clear previous errors
 
-  // Get the result of form validation
-  const data_valid = validateAddProductForm(event);
+  const validationResult = validateAddProductForm(event);
 
-  if (data_valid.is_valid) {
-    // Handle success (e.g., show success message or submit form)
-    alert('Product added successfully!');
-  } else {
-    // Handle displaying error messages for each field
-    if (data_valid.errors.imageURL) {
-      document.querySelector('.imageError').innerHTML = data_valid.errors.imageURL;
+  if (!validationResult.is_valid) {
+    if (validationResult.errors.imageURL) {
+      document.querySelector('.imageError').innerHTML = validationResult.errors.imageURL;
     }
+  } else {
+    alert('Product added successfully!');
   }
 });
 
