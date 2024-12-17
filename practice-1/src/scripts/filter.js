@@ -15,6 +15,9 @@ function clearError(form) {
 	errors.forEach(error => error.innerHTML = '');
 }
 
+// Add a 'submit' event listener to the form
+form.addEventListener('submit', validateAddProductForm);
+
 function toggleBodyScroll(enable) {
   document.body.style.overflow = enable ? 'auto' : 'hidden';
 }

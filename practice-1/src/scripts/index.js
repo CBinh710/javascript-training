@@ -127,6 +127,3 @@ function validateAddProductForm(event) {
 		alert('Product added successfully!'); // Show success message
 	}
 }
-
-// Add a 'submit' event listener to the form
-form.addEventListener('submit', validateAddProductForm);
