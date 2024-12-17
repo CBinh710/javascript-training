@@ -109,18 +109,12 @@ function clearError(form) {
 cancelButton.addEventListener('click', () => {
 	// Clear all error message
 	clearError(form);
-
-	//Reset form
-	form.reset();
 });
 
 // Add event listener for the window
 window.addEventListener('click', () => {
 	// Clear all error message
 	clearError(form);
-
-	//Reset form
-	form.reset();
 });
 
 /**
@@ -133,30 +127,28 @@ function validateAddProductForm(event) {
 	event.preventDefault();
 
 	// Get the image URL input field and error display element
-	const imageURLInput = document.getElementById('chooseFile');
 	const imageError = document.getElementById('imageError');
-	
-	// Clear any existing error messages
-	clearError(event.target);
-
+	const imageURLInput = document.getElementById('chooseFile');
 	// Flag to track whether the form is valid
 	let isValid = true;
 
-	// Validate the Image URL field 
-	const imageURL = imageURLInput.value.trim();// Trim whitespace from the input
+	// Validate the Image URL field
+	const imageURL = imageURLInput.value.trim(); // Trim whitespace from the input
 	// Regular expression to check for valid image URLs ending with png, jpg, or jpeg
 	const VALIDURL = /^https?:\/\/.+\.(png|jpg|jpeg)$/i.test(imageURL);
 
 	// Display error message if the URL is empty or invalid
 	if (!imageURL || !VALIDURL) {
 		imageError.innerHTML = "Image URL must be valid and in PNG, JPEG, or JPG format.";
-		isValid = false;// Mark form as invalid
+		isValid = false; // Mark form as invalid
+	} else {
+		isValid = true;
 	}
 
 	// If all fields pass validation
 	if (isValid) {
-		alert('Product added successfully!');
-		location.reload();
+		alert('Product added successfully!'); // Show success message
+		location.reload(); // Reload the page to reset the form
 	}
 }
 
