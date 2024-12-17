@@ -1,3 +1,4 @@
+// Static data containing a list of products
 const staticData = {
 	products: [
 		{
@@ -93,32 +94,28 @@ const staticData = {
 	]
 };
 
-/**
-	This function will create an fake element to display error without using directly HTML element
-	nextElementSibling: Return the HTML content of the next sibling
-	insertAdjacentHTML('afterend', `...`): inserts HTML code into a specified position.
- */
-function showError(input, messages) {
-	const existingError = input.nextElementSibling;
-
-	if (existingError && existingError.classList.contains('error-message') ) {
-		existingError.remove();
-	}
-
-	input.insertAdjacentHTML('afterend', `<span class="error-message">${messages}</span>`);
-}
-
-//Clear all error messages
+const cancelButton = document.getElementById('btnCancel');
+const form = document.querySelector('.add-form');
+// Function to clear all error messages in the form
 function clearError(form) {
+	// Select all elements with the class 'error-message' inside the form
 	const errors = form.querySelectorAll('.error-message');
 
-	errors.forEach(error => error.remove()); 
+	// Loop through each error element and clear its content
+	errors.forEach(error => error.innerHTML = ''); 
 }
 
-//Add event for cancel button
-const cancelButton = document.getElementById('btnCancel');
+// Add event listener for the 'Cancel' button
+cancelButton.addEventListener('click', () => {
+	// Clear all error message
+	clearError(form);
 
-cancelButton.addEventListener('click', function () {
+	//Reset form
+	form.reset();
+});
+
+// Add event listener for the window
+window.addEventListener('click', () => {
 	// Clear all error message
 	clearError(form);
 
@@ -127,34 +124,41 @@ cancelButton.addEventListener('click', function () {
 });
 
 /**
-	This function will validate input imported
+ * Function to validate the 'Add Product' form
+ * @param {Event} event - The submit event triggered by the form
  */
 
 function validateAddProductForm(event) {
+	// Prevent the default form submission behavior
 	event.preventDefault();
 
+	// Get the image URL input field and error display element
 	const imageURLInput = document.getElementById('chooseFile');
+	const imageError = document.getElementById('imageError');
 	
+	// Clear any existing error messages
 	clearError(event.target);
 
+	// Flag to track whether the form is valid
 	let isValid = true;
 
-	//Validate imageURL 
-	const imageURL = imageURLInput.value.trim();
-	const validImageURL = /^https?:\/\/.+\.(png|jpg|jpeg)$/i.test(imageURL);
+	// Validate the Image URL field 
+	const imageURL = imageURLInput.value.trim();// Trim whitespace from the input
+	// Regular expression to check for valid image URLs ending with png, jpg, or jpeg
+	const VALIDURL = /^https?:\/\/.+\.(png|jpg|jpeg)$/i.test(imageURL);
 
-	if (!imageURL || !validImageURL) {
-		showError(imageURLInput, "Image URL must be valid and in PNG, JPEG, or JPG format.")
-		isValid = false;
+	// Display error message if the URL is empty or invalid
+	if (!imageURL || !VALIDURL) {
+		imageError.innerHTML = "Image URL must be valid and in PNG, JPEG, or JPG format.";
+		isValid = false;// Mark form as invalid
 	}
 
+	// If all fields pass validation
 	if (isValid) {
 		alert('Product added successfully!');
 		location.reload();
 	}
 }
 
-
-const form = document.querySelector('.add-form');
-
+// Add a 'submit' event listener to the form
 form.addEventListener('submit', validateAddProductForm);

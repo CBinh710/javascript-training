@@ -649,10 +649,14 @@
         <form action="" class="add-form">
           <h3 class="add-form-heading">Add new product</h3>
           <input class="input add-form-input product-name-input" type="text" placeholder="Import image URL" name="chooseFile" id="chooseFile">
+          <span id="imageError" class="error-message"></span>
           <input class="input add-form-input product-name-input" type="text" placeholder="Product Name" name="product name" value="">
+          <span class="error-message"></span>
           <div class="flex space-between product-cost-input">
             <input class="input add-form-input" type="text" placeholder="Price ($)" name="price" value="">
+            <span class="error-message"></span>
             <input class="input add-form-input" type="text" placeholder="Discount (%)" name="discount" value="">
+            <span class="error-message"></span>
           </div>
 
           <div class="flex add-form-color-container">
@@ -709,6 +713,7 @@
               </label>
             </div>
           </div>
+          <span class="error-message"></span>
 
           <div class="filter-by-size flex add-form-sizes-container">
             <h4 class="add-form-sub-heading">Size:</h4>
@@ -759,11 +764,13 @@
               </label>
             </div>
           </div>
+          <span class="error-message"></span>
 
           <div class="add-product-description">
             <label for="desciptionDetail" class="desciption-heading">Description Detail</label><br/>
             <textarea class="description-text" id="desciptionDetail" placeholder="Submit Your Order Information - Item Name, Decoration Size, Quantity, Due Date and any other details"></textarea>
           </div>
+          <span class="error-message"></span>
 
           <button id="btnSubmit" class="btn btn-submit btn-primary flex" type="submit">Submit</button>
           <button id="btnCancel" class="btn btn-submit btn-primary flex" type="button">Cancel</button>
