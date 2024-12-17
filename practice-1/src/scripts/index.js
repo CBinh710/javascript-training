@@ -95,14 +95,6 @@ const staticData = {
 };
 
 const form = document.querySelector('.add-form');
-// Function to clear all error messages in the form
-function clearError(form) {
-	// Select all elements with the class 'error-message' inside the form
-	const errors = form.querySelectorAll('.error-message');
-
-	// Loop through each error element and clear its content
-	errors.forEach(error => error.innerHTML = '');
-}
 
 /**
  * Function to validate the 'Add Product' form

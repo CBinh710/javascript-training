@@ -5,6 +5,15 @@ const addProduct = document.getElementById('addProduct');
 const displayAddForm = document.getElementById('addProductContainer');
 const cancelButton = document.getElementById('btnCancel');
 
+// Function to clear all error messages in the form
+function clearError(form) {
+	// Select all elements with the class 'error-message' inside the form
+	const errors = form.querySelectorAll('.error-message');
+
+	// Loop through each error element and clear its content
+	errors.forEach(error => error.innerHTML = '');
+}
+
 function toggleBodyScroll(enable) {
   document.body.style.overflow = enable ? 'auto' : 'hidden';
 }
