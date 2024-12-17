@@ -72,4 +72,3 @@ slider.oninput = function() {
   valPercent = (this.value/slider.max)*100;
   slider.style.background = `linear-gradient(to right, #000 ${valPercent}%, #f7f5f5e5 ${valPercent}%)`;
 }
-  

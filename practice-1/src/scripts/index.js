@@ -127,8 +127,8 @@ function validateAddProductForm(event) {
 	event.preventDefault();
 
 	// Get the image URL input field and error display element
-	const imageError = document.getElementById('imageError');
-	const imageURLInput = document.getElementById('chooseFile');
+	const imageError = document.querySelector('.imageError');
+	const imageURLInput = document.querySelector('.chooseFile');
 	// Flag to track whether the form is valid
 	let isValid = true;
 
@@ -148,7 +148,6 @@ function validateAddProductForm(event) {
 	// If all fields pass validation
 	if (isValid) {
 		alert('Product added successfully!'); // Show success message
-		location.reload(); // Reload the page to reset the form
 	}
 }
 
