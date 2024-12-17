@@ -114,15 +114,19 @@ const validateAddProductForm = (event) => {
     errors: {}
   };
 
-  // Get all input fields and error elements
-  const [imageURLInput] = document.querySelectorAll('.chooseFile');
-  const [imageError] = document.querySelectorAll('.imageError');
+  // Query all input fields and error elements
+  const inputs = document.querySelectorAll('.chooseFile');
+  const errors = document.querySelectorAll('.imageError');
 
-  // Validate the Image URL field
-  if (!validateImageURL(imageURLInput.value)) {
-    data.is_valid = false;
-    data.errors.imageURL = "Image URL must be valid and in PNG, JPEG, or JPG format.";
-  }
+  // Use forEach to iterate through the NodeList
+  inputs.forEach((input, index) => {
+    if (!validateImageURL(input.value)) {
+      data.is_valid = false;
+
+      // Display the corresponding error message
+      errors[index].innerHTML = "Image URL must be valid and in PNG, JPEG, or JPG format.";
+    }
+  });
 
   return data;
 }
@@ -140,10 +144,7 @@ form.addEventListener('submit', (event) => {
   const validationResult = validateAddProductForm(event);
 
   if (!validationResult.is_valid) {
-    if (validationResult.errors.imageURL) {
-      const [imageError] = document.querySelectorAll('.imageError');
-      imageError.innerHTML = validationResult.errors.imageURL;
-    }
+    // Handle displaying error messages (already handled in the loop above)
   } else {
     alert('Product added successfully!');
   }
