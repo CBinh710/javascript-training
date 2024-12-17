@@ -100,51 +100,73 @@ const staticData = {
 	]
 };
 // Function to clear all error messages in the form
+// Function to clear all error messages
 function clearError(form) {
-	// Select all elements with the class 'error-message' inside the form
-	const errors = form.querySelectorAll('.error-message');
+  // Select all elements with the class 'error-message' inside the form
+  const errors = form.querySelectorAll('.error-message');
 
-	// Loop through each error element and clear its content
-	errors.forEach(error => error.innerHTML = '');
+  // Loop through each error element and clear its content
+  errors.forEach(error => error.innerHTML = '');
 }
 
 const validateAddProductForm = (event) => {
-	// Prevent the default form submission behavior
-	event.preventDefault();
+  // Prevent the default form submission behavior
+  event.preventDefault();
 
-	// Get the image URL input field and error display element
-	const imageError = document.querySelector('.imageError');
-	const imageURLInput = document.querySelector('.chooseFile');
-	
-	// Validate the Image URL field
-	const isValid = validateImageURL(imageURLInput.value);
+  // Initialize the result object
+  const data = {
+    is_valid: true,
+    errors: {}
+  };
 
-	// Return the result to indicate if it's valid or invalid
-	if (!isValid) {
-		// If invalid, display the error
-		displayImageError(imageError);
-		return 'INVALID'; // Return INVALID if validation fails
-	} else {
-		// If valid, show success message
-		alert('Product added successfully!');
-		return 'VALID'; // Return VALID if validation passes
-	}
+  // Get the image URL input field and error display element
+  const imageError = document.querySelector('.imageError');
+  const imageURLInput = document.querySelector('.chooseFile');
+
+  // Validate the Image URL field
+  const isValid = validateImageURL(imageURLInput.value);
+
+  // If the Image URL is invalid, update the result object
+  if (!isValid) {
+    data.is_valid = false;
+    data.errors.imageURL = "Image URL must be valid and in PNG, JPEG, or JPG format.";
+    // Display error message on the UI
+    displayImageError(imageError);
+  }
+
+  return data;
 }
 
 // Function to validate the Image URL
 const validateImageURL = (imageURL) => {
-	const trimmedURL = imageURL.trim(); // Trim whitespace from the input
-	const VALIDURL = /^https?:\/\/.+\.(png|jpg|jpeg)$/i.test(trimmedURL);
-	return !!trimmedURL && VALIDURL;
+  const trimmedURL = imageURL.trim(); // Trim whitespace from the input
+  const VALIDURL = /^https?:\/\/.+\.(png|jpg|jpeg)$/i.test(trimmedURL);
+  return !!trimmedURL && VALIDURL;
 }
 
 // Function to display the error message
 const displayImageError = (imageError) => {
-	imageError.innerHTML = "Image URL must be valid and in PNG, JPEG, or JPG format.";
+  imageError.innerHTML = "Image URL must be valid and in PNG, JPEG, or JPG format.";
 }
 
 // Add a 'submit' event listener to the form
-form.addEventListener('submit', validateAddProductForm);
+form.addEventListener('submit', (event) => {
+  // Clear any existing error messages
+  clearError(event.target);
+
+  // Get the result of form validation
+  const data_valid = validateAddProductForm(event);
+
+  if (data_valid.is_valid) {
+    // Handle success (e.g., show success message or submit form)
+    alert('Product added successfully!');
+  } else {
+    // Handle displaying error messages for each field
+    if (data_valid.errors.imageURL) {
+      document.querySelector('.imageError').innerHTML = data_valid.errors.imageURL;
+    }
+  }
+});
 
 function toggleBodyScroll(enable) {
   document.body.style.overflow = enable ? 'auto' : 'hidden';
