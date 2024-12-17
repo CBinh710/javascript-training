@@ -132,8 +132,6 @@ function validateAddProductForm(event) {
 	if (!imageURL || !VALIDURL) {
 		imageError.innerHTML = "Image URL must be valid and in PNG, JPEG, or JPG format.";
 		isValid = false; // Mark form as invalid
-	} else {
-		isValid = true;
 	}
 
 	// If all fields pass validation
@@ -149,13 +147,13 @@ function toggleBodyScroll(enable) {
   document.body.style.overflow = enable ? 'auto' : 'hidden';
 }
 
-addProduct.addEventListener('click', function () {
+addProduct.addEventListener('click', () => {
   displayAddForm.classList.remove('hidden');
   displayAddForm.classList.add('flex');
   toggleBodyScroll(false);
 });
 
-cancelButton.addEventListener('click', function () {
+cancelButton.addEventListener('click', () => {
   displayAddForm.classList.remove('flex');
   displayAddForm.classList.add('hidden');
   toggleBodyScroll(true);
@@ -163,19 +161,19 @@ cancelButton.addEventListener('click', function () {
 	form.reset();
 });
 
-filterIcon.addEventListener('click', function () {
+filterIcon.addEventListener('click', () => {
   filterForm.classList.remove('hidden');
   filterForm.classList.add('flex');
   toggleBodyScroll(false);
 });
 
-closeButton.addEventListener('click', function () {
+closeButton.addEventListener('click', () => {
   filterForm.classList.remove('flex');
   filterForm.classList.add('hidden');
   toggleBodyScroll(true);
 });
 
-window.addEventListener('click', function (event) {
+window.addEventListener('click', (event) => {
   if (event.target === filterForm || event.target === displayAddForm) {
     filterForm.classList.add('hidden');
     filterForm.classList.remove('flex');
@@ -187,7 +185,7 @@ window.addEventListener('click', function (event) {
   }
 });
 
-window.addEventListener('resize', function () {
+window.addEventListener('resize', () => {
   if (window.innerWidth >= 1440) {
     toggleBodyScroll(true);
   }
@@ -198,7 +196,7 @@ const sliderSmall = document.getElementById("sliderRangeSmall");
 const outputSmall = document.getElementById("sliderPriceSmall");
 outputSmall.innerHTML = sliderSmall.value;
 
-sliderSmall.oninput = function () {
+sliderSmall.oninput = () => {
   outputSmall.innerHTML = this.value;
   valPercentSmall = (this.value / sliderSmall.max) * 100;
   sliderSmall.style.background = `linear-gradient(to right, #000 ${valPercentSmall}%, #f7f5f5e5 ${valPercentSmall}%)`;
@@ -209,7 +207,7 @@ const slider = document.getElementById("sliderRange");
 const output = document.getElementById("sliderPrice");
 output.innerHTML = slider.value;
 
-slider.oninput = function () {
+slider.oninput = () => {
   output.innerHTML = this.value;
   valPercent = (this.value / slider.max) * 100;
   slider.style.background = `linear-gradient(to right, #000 ${valPercent}%, #f7f5f5e5 ${valPercent}%)`;
