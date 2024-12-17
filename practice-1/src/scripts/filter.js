@@ -1,45 +1,39 @@
 //Handles for responsive of filter
-window.onload = function() {
+document.addEventListener('DOMContentLoaded', function () {
   const filterIcon = document.getElementById('filter');
   const filterForm = document.getElementById('filterForm');
   const closeButton = document.getElementById('closeFilterIcon');
   const addProduct = document.getElementById('addProduct');
   const displayAddForm = document.getElementById('addProductContainer');
   const cancelButton = document.getElementById('btnCancel');
-  
   function toggleBodyScroll(enable) {
     document.body.style.overflow = enable ? 'auto' : 'hidden';
   }
 
-  // Toggle add product form visibility
   addProduct.addEventListener('click', function () {
     displayAddForm.classList.remove('hidden');
     displayAddForm.classList.add('flex');
     toggleBodyScroll(false);
   });
 
-  // Cancel adding product
   cancelButton.addEventListener('click', function () {
     displayAddForm.classList.remove('flex');
     displayAddForm.classList.add('hidden');
     toggleBodyScroll(true);
   });
 
-  // Toggle filter form visibility
   filterIcon.addEventListener('click', function () {
     filterForm.classList.remove('hidden');
     filterForm.classList.add('flex');
     toggleBodyScroll(false);
   });
 
-  // Close filter form
   closeButton.addEventListener('click', function () {
     filterForm.classList.remove('flex');
     filterForm.classList.add('hidden');
     toggleBodyScroll(true);
   });
 
-  // Close forms if clicked outside
   window.addEventListener('click', function (event) {
     if (event.target === filterForm || event.target === displayAddForm) {
       filterForm.classList.add('hidden');
@@ -50,13 +44,12 @@ window.onload = function() {
     }
   });
 
-  // Handle window resize
   window.addEventListener('resize', function () {
     if (window.innerWidth >= 1440) {
       toggleBodyScroll(true);
     }
   });
-};
+});
 
 //Handles for slider bar in mobile screen
 const sliderSmall = document.getElementById("sliderRangeSmall");

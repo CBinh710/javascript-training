@@ -102,13 +102,14 @@ function clearError(form) {
 	const errors = form.querySelectorAll('.error-message');
 
 	// Loop through each error element and clear its content
-	errors.forEach(error => error.innerHTML = ''); 
+	errors.forEach(error => error.innerHTML = '');
 }
 
 // Add event listener for the 'Cancel' button
 cancelButton.addEventListener('click', () => {
 	// Clear all error message
 	clearError(form);
+	form.reset();
 });
 
 // Add event listener for the window
