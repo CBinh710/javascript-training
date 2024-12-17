@@ -15,7 +15,7 @@ const staticData = {
 			discount: 10,
 			color: ['pink', 'blue', 'skyblue'],
 			size: ['s', 'm', 'l', 'xl'],
-			description: 'A must-have for days on the go, this adidas juniors hoodie is made from soft fleece to keep you comfortable wherever you go. Ribbed cuffs add comfort and a zip down the front lets you adjust the amount of coverage.'	
+			description: 'A must-have for days on the go, this adidas juniors hoodie is made from soft fleece to keep you comfortable wherever you go. Ribbed cuffs add comfort and a zip down the front lets you adjust the amount of coverage.'
 		},
 		{
 			id: 2,
@@ -25,7 +25,7 @@ const staticData = {
 			discount: 15,
 			color: ['pink', 'blue', 'skyblue'],
 			size: ['xxs', 'm', 'l'],
-			description: 'A must-have for days on the go, this adidas juniors hoodie is made from soft fleece to keep you comfortable wherever you go. Ribbed cuffs add comfort and a zip down the front lets you adjust the amount of coverage.'	
+			description: 'A must-have for days on the go, this adidas juniors hoodie is made from soft fleece to keep you comfortable wherever you go. Ribbed cuffs add comfort and a zip down the front lets you adjust the amount of coverage.'
 		},
 		{
 			id: 3,
@@ -35,7 +35,7 @@ const staticData = {
 			discount: 30,
 			color: ['orange', 'black', 'green'],
 			size: ['xxs', 'l', 'xl'],
-			description: 'A must-have for days on the go, this adidas juniors hoodie is made from soft fleece to keep you comfortable wherever you go. Ribbed cuffs add comfort and a zip down the front lets you adjust the amount of coverage.'	
+			description: 'A must-have for days on the go, this adidas juniors hoodie is made from soft fleece to keep you comfortable wherever you go. Ribbed cuffs add comfort and a zip down the front lets you adjust the amount of coverage.'
 		},
 		{
 			id: 4,
@@ -45,7 +45,7 @@ const staticData = {
 			discount: 20,
 			color: ['gold', 'blue', 'green'],
 			size: ['xs', 'm', 'xxxl'],
-			description: 'A must-have for days on the go, this adidas juniors hoodie is made from soft fleece to keep you comfortable wherever you go. Ribbed cuffs add comfort and a zip down the front lets you adjust the amount of coverage.'	
+			description: 'A must-have for days on the go, this adidas juniors hoodie is made from soft fleece to keep you comfortable wherever you go. Ribbed cuffs add comfort and a zip down the front lets you adjust the amount of coverage.'
 		},
 		{
 			id: 5,
@@ -55,7 +55,7 @@ const staticData = {
 			discount: 50,
 			color: ['gold', 'pink', 'green'],
 			size: ['xs', 'm', 'l', 'xl'],
-			description: 'A must-have for days on the go, this adidas juniors hoodie is made from soft fleece to keep you comfortable wherever you go. Ribbed cuffs add comfort and a zip down the front lets you adjust the amount of coverage.'	
+			description: 'A must-have for days on the go, this adidas juniors hoodie is made from soft fleece to keep you comfortable wherever you go. Ribbed cuffs add comfort and a zip down the front lets you adjust the amount of coverage.'
 		},
 		{
 			id: 6,
@@ -65,7 +65,7 @@ const staticData = {
 			discount: 30,
 			color: ['gold', 'black', 'skyblue'],
 			size: ['xxs', 'l', 'xl'],
-			description: 'A must-have for days on the go, this adidas juniors hoodie is made from soft fleece to keep you comfortable wherever you go. Ribbed cuffs add comfort and a zip down the front lets you adjust the amount of coverage.'	
+			description: 'A must-have for days on the go, this adidas juniors hoodie is made from soft fleece to keep you comfortable wherever you go. Ribbed cuffs add comfort and a zip down the front lets you adjust the amount of coverage.'
 		},
 		{
 			id: 7,
@@ -75,7 +75,7 @@ const staticData = {
 			discount: 40,
 			color: ['gold', 'black', 'skyblue'],
 			size: ['m', 'l', 'xl'],
-			description: 'A must-have for days on the go, this adidas juniors hoodie is made from soft fleece to keep you comfortable wherever you go. Ribbed cuffs add comfort and a zip down the front lets you adjust the amount of coverage.'	
+			description: 'A must-have for days on the go, this adidas juniors hoodie is made from soft fleece to keep you comfortable wherever you go. Ribbed cuffs add comfort and a zip down the front lets you adjust the amount of coverage.'
 		},
 		{
 			id: 8,
@@ -85,7 +85,7 @@ const staticData = {
 			discount: 10,
 			color: ['violet', 'blue', 'skyblue'],
 			size: ['s', 'm', 'xl', 'xxl'],
-			description: 'A must-have for days on the go, this adidas juniors hoodie is made from soft fleece to keep you comfortable wherever you go. Ribbed cuffs add comfort and a zip down the front lets you adjust the amount of coverage.'	
+			description: 'A must-have for days on the go, this adidas juniors hoodie is made from soft fleece to keep you comfortable wherever you go. Ribbed cuffs add comfort and a zip down the front lets you adjust the amount of coverage.'
 		},
 		{
 			id: 9,
@@ -95,7 +95,7 @@ const staticData = {
 			discount: 24,
 			color: ['violet', 'blue', 'skyblue'],
 			size: ['s', 'm', 'l', 'xl'],
-			description: 'A must-have for days on the go, this adidas juniors hoodie is made from soft fleece to keep you comfortable wherever you go. Ribbed cuffs add comfort and a zip down the front lets you adjust the amount of coverage.'	
+			description: 'A must-have for days on the go, this adidas juniors hoodie is made from soft fleece to keep you comfortable wherever you go. Ribbed cuffs add comfort and a zip down the front lets you adjust the amount of coverage.'
 		}
 	]
 };
@@ -114,8 +114,9 @@ const validateAddProductForm = (event) => {
     errors: {}
   };
 
-  const imageError = document.querySelector('.imageError');
-  const imageURLInput = document.querySelector('.chooseFile');
+  // Get all input fields and error elements
+  const [imageURLInput] = document.querySelectorAll('.chooseFile');
+  const [imageError] = document.querySelectorAll('.imageError');
 
   // Validate the Image URL field
   if (!validateImageURL(imageURLInput.value)) {
@@ -140,7 +141,8 @@ form.addEventListener('submit', (event) => {
 
   if (!validationResult.is_valid) {
     if (validationResult.errors.imageURL) {
-      document.querySelector('.imageError').innerHTML = validationResult.errors.imageURL;
+      const [imageError] = document.querySelectorAll('.imageError');
+      imageError.innerHTML = validationResult.errors.imageURL;
     }
   } else {
     alert('Product added successfully!');
