@@ -119,12 +119,15 @@ const validateAddProductForm = (event) => {
 	// Validate the Image URL field
 	const isValid = validateImageURL(imageURLInput.value);
 
-	// If invalid, display the error
+	// Return the result to indicate if it's valid or invalid
 	if (!isValid) {
+		// If invalid, display the error
 		displayImageError(imageError);
+		return 'INVALID'; // Return INVALID if validation fails
 	} else {
-		// If all fields pass validation, show success message
+		// If valid, show success message
 		alert('Product added successfully!');
+		return 'VALID'; // Return VALID if validation passes
 	}
 }
 
