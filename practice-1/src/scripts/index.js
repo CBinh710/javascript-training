@@ -94,7 +94,6 @@ const staticData = {
 	]
 };
 
-const cancelButton = document.getElementById('btnCancel');
 const form = document.querySelector('.add-form');
 // Function to clear all error messages in the form
 function clearError(form) {
@@ -104,19 +103,6 @@ function clearError(form) {
 	// Loop through each error element and clear its content
 	errors.forEach(error => error.innerHTML = '');
 }
-
-// Add event listener for the 'Cancel' button
-cancelButton.addEventListener('click', () => {
-	// Clear all error message
-	clearError(form);
-	form.reset();
-});
-
-// Add event listener for the window
-window.addEventListener('click', () => {
-	// Clear all error message
-	clearError(form);
-});
 
 /**
  * Function to validate the 'Add Product' form
