@@ -1,10 +1,16 @@
-const filterIcon = document.getElementById('filter');
-const filterForm = document.getElementById('filterForm');
-const closeButton = document.getElementById('closeFilterIcon');
-const addProduct = document.getElementById('addProduct');
-const displayAddForm = document.getElementById('addProductContainer');
-const cancelButton = document.getElementById('btnCancel');
-const form = document.querySelector('.add-form');
+const elements = {
+  filterIcon: document.getElementById('filter'),
+  filterForm: document.getElementById('filterForm'),
+  closeButton: document.getElementById('closeFilterIcon'),
+  addProduct: document.getElementById('addProduct'),
+  displayAddForm: document.getElementById('addProductContainer'),
+  cancelButton: document.getElementById('btnCancel'),
+  form: document.querySelector('.add-form'),
+  sliderSmall: document.getElementById("sliderRangeSmall"),
+  outputSmall: document.getElementById("sliderPriceSmall"),
+  slider: document.getElementById("sliderRange"),
+  output: document.getElementById("sliderPrice")
+};
 const staticData = {
 	products: [
 		{
@@ -100,106 +106,123 @@ const staticData = {
 	]
 };
 
-// Function to clear all error messages
-function clearError(form) {
+// Clear all error messages
+const clearError = (form) => {
   const errors = form.querySelectorAll('.error-message');
-  errors.forEach(error => error.innerHTML = '');
-}
+  errors.forEach(error => (error.innerHTML = ''));
+};
 
-function getFormData(form) {
-  const formData = new FormData(form);
-  return {
-    imageURL: formData.get('chooseFile')?.trim(),
-  };
-}
+// Validate Image URL
+const validateImageURL = (imageURL) => {
+  const isValid = /^https?:\/\/.+\.(png|jpg|jpeg)$/i.test(imageURL?.trim());
+  const message = isValid ? null : 'Image URL must be a valid PNG, JPEG, or JPG.';
+  return { isValid, message };
+};
 
-function validateImageURL(imageURL) {
-  if (!/^https?:\/\/.+\.(png|jpg|jpeg)$/i.test(imageURL)) {
-    return 'Image URL must be a valid PNG, JPEG, or JPG.';
-  }
-  return null;
-}
+// Validate all fields and return errors
+const validateFields = (formData, form) => {
+  const errors = {}; // Object to store validation errors
+  const errorElements = form.querySelectorAll('.error-message'); // Get all error message elements
 
-function validateAddProductForm(form) {
-  const data = getFormData(form);
-  const errors = form.querySelectorAll('.error-message');
+  // List of validation functions for each field
+  const validationResults = [
+    { field: 'imageURL', result: validateImageURL(formData.get('chooseFile')) },
+  ];
 
-  const validations = {
-    imageURL: validateImageURL(data.imageURL),
-  };
-
-  let isValid = true;
-
-  Object.keys(validations).forEach((key, index) => {
-    if (validations[key]) {
-      isValid = false;
-      errors[index].innerHTML = validations[key];
+  // Iterate through validation results and update errors
+  validationResults.forEach(({ field, result }, index) => {
+    if (!result.isValid) {
+      errors[field] = result.message; // Store error message for the field
+      errorElements[index].innerHTML = result.message; // Display error message in the form
     }
   });
 
-  return { isValid, data };
-}
+  return errors; // Return the collected errors
+};
 
-document.querySelector('.add-form').addEventListener('submit', (event) => {
+// Main validation function
+const validateAddProductForm = (event) => {
   event.preventDefault();
 
   const form = event.target;
+  const formData = new FormData(form);
+  const data = {
+    is_valid: true,
+    errors: {},
+  };
 
-  //clear all error messages
+  // Clear previous errors
   clearError(form);
 
-  // Validate form
-  const { isValid, data } = validateAddProductForm(form);
+  // Validate fields
+  data.errors = validateFields(formData, form);
 
-  if (isValid) {
-    
-    // Reset form
-    form.reset();
+  // Check if form is valid
+  data.is_valid = Object.keys(data.errors).length === 0;
+
+  return data;
+};
+
+
+// Submit event listener
+document.querySelector('.add-form').addEventListener('submit', (event) => {
+  const validationResult = validateAddProductForm(event);
+
+  if (validationResult.is_valid) {
+    const formData = new FormData(event.target);
+    //TODO:
+    // Add product card
+
+    // Clear the form
+    event.target.reset();
     alert('Product added successfully!');
   } else {
-    console.error('Validation failed.');
+    console.error('Validation errors:', validationResult.errors);
   }
 });
+
+elements.outputSmall.innerHTML = elements.sliderSmall.value;
+elements.output.innerHTML = elements.slider.value;
 
 function toggleBodyScroll(enable) {
   document.body.style.overflow = enable ? 'auto' : 'hidden';
 }
 
-addProduct.addEventListener('click', () => {
-  displayAddForm.classList.remove('hidden');
-  displayAddForm.classList.add('flex');
+elements.addProduct.addEventListener('click', () => {
+  elements.displayAddForm.classList.remove('hidden');
+  elements.displayAddForm.classList.add('flex');
   toggleBodyScroll(false);
 });
 
-cancelButton.addEventListener('click', () => {
-  displayAddForm.classList.remove('flex');
-  displayAddForm.classList.add('hidden');
+elements.cancelButton.addEventListener('click', () => {
+  elements.displayAddForm.classList.remove('flex');
+  elements.displayAddForm.classList.add('hidden');
   toggleBodyScroll(true);
-  clearError(form);
-	form.reset();
+  clearError(elements.form);
+  elements.form.reset();
 });
 
-filterIcon.addEventListener('click', () => {
-  filterForm.classList.remove('hidden');
-  filterForm.classList.add('flex');
+elements.filterIcon.addEventListener('click', () => {
+  elements.filterForm.classList.remove('hidden');
+  elements.filterForm.classList.add('flex');
   toggleBodyScroll(false);
 });
 
-closeButton.addEventListener('click', () => {
-  filterForm.classList.remove('flex');
-  filterForm.classList.add('hidden');
+elements.closeButton.addEventListener('click', () => {
+  elements.filterForm.classList.remove('flex');
+  elements.filterForm.classList.add('hidden');
   toggleBodyScroll(true);
 });
 
 window.addEventListener('click', (event) => {
-  if (event.target === filterForm || event.target === displayAddForm) {
-    filterForm.classList.add('hidden');
-    filterForm.classList.remove('flex');
-    displayAddForm.classList.remove('flex');
-    displayAddForm.classList.add('hidden');
+  if (event.target === elements.filterForm || event.target === elements.displayAddForm) {
+    elements.filterForm.classList.add('hidden');
+    elements.filterForm.classList.remove('flex');
+    elements.displayAddForm.classList.remove('flex');
+    elements.displayAddForm.classList.add('hidden');
     toggleBodyScroll(true);
-    clearError(form);
-    form.reset();
+    clearError(elements.form);
+    elements.form.reset();
   }
 });
 
@@ -209,24 +232,16 @@ window.addEventListener('resize', () => {
   }
 });
 
-//Handles for slider bar in mobile screen
-const sliderSmall = document.getElementById("sliderRangeSmall");
-const outputSmall = document.getElementById("sliderPriceSmall");
-outputSmall.innerHTML = sliderSmall.value;
+// Handles for slider bar in mobile screen
+elements.sliderSmall.oninput = () => {
+  elements.outputSmall.innerHTML = elements.sliderSmall.value;
+  let valPercentSmall = (elements.sliderSmall.value / elements.sliderSmall.max) * 100;
+  elements.sliderSmall.style.background = `linear-gradient(to right, #000 ${valPercentSmall}%, #f7f5f5e5 ${valPercentSmall}%)`;
+};
 
-sliderSmall.oninput = () => {
-  outputSmall.innerHTML = this.value;
-  valPercentSmall = (this.value / sliderSmall.max) * 100;
-  sliderSmall.style.background = `linear-gradient(to right, #000 ${valPercentSmall}%, #f7f5f5e5 ${valPercentSmall}%)`;
-}
-
-//Handles for slider bar in desktop screen
-const slider = document.getElementById("sliderRange");
-const output = document.getElementById("sliderPrice");
-output.innerHTML = slider.value;
-
-slider.oninput = () => {
-  output.innerHTML = this.value;
-  valPercent = (this.value / slider.max) * 100;
-  slider.style.background = `linear-gradient(to right, #000 ${valPercent}%, #f7f5f5e5 ${valPercent}%)`;
-}
+// Handles for slider bar in desktop screen
+elements.slider.oninput = () => {
+  elements.output.innerHTML = elements.slider.value;
+  let valPercent = (elements.slider.value / elements.slider.max) * 100;
+  elements.slider.style.background = `linear-gradient(to right, #000 ${valPercent}%, #f7f5f5e5 ${valPercent}%)`;
+};
