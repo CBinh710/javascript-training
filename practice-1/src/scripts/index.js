@@ -106,48 +106,58 @@ function clearError(form) {
   errors.forEach(error => error.innerHTML = '');
 }
 
-const validateAddProductForm = (event) => {
-  event.preventDefault();
+function getFormData(form) {
+  const formData = new FormData(form);
+  return {
+    imageURL: formData.get('chooseFile')?.trim(),
+  };
+}
 
-  const data = {
-    is_valid: true,
-    errors: {}
+function validateImageURL(imageURL) {
+  if (!/^https?:\/\/.+\.(png|jpg|jpeg)$/i.test(imageURL)) {
+    return 'Image URL must be a valid PNG, JPEG, or JPG.';
+  }
+  return null;
+}
+
+function validateAddProductForm(form) {
+  const data = getFormData(form);
+  const errors = form.querySelectorAll('.error-message');
+
+  const validations = {
+    imageURL: validateImageURL(data.imageURL),
   };
 
-  // Query all input fields and error elements
-  const imageInputs = document.querySelectorAll('.chooseFile');
-  const imageErrors = document.querySelectorAll('.imageError');
+  let isValid = true;
 
-  // Use forEach to iterate through the NodeList
-  imageInputs.forEach((input, index) => {
-    if (!validateImageURL(input.value)) {
-      data.is_valid = false;
-      data.errors[`imageURL_${index}`] = "Image URL must be valid and in PNG, JPEG, or JPG format.";
-
-      // Display the corresponding error message
-      imageErrors[index].innerHTML = "Image URL must be valid and in PNG, JPEG, or JPG format.";
+  Object.keys(validations).forEach((key, index) => {
+    if (validations[key]) {
+      isValid = false;
+      errors[index].innerHTML = validations[key];
     }
   });
 
-  return data;
+  return { isValid, data };
 }
 
-// Function to validate the Image URL
-const validateImageURL = (imageURL) => {
-  const trimmedURL = imageURL.trim();
-  return /^https?:\/\/.+\.(png|jpg|jpeg)$/i.test(trimmedURL);
-}
+document.querySelector('.add-form').addEventListener('submit', (event) => {
+  event.preventDefault();
 
-// Submit event listener
-form.addEventListener('submit', (event) => {
-  clearError(event.target); // Clear previous errors
+  const form = event.target;
 
-  const validationResult = validateAddProductForm(event);
+  //clear all error messages
+  clearError(form);
 
-  if (!validationResult.is_valid) {
-    // Handle displaying error messages (already handled in the loop above)
-  } else {
+  // Validate form
+  const { isValid, data } = validateAddProductForm(form);
+
+  if (isValid) {
+    
+    // Reset form
+    form.reset();
     alert('Product added successfully!');
+  } else {
+    console.error('Validation failed.');
   }
 });
 
