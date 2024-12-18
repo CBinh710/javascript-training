@@ -115,17 +115,17 @@ const validateAddProductForm = (event) => {
   };
 
   // Query all input fields and error elements
-  const inputs = document.querySelectorAll('.chooseFile');
-  const errors = document.querySelectorAll('.imageError');
+  const imageInputs = document.querySelectorAll('.chooseFile');
+  const imageErrors = document.querySelectorAll('.imageError');
 
   // Use forEach to iterate through the NodeList
-  inputs.forEach((input, index) => {
+  imageInputs.forEach((input, index) => {
     if (!validateImageURL(input.value)) {
       data.is_valid = false;
       data.errors[`imageURL_${index}`] = "Image URL must be valid and in PNG, JPEG, or JPG format.";
 
       // Display the corresponding error message
-      errors[index].innerHTML = "Image URL must be valid and in PNG, JPEG, or JPG format.";
+      imageErrors[index].innerHTML = "Image URL must be valid and in PNG, JPEG, or JPG format.";
     }
   });
 
