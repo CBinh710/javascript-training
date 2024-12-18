@@ -122,6 +122,7 @@ const validateAddProductForm = (event) => {
   inputs.forEach((input, index) => {
     if (!validateImageURL(input.value)) {
       data.is_valid = false;
+      data.errors[`imageURL_${index}`] = "Image URL must be valid and in PNG, JPEG, or JPG format.";
 
       // Display the corresponding error message
       errors[index].innerHTML = "Image URL must be valid and in PNG, JPEG, or JPG format.";
