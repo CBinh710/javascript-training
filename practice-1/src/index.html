@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shop.co</title>
     <link rel="stylesheet" href="./styles/main.css">
+    <link rel="shortcut icon" href="#">
   </head>
   <body>
     <section class="promotion">
@@ -21,7 +22,7 @@
           <nav class="nav">
             <img src="./assets/images/icons/nav.svg" class="icon nav-icon flex align-center" alt="Nav icon">
             <a href="#"><img src="./assets/images/icons/logo.svg" class="logo" alt="Brand icon"></a>
-            <ul class="nav-links hidden" id="main-menu">
+            <ul class="nav-links hidden">
               <li><a class="link-item" href="#shop">Shop</a> <img src="./assets/images/icons/bottom-arrow.svg" alt="Bottom arrow icon"></li>
               <li><a class="link-item" href="#onsales">On Sale</a></li>
               <li><a class="link-item" href="#newarrivals">New Arrivals</a></li>
@@ -65,8 +66,8 @@
                   </div>
 
                   <div class="slider-container">
-                    <input type="range" min="0" max="250" value="50" class="slider" id="slider-range">
-                    <p class="price-range">$<span id="slider-price"></span></p>
+                    <input type="range" min="0" max="250" value="50" class="slider" id="sliderRange">
+                    <p class="price-range">$<span id="sliderPrice"></span></p>
                   </div>
                 </div>
 
@@ -191,7 +192,7 @@
                 <h2 class="product-heading">Casual</h2>
                 <div class="manage-product-actions flex align-center">
                   <img id="filter" class="icon icon-circle icon-light icon-filter icon-md pointer" src="./assets/images/icons/filter.svg" alt="Filter icon">
-                  <button id="add-product" class="btn pointer">Add</button>
+                  <button id="addProduct" class="btn pointer">Add</button>
                 </div>
               </div>
 
@@ -305,95 +306,8 @@
                   </div>
                   <button class="btn-delete pointer">X</button>
                 </article>
-
-                <article class="card card-container">
-                  <div class="card-image-container">
-                    <img class="card-image" src="./assets/images/products/gradient-graphic-t-shirt.png" alt="Gradiebt graphic T shirt product">
-                  </div>
-                  <p class="card-name">Gradient Graphic T-Shirt</p>
-                  <div class="card-rating">
-                    <div class="rating-star">
-                      <div class="star-icon"><img src="./assets/images/icons/star.svg" alt="rating star"></div>
-                      <div class="star-icon"><img src="./assets/images/icons/star.svg" alt="rating star"></div>
-                      <div class="star-icon"><img src="./assets/images/icons/star.svg" alt="rating star"></div>
-                      <div class="star-icon"><img class="half-star" src="./assets/images/icons/star.svg" alt="rating star"></div>
-                    </div>
-                    <p class="rating-label">3.5/5</p>
-                  </div>
-                  <div class="card-price">
-                    <p class="price-selling">$100</p>
-                    <s class="price-discount">$150</s>
-                    <p class="price-discount-percent">-20%</p>
-                  </div>
-                  <button class="btn-delete pointer">X</button>
-                </article>
-
-                <article class="card card-container">
-                  <div class="card-image-container">
-                    <img class="card-image" src="./assets/images/products/gradient-graphic-t-shirt.png" alt="Gradiebt graphic T shirt product">
-                  </div>
-                  <p class="card-name">Gradient Graphic T-Shirt</p>
-                  <div class="card-rating">
-                    <div class="rating-star">
-                      <div class="star-icon"><img src="./assets/images/icons/star.svg" alt="rating star"></div>
-                      <div class="star-icon"><img src="./assets/images/icons/star.svg" alt="rating star"></div>
-                      <div class="star-icon"><img src="./assets/images/icons/star.svg" alt="rating star"></div>
-                      <div class="star-icon"><img class="half-star" src="./assets/images/icons/star.svg" alt="rating star"></div>
-                    </div>
-                    <p class="rating-label">3.5/5</p>
-                  </div>
-                  <div class="card-price">
-                    <p class="price-selling">$100</p>
-                    <s class="price-discount">$150</s>
-                    <p class="price-discount-percent">-20%</p>
-                  </div>
-                  <button class="btn-delete pointer">X</button>
-                </article>
-
-                <article class="card card-container">
-                  <div class="card-image-container">
-                    <img class="card-image" src="./assets/images/products/gradient-graphic-t-shirt.png" alt="Gradiebt graphic T shirt product">
-                  </div>
-                  <p class="card-name">Gradient Graphic T-Shirt</p>
-                  <div class="card-rating">
-                    <div class="rating-star">
-                      <div class="star-icon"><img src="./assets/images/icons/star.svg" alt="rating star"></div>
-                      <div class="star-icon"><img src="./assets/images/icons/star.svg" alt="rating star"></div>
-                      <div class="star-icon"><img src="./assets/images/icons/star.svg" alt="rating star"></div>
-                      <div class="star-icon"><img class="half-star" src="./assets/images/icons/star.svg" alt="rating star"></div>
-                    </div>
-                    <p class="rating-label">3.5/5</p>
-                  </div>
-                  <div class="card-price">
-                    <p class="price-selling">$100</p>
-                    <s class="price-discount">$150</s>
-                    <p class="price-discount-percent">-20%</p>
-                  </div>
-                  <button class="btn-delete pointer">X</button>
-                </article>
-
-                <article class="card card-container">
-                  <div class="card-image-container">
-                    <img class="card-image" src="./assets/images/products/gradient-graphic-t-shirt.png" alt="Gradiebt graphic T shirt product">
-                  </div>
-                  <p class="card-name">Gradient Graphic T-Shirt</p>
-                  <div class="card-rating">
-                    <div class="rating-star">
-                      <div class="star-icon"><img src="./assets/images/icons/star.svg" alt="rating star"></div>
-                      <div class="star-icon"><img src="./assets/images/icons/star.svg" alt="rating star"></div>
-                      <div class="star-icon"><img src="./assets/images/icons/star.svg" alt="rating star"></div>
-                      <div class="star-icon"><img class="half-star" src="./assets/images/icons/star.svg" alt="rating star"></div>
-                    </div>
-                    <p class="rating-label">3.5/5</p>
-                  </div>
-                  <div class="card-price">
-                    <p class="price-selling">$100</p>
-                    <s class="price-discount">$150</s>
-                    <p class="price-discount-percent">-20%</p>
-                  </div>
-                  <button class="btn-delete pointer">X</button>
-                </article>
               </div>
+
               <div class="pagination-container">
                 <ul class="pagination flex align-center">
                   <li class="previous-arrow disabled">
@@ -508,11 +422,11 @@
       </div>
     </div>
 
-    <div id="filter-form" class="small-screen-filter hidden">
+    <div id="filterForm" class="small-screen-filter hidden">
       <form class="filter-container">
         <div class="filter-heading flex space-between">
           <h3>Filters</h3>
-          <img id="close-filter-icon" class="pointer" src="./assets/images/icons/close.svg" alt="Close icon">
+          <img id="closeFilterIcon" class="pointer" src="./assets/images/icons/close.svg" alt="Close icon">
         </div>
 
         <div class="filter-by-price">
@@ -522,8 +436,8 @@
           </div>
 
           <div class="slider-container">
-            <input type="range" min="0" max="250" value="50" class="slider" id="slider-range-small">
-            <p class="price-range">$<span id="slider-price-small"></span></p>
+            <input type="range" min="0" max="250" value="50" class="slider" id="sliderRangeSmall">
+            <p class="price-range">$<span id="sliderPriceSmall"></span></p>
           </div>
 
         </div>
@@ -644,23 +558,24 @@
       </form>
     </div>
 
-    <div id="add-product-container" class="add-product-container hidden">
+    <div id="addProductContainer" class="add-product-container hidden">
       <div class="container">
         <form action="" class="add-form">
           <h3 class="add-form-heading">Add new product</h3>
-
-          <div class="file-upload">
-            <div class="file-select">
-              <div class="file-select-button" id="fileName">Choose File</div>
-              <div class="file-select-name" id="noFile">No file chosen...</div>
-              <input type="file" name="chooseFile" id="chooseFile">
-            </div>
-          </div>
-
-          <input class="input add-form-input product-name-input" type="text" placeholder="Product Name" name="product name" value="">
+          <input class="input add-form-input product-name-input choose-file" type="text" placeholder="Import image URL" name="choose-file">
+          <span class="error-message imageError"></span>
+          <input class="input add-form-input product-name-input" type="text" placeholder="Product Name" name="product-name" value="">
+          <span class="error-message productNameError"></span>
           <div class="flex space-between product-cost-input">
-            <input class="input add-form-input" type="text" placeholder="Price ($)" name="price" value="">
-            <input class="input add-form-input" type="text" placeholder="Discount (%)" name="discount" value="">
+            <div class="price-input">
+              <input class="input add-form-input" type="text" placeholder="Price ($)" name="price" value="">
+              <span class="error-message priceError"></span>
+            </div>
+
+            <div class="discount-input">
+              <input class="input add-form-input" type="text" placeholder="Discount (%)" name="discount" value="">
+              <span class="error-message discountError"></span>
+            </div>
           </div>
 
           <div class="flex add-form-color-container">
@@ -717,6 +632,7 @@
               </label>
             </div>
           </div>
+          <span class="error-message colorError"></span>
 
           <div class="filter-by-size flex add-form-sizes-container">
             <h4 class="add-form-sub-heading">Size:</h4>
@@ -767,20 +683,21 @@
               </label>
             </div>
           </div>
+          <span class="error-message sizeError"></span>
 
           <div class="add-product-description">
-            <label for="desciption-detail" class="desciption-heading">Description Detail</label><br/>
-            <textarea class="description-text" id="desciption-detail" placeholder="Submit Your Order Information - Item Name, Decoration Size, Quantity, Due Date and any other details"></textarea>
+            <label for="desciptionDetail" class="desciption-heading">Description Detail</label><br/>
+            <textarea class="description-text" id="desciptionDetail" placeholder="Submit Your Order Information - Item Name, Decoration Size, Quantity, Due Date and any other details"></textarea>
           </div>
+          <span class="error-message"></span>
 
-          <button class="btn btn-submit btn-primary flex" type="submit">Submit</button>
-          <button id="btn-cancel" class="btn btn-cancel flex" type="button">Cancel</button>
+          <button id="btnSubmit" class="btn btn-submit btn-primary flex" type="submit">Submit</button>
+          <button id="btnCancel" class="btn btn-submit btn-primary flex" type="button">Cancel</button>
 
         </form>
       </div>
     </div>
 
-
-    <script src="./scripts/filter.js"></script>
+    <script src="./scripts/index.js"></script>
   </body>
 </html>
