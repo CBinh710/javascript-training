@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
     clearErrors();
 
     const formData = new FormData(elements.form);
-    const imageURL = formData.get("chooseFile") ? formData.get("chooseFile").trim() : "";
+    const imageURL = formData.get("choose-file") ? formData.get("chooseFile").trim() : "";
 		const productName = formData.get("product-name") ? formData.get("product-name").trim() : "";
     const price = formData.get("price") ? formData.get("price").trim() : "";
     const discount = formData.get("discount") ? formData.get("discount").trim() : "";
