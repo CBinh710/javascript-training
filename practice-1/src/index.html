@@ -306,95 +306,8 @@
                   </div>
                   <button class="btn-delete pointer">X</button>
                 </article>
-
-                <article class="card card-container">
-                  <div class="card-image-container">
-                    <img class="card-image" src="./assets/images/products/gradient-graphic-t-shirt.png" alt="Gradiebt graphic T shirt product">
-                  </div>
-                  <p class="card-name">Gradient Graphic T-Shirt</p>
-                  <div class="card-rating">
-                    <div class="rating-star">
-                      <div class="star-icon"><img src="./assets/images/icons/star.svg" alt="rating star"></div>
-                      <div class="star-icon"><img src="./assets/images/icons/star.svg" alt="rating star"></div>
-                      <div class="star-icon"><img src="./assets/images/icons/star.svg" alt="rating star"></div>
-                      <div class="star-icon"><img class="half-star" src="./assets/images/icons/star.svg" alt="rating star"></div>
-                    </div>
-                    <p class="rating-label">3.5/5</p>
-                  </div>
-                  <div class="card-price">
-                    <p class="price-selling">$100</p>
-                    <s class="price-discount">$150</s>
-                    <p class="price-discount-percent">-20%</p>
-                  </div>
-                  <button class="btn-delete pointer">X</button>
-                </article>
-
-                <article class="card card-container">
-                  <div class="card-image-container">
-                    <img class="card-image" src="./assets/images/products/gradient-graphic-t-shirt.png" alt="Gradiebt graphic T shirt product">
-                  </div>
-                  <p class="card-name">Gradient Graphic T-Shirt</p>
-                  <div class="card-rating">
-                    <div class="rating-star">
-                      <div class="star-icon"><img src="./assets/images/icons/star.svg" alt="rating star"></div>
-                      <div class="star-icon"><img src="./assets/images/icons/star.svg" alt="rating star"></div>
-                      <div class="star-icon"><img src="./assets/images/icons/star.svg" alt="rating star"></div>
-                      <div class="star-icon"><img class="half-star" src="./assets/images/icons/star.svg" alt="rating star"></div>
-                    </div>
-                    <p class="rating-label">3.5/5</p>
-                  </div>
-                  <div class="card-price">
-                    <p class="price-selling">$100</p>
-                    <s class="price-discount">$150</s>
-                    <p class="price-discount-percent">-20%</p>
-                  </div>
-                  <button class="btn-delete pointer">X</button>
-                </article>
-
-                <article class="card card-container">
-                  <div class="card-image-container">
-                    <img class="card-image" src="./assets/images/products/gradient-graphic-t-shirt.png" alt="Gradiebt graphic T shirt product">
-                  </div>
-                  <p class="card-name">Gradient Graphic T-Shirt</p>
-                  <div class="card-rating">
-                    <div class="rating-star">
-                      <div class="star-icon"><img src="./assets/images/icons/star.svg" alt="rating star"></div>
-                      <div class="star-icon"><img src="./assets/images/icons/star.svg" alt="rating star"></div>
-                      <div class="star-icon"><img src="./assets/images/icons/star.svg" alt="rating star"></div>
-                      <div class="star-icon"><img class="half-star" src="./assets/images/icons/star.svg" alt="rating star"></div>
-                    </div>
-                    <p class="rating-label">3.5/5</p>
-                  </div>
-                  <div class="card-price">
-                    <p class="price-selling">$100</p>
-                    <s class="price-discount">$150</s>
-                    <p class="price-discount-percent">-20%</p>
-                  </div>
-                  <button class="btn-delete pointer">X</button>
-                </article>
-
-                <article class="card card-container">
-                  <div class="card-image-container">
-                    <img class="card-image" src="./assets/images/products/gradient-graphic-t-shirt.png" alt="Gradiebt graphic T shirt product">
-                  </div>
-                  <p class="card-name">Gradient Graphic T-Shirt</p>
-                  <div class="card-rating">
-                    <div class="rating-star">
-                      <div class="star-icon"><img src="./assets/images/icons/star.svg" alt="rating star"></div>
-                      <div class="star-icon"><img src="./assets/images/icons/star.svg" alt="rating star"></div>
-                      <div class="star-icon"><img src="./assets/images/icons/star.svg" alt="rating star"></div>
-                      <div class="star-icon"><img class="half-star" src="./assets/images/icons/star.svg" alt="rating star"></div>
-                    </div>
-                    <p class="rating-label">3.5/5</p>
-                  </div>
-                  <div class="card-price">
-                    <p class="price-selling">$100</p>
-                    <s class="price-discount">$150</s>
-                    <p class="price-discount-percent">-20%</p>
-                  </div>
-                  <button class="btn-delete pointer">X</button>
-                </article>
               </div>
+
               <div class="pagination-container">
                 <ul class="pagination flex align-center">
                   <li class="previous-arrow disabled">
@@ -651,13 +564,18 @@
           <h3 class="add-form-heading">Add new product</h3>
           <input class="input add-form-input product-name-input chooseFile" type="text" placeholder="Import image URL" name="chooseFile">
           <span class="error-message imageError"></span>
-          <input class="input add-form-input product-name-input" type="text" placeholder="Product Name" name="product name" value="">
-          <span class="error-message"></span>
+          <input class="input add-form-input product-name-input" type="text" placeholder="Product Name" name="product-name" value="">
+          <span class="error-message productNameError"></span>
           <div class="flex space-between product-cost-input">
-            <input class="input add-form-input" type="text" placeholder="Price ($)" name="price" value="">
-            <span class="error-message"></span>
-            <input class="input add-form-input" type="text" placeholder="Discount (%)" name="discount" value="">
-            <span class="error-message"></span>
+            <div class="price-input">
+              <input class="input add-form-input" type="text" placeholder="Price ($)" name="price" value="">
+              <span class="error-message priceError"></span>
+            </div>
+
+            <div class="discount-input">
+              <input class="input add-form-input" type="text" placeholder="Discount (%)" name="discount" value="">
+              <span class="error-message discountError"></span>
+            </div>
           </div>
 
           <div class="flex add-form-color-container">
@@ -714,7 +632,7 @@
               </label>
             </div>
           </div>
-          <span class="error-message"></span>
+          <span class="error-message colorError"></span>
 
           <div class="filter-by-size flex add-form-sizes-container">
             <h4 class="add-form-sub-heading">Size:</h4>
@@ -765,7 +683,7 @@
               </label>
             </div>
           </div>
-          <span class="error-message"></span>
+          <span class="error-message sizeError"></span>
 
           <div class="add-product-description">
             <label for="desciptionDetail" class="desciption-heading">Description Detail</label><br/>

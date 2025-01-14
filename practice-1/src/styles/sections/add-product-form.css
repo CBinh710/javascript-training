@@ -39,6 +39,14 @@
   padding: 14px 16px;
 }
 
+.price-input {
+  flex: 1;
+}
+
+.discount-input {
+  flex: 1;
+}
+
 .add-form-sub-heading {
   font-family: var(--font-family-secondary);
   font-size: var(--font-size-md);
@@ -58,7 +66,6 @@
 
 .add-form-sizes-container {
   margin-top: 30px;
-  margin-bottom: 45px;
 }
 
 .add-form-sizes {
@@ -72,6 +79,7 @@
   font-family: var(--font-family-secondary);
   font-size: var(--font-size-md);
   padding: 14px 16px 18px 16px;
+  margin-top: 20px;
   border: 1px solid var(--color-secondary);
   border-radius: 8px;
   color: var(--color-heading-secondary);
@@ -86,6 +94,7 @@
 }
 
 .btn-submit {
+  z-index: 100;
   justify-content: center;
   margin: 10px auto;
   width: 50%;
